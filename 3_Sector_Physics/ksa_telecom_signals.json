@@ -1,0 +1,54 @@
+{
+    "sector": "KSA Telecom",
+    "version": "1.0",
+    "calibration_date": "2026-02-14",
+    "currency": "SAR",
+    "benchmarks": {
+        "subs_per_tower_target": 1800,
+        "sharing_ratio_min": 0.45,
+        "capex_revenue_limit": 0.18,
+        "arpu_target_sar": 75
+    },
+    "signals": [
+        {
+            "id": "telco_tower_yield",
+            "name": "Tower Subscriber Yield",
+            "weight": 0.25,
+            "formula": "total_subscribers / tower_count",
+            "risk_threshold": 1200
+        },
+        {
+            "id": "telco_sharing_ratio",
+            "name": "Infrastructure Sharing Intensity",
+            "weight": 0.20,
+            "formula": "shared_towers / total_towers",
+            "risk_threshold": 0.35
+        },
+        {
+            "id": "telco_gen_dependency",
+            "name": "Generator Opex Drag",
+            "weight": 0.15,
+            "formula": "tower_energy_costs / total_network_opex",
+            "risk_threshold": 0.30
+        },
+        {
+            "id": "telco_subs_prevalence",
+            "name": "Multi-SIM Exposure",
+            "weight": 0.10,
+            "formula": "active_subs / population_coverage",
+            "warning_threshold": 1.6
+        },
+        {
+            "id": "telco_capex_gear",
+            "name": "Capex Leverage Ratio",
+            "weight": 0.30,
+            "formula": "annual_capex / delta_revenue",
+            "risk_threshold": 1.2
+        }
+    ],
+    "structural_weights": {
+        "infrastructure": 0.60,
+        "market_position": 0.25,
+        "capital_efficiency": 0.15
+    }
+}

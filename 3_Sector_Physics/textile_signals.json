@@ -1,0 +1,48 @@
+{
+    "sector_id": "textile_v1",
+    "sector_name": "Textile Exporters (Vertically Integrated)",
+    "benchmark_peer": "Interloop Limited",
+    "signals": [
+        {
+            "id": "trade_integrity",
+            "weight": 0.20,
+            "formula": "abs(claimed_revenue_growth - port_shipment_kg_delta)",
+            "threshold_amber": 10,
+            "threshold_red": 20,
+            "source": "Customs Manifests / PSX"
+        },
+        {
+            "id": "energy_stress",
+            "weight": 0.15,
+            "formula": "current_electricity_tariff / output_yield_index",
+            "threshold_amber": 40,
+            "threshold_red": 60,
+            "source": "Grid Data / IESCO / FESCO"
+        },
+        {
+            "id": "inventory_lag",
+            "weight": 0.15,
+            "formula": "current_inventory_days - 110",
+            "threshold_amber": 30,
+            "threshold_red": 50,
+            "source": "Audit Notes / PSX"
+        },
+        {
+            "id": "fx_dependency",
+            "weight": 0.10,
+            "formula": "net_imported_input_value / export_revenue_usd",
+            "threshold_amber": 0.5,
+            "threshold_red": 0.8,
+            "source": "Trade Manifests"
+        },
+        {
+            "id": "sentiment_decay",
+            "weight": 0.10,
+            "formula": "sentiment_slope_36m",
+            "threshold_amber": -0.2,
+            "threshold_red": -0.5,
+            "source": "Digital Proxies"
+        }
+    ],
+    "engine_calibration": "DETERMINISTIC_LOCKED_2026_02_13"
+}

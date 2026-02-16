@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORBITAL BAE | Boardroom Verdict</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0c;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --accent-green: #00ff88;
+            --accent-amber: #ffcc00;
+            --accent-red: #ff4444;
+            --text-dim: #94a3b8;
+            --text-main: #f8fafc;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 40px;
+            line-height: 1.5;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 800px;
+            /* Standard A4ish width for PDF rendering */
+            background: linear-gradient(145deg, #111114 0%, #0a0a0c 100%);
+            border: 1px solid var(--border);
+            padding: 50px;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .brand h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin: 0;
+            background: linear-gradient(to right, #fff, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand p {
+            color: var(--accent-green);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 5px 0 0 0;
+        }
+
+        .meta {
+            text-align: right;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        /* Risk Index Widget */
+        .risk-section {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .risk-score-card {
+            flex: 1;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 4px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .score-value {
+            font-size: 4rem;
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+            line-height: 1;
+            margin: 10px 0;
+        }
+
+        .value-red {
+            color: var(--accent-red);
+        }
+
+        .value-amber {
+            color: var(--accent-amber);
+        }
+
+        .value-green {
+            color: var(--accent-green);
+        }
+
+        .score-label {
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+        }
+
+        /* The Signals Table */
+        .signal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .signal-card {
+            background: var(--card-bg);
+            border-left: 3px solid var(--accent-red);
+            padding: 20px;
+            border-radius: 2px;
+        }
+
+        .signal-card.amber {
+            border-left-color: var(--accent-amber);
+        }
+
+        .signal-card.green {
+            border-left-color: var(--accent-green);
+        }
+
+        .signal-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .signal-subtitle {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .signal-data {
+            font-family: 'Inter', monospace;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* Verdict Section */
+        .verdict {
+            border-top: 1px solid var(--border);
+            padding-top: 30px;
+        }
+
+        .verdict h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .verdict-box {
+            background: rgba(255, 68, 68, 0.05);
+            border: 1px solid rgba(255, 68, 68, 0.2);
+            padding: 20px;
+            color: #ff8888;
+            font-size: 0.95rem;
+            border-radius: 4px;
+        }
+
+        .highlight-number {
+            font-weight: 800;
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Decorative Element */
+        .glow {
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="glow"></div>
+
+        <header>
+            <div class="brand">
+                <h1>ORBITAL BAE</h1>
+                <p>Buy-Side Advisory Engine</p>
+            </div>
+            <div class="meta">
+                ID: <strong>FLASH-PAK-4029</strong><br>
+                DATE: 13 FEB 2026<br>
+                LEVEL: <strong>PRE-IC SENSITIVE</strong>
+            </div>
+        </header>
+
+        <section class="risk-section">
+            <div class="risk-score-card">
+                <span class="score-label">ORBITAL Risk Index</span>
+                <div class="score-value value-red">68</div>
+                <span class="score-label">Classification: <strong>AT-RISK / RED FLAG</strong></span>
+            </div>
+            <div class="risk-score-card" style="text-align: left;">
+                <span class="score-label">Target Entity</span>
+                <h2 style="margin: 10px 0; font-family: 'Outfit';">Stylo Shoes (Pvt) Ltd</h2>
+                <span class="score-label">Sector: <strong>Footwear Retail/Mfg</strong></span>
+                <br>
+                <span class="score-label">Status: <strong>Verification Divergence</strong></span>
+            </div>
+        </section>
+
+        <div class="signal-grid">
+            <div class="signal-card">
+                <span class="signal-subtitle">Throughput vs. Revenue</span>
+                <div class="signal-title">Trade Integrity Audit</div>
+                <div class="signal-data">-12.4% YoY Volume Drop</div>
+                <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 10px;">Claimed +15% revenue growth is
+                    mathematically incompatible with 36-month import velocity.</p>
+            </div>
+            <div class="signal-card amber">
+                <span class="signal-subtitle">Asset Efficiency</span>
+                <div class="signal-title">Yield Gap Analysis</div>
+                <div class="signal-data">184 Days Inventory Aging</div>
+                <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 10px;">Sector Physics benchmark
+                    (Bata/Service) is 120 days. Trapped capital estimated at <span style="color:#fff">PKR 450M.</span>
+                </p>
+            </div>
+            <div class="signal-card amber">
+                <span class="signal-subtitle">Exit Optionality</span>
+                <div class="signal-title">Sentiment Integrity</div>
+                <div class="signal-data">42.1 Index Score</div>
+                <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 10px;">Structural brand decay detected
+                    in Tier-2 cities. Terminal value premium is eroding.</p>
+            </div>
+            <div class="signal-card green">
+                <span class="signal-subtitle">Operational Physics</span>
+                <div class="signal-title">RPSF Efficiency</div>
+                <div class="signal-data">PKR 142k / SqFt</div>
+                <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 10px;">Footprint yield remains within
+                    institutional norms. Location premium is stable.</p>
+            </div>
+        </div>
+
+        <section class="verdict">
+            <h2>Strategic Verdict & Price Leverage</h2>
+            <div class="verdict-box">
+                <p>Based on <strong>High-Frequency Proxy Synthesis</strong>, we have identified a material <span
+                        class="highlight-number">27% Divergence Gap</span> between operational reality and
+                    seller-provided financial claims. </p>
+                <p><strong>Recommendation</strong>: Proceed with extreme caution. Use the Trade Volume Drop as leverage
+                    to re-negotiate the valuation ceiling downwards by <span class="highlight-number">PKR 180M -
+                        240M</span> before committing to Phase II CDD.</p>
+            </div>
+        </section>
+
+        <footer>
+            <div>ORBITAL BAE: SUPPLEMENTARY DECISION SUPPORT LAYER</div>
+            <div>© 2026 ORBITAL STRATEGIC INTELLIGENCE</div>
+        </footer>
+    </div>
+</body>
+
+</html>

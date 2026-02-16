@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORBITAL STRATEGIC | KSA Telecom Intelligence</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --ksa-green: #043927;
+            --ksa-gold: #C5A059;
+            --bg-onyx: #0a0b0d;
+            --bg-card: #14161a;
+            --text-main: #e2e8f0;
+            --text-dim: #94a3b8;
+            --border-gold: rgba(197, 160, 89, 0.3);
+            --accent-red: #ff4b2b;
+        }
+
+        body {
+            background-color: var(--bg-onyx);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .report-page {
+            width: 900px;
+            background: var(--bg-onyx);
+            padding: 80px 60px;
+            border-left: 1px solid var(--border-gold);
+            border-right: 1px solid var(--border-gold);
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Cover Section */
+        header {
+            border-bottom: 2px solid var(--ksa-gold);
+            padding-bottom: 40px;
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .logo-block h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin: 0;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .logo-block p {
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            color: var(--ksa-gold);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 5px 0 0 0;
+        }
+
+        .report-metadata {
+            text-align: right;
+            font-family: 'Outfit';
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        /* McKinsey Aesthetic Elements */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--ksa-gold);
+            margin-bottom: 25px;
+            border-left: 4px solid var(--ksa-gold);
+            padding-left: 20px;
+        }
+
+        .exec-summary {
+            background: rgba(197, 160, 89, 0.03);
+            border: 1px solid var(--border-gold);
+            padding: 40px;
+            margin-bottom: 60px;
+            font-size: 1.15rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #fff;
+        }
+
+        /* Sector Physics Dashboard */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 4px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--ksa-gold);
+        }
+
+        .stat-value {
+            font-family: 'Outfit';
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--ksa-gold);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Invisible Signals Section */
+        .signal-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 60px;
+        }
+
+        .signal-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 4px;
+        }
+
+        .signal-icon {
+            font-size: 2.5rem;
+            color: var(--ksa-gold);
+        }
+
+        .signal-content h3 {
+            font-family: 'Outfit';
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+            color: #fff;
+        }
+
+        .signal-content p {
+            margin: 0;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        /* Consequences Box */
+        .consequences-box {
+            background: linear-gradient(135deg, #1a0a0d 0%, #0a0b0d 100%);
+            border: 1px solid rgba(255, 75, 43, 0.3);
+            padding: 40px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .consequences-box::before {
+            content: 'STRUCTURAL ALERT';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 0.6rem;
+            font-weight: 900;
+            color: var(--accent-red);
+            letter-spacing: 3px;
+        }
+
+        .consequences-box h3 {
+            color: var(--accent-red);
+            font-family: 'Outfit';
+            margin-top: 0;
+        }
+
+        .consequences-list {
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .consequences-list li {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+
+        .accent-bar {
+            height: 4px;
+            width: 100%;
+            background: linear-gradient(to right, var(--ksa-green), var(--ksa-gold), var(--ksa-green));
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="report-page">
+        <div class="accent-bar"></div>
+
+        <header>
+            <div class="logo-block">
+                <h1>ORBITAL</h1>
+                <p>Strategic Intelligence</p>
+            </div>
+            <div class="report-metadata">
+                Sector: <strong>Telecom KSA</strong><br>
+                Date: 14 February 2026<br>
+                Security: <strong>BOARD CONFIDENTIAL</strong>
+            </div>
+        </header>
+
+        <section class="exec-summary">
+            "The Kingdom's telecom sector is currently at a critical junction where Capex deployment is decoupled from
+            subscriber yield. ORBITAL identifies a SAR 6B capital redundancy in the current 'Steel-Centric'
+            infrastructure model. The transition to Asset-Light sharing is no longer a choice—it is a mathematical
+            necessity for IRR preservation."
+        </section>
+
+        <section>
+            <h2>Sector Physics Dashboard</h2>
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <span class="stat-value">SAR 6.2B</span>
+                    <span class="stat-label">Trapped Infrastructure Capital</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">1,410</span>
+                    <span class="stat-label">Current Subs/Tower Yield</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">175%</span>
+                    <span class="stat-label">Subscriber Prevalence</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>The Invisible Signals</h2>
+            <div class="signal-list">
+                <div class="signal-item">
+                    <div class="signal-icon">📡</div>
+                    <div class="signal-content">
+                        <h3>Infrastructure Duplicity Index</h3>
+                        <p>Our analysis detects a 1.4x redundancy factor in rural Saudi clusters. Operators are building
+                            separate tower footprints in low-density zones, creating a permanent Opex drag that internal
+                            audits fail to quantify.</p>
+                    </div>
+                </div>
+                <div class="signal-item">
+                    <div class="signal-icon">⏳</div>
+                    <div class="signal-content">
+                        <h3>The 'Digital Ghost' Churn</h3>
+                        <p>Multi-SIM subscriber base (175% penetration) creates an illusion of growth. ORBITAL
+                            identifies that 30% of active SIMs are low-margin anchors that drain network resources
+                            without contributing to ARPU velocity.</p>
+                    </div>
+                </div>
+                <div class="signal-item">
+                    <div class="signal-icon">🌋</div>
+                    <div class="signal-content">
+                        <h3>Generator Dependency Variance</h3>
+                        <p>Energy physics in desert connectivity (NEOM/Rural North) reveals a legacy dependency on
+                            diesel generators that inflates Opex by 2.5x. Without high-intensity dish sharing, these
+                            regions are negative-margin assets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="consequences-box">
+            <h3>Structural Findings & Consequences</h3>
+            <div class="consequences-list">
+                <ul>
+                    <li><strong>Finding: Sub-Optimal Tower Yield.</strong> <br>A typical KSA operator is carrying +20%
+                        more steel than the sector gold standard requires. <br><em>Consequence: Permanent valuation
+                            discount from institutional investors who see 'Tele-Real-Estate' rather than a Digital
+                            Service.</em></li>
+                    <li><strong>Finding: Spectrum Inefficiency.</strong> <br>Data throughput divided by spectrum MHz
+                        allocation is 15% below G20 norms. <br><em>Consequence: Massive capital 'parked' in spectrum
+                            licenses that the current backhaul cannot monetize.</em></li>
+                    <li><strong>Finding: The Apex Churn Risk.</strong> <br>High-wealth subs are anchor-switching every 6
+                        months via digital eSIM. <br><em>Consequence: Customer Acquisition Cost (CAC) is becoming a
+                            terminal P&L liability.</em></li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            ORBITAL STRATEGIC INTELLIGENCE | KINGDOM OF SAUDI ARABIA | VISION 2030 ALIGNED
+            <br>© 2026. Boardroom-Ready Forensic Brief.
+        </footer>
+    </div>
+</body>
+
+</html>

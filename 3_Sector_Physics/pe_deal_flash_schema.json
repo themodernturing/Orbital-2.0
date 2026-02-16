@@ -1,0 +1,44 @@
+{
+  "audit_metadata": {
+    "target_name": "Target Company Name",
+    "sector": "Retail / Footwear",
+    "timestamp": "2026-02-13T14:40:00Z",
+    "audit_engine_version": "1.0-KINETIC",
+    "data_anchors": ["Volza", "Trustpilot", "Companies House", "ECDB"]
+  },
+  "orbital_score": {
+    "total": 0,
+    "efficiency_rank": 0,
+    "risk_index": 0,
+    "verdict_tier": "Alpha / Neutral / Beta"
+  },
+  "signal_matrix": {
+    "signal_1_inventory_turn": {
+      "delta_to_benchmark": 0,
+      "trapped_capital_est": 0,
+      "status": "GREEN/AMBER/RED"
+    },
+    "signal_2_trade_velocity": {
+      "yo_y_import_delta": 0,
+      "supply_chain_concentration": 0,
+      "status": "GREEN/AMBER/RED"
+    },
+    "signal_3_sentiment_decay": {
+      "rating_avg": 0,
+      "trend_slope": 0,
+      "repatriation_risk": 0,
+      "status": "GREEN/AMBER/RED"
+    },
+    "signal_4_revenue_concentration": {
+      "top_channel_dependency": 0,
+      "geographic_gap_score": 0,
+      "status": "GREEN/AMBER/RED"
+    }
+  },
+  "institutional_verdict": {
+    "executive_summary": "Short, dense verdict on the target's investment viability.",
+    "top_red_flag": "Single most critical warning signal.",
+    "upside_leverage": "Primary efficiency unlock identified.",
+    "investment_thesis": "The 'Lemon' or 'Buy' rationale."
+  }
+}
