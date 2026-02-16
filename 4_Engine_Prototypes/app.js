@@ -3,7 +3,7 @@
 // Visualizations + OpenAI GPT-4o Chatbot
 // ═══════════════════════════════════════════════
 
-const OPENAI_KEY = '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';
+const OPENAI_KEY = 'REPLACE_WITH_YOUR_KEY';
 
 // ── Chart.js Global Config ──
 Chart.defaults.color = '#8888a0';
