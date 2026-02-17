@@ -16,28 +16,37 @@ To serve as the neutral, institutional-grade data infrastructure for capital dec
 
 ### B. Quant Defensibility
 - **Requirement**: "Evidence Packs" for every high-impact claim.
-- **Components**: Driver Ranking, Sensitivity Assumptions, and Historical Correlation data.
-- **Auditability**: Every claim must be traceable to the Signal Layer.
+- **Components**: Driver Ranking/Contribution Bands, Sensitivity Assumptions, and Historical Correlation data.
+- **Auditability**: Every claim must be traceable via a **Trace Chain** (Signal → Driver → Conclusion).
+- **Nuance**: Proprietary weights remain hidden behind driver rankings and stability tests.
 
 ### C. Scenario Math Rigor
-- **Requirement**: Explicit assumption versioning.
-- **Modeling**: Best/Base/Worst case range modeling.
-- **Elasticity**: Documented pass-through and lag assumptions per sector.
+- **Requirement**: Explicit assumption versioning via **Scenario Objects**.
+- **Modeling**: Standardized Best/Base/Worst case range modeling.
+- **Elasticity**: Documented pass-through, lag, and distribution assumptions per sector.
 
 ### D. Backtesting
 - **Requirement**: Strict "No-Leakage" discipline (t-0 data only).
-- **Metrics**: Precision/Recall, AUC, and Hit Rate.
-- **Certification**: A formal "Validation Note" for every major model version.
+- **Metrics**: Precision/Recall, AUC, and Hit Rate by sector and horizon.
+- **Certification**: A formal "Magnus Validation Note" for every major model version.
 
 ### E. Historical Validation
-- **Requirement**: Vetted Signal Library.
+- **Requirement**: Vetted **Signal Validation Cards**.
 - **Process**: Lead/Lag analysis and stability testing across multiple company cycles.
+- **Output**: A scientific Signal Validation Card including failure modes.
 
 ## 3. THE "NO-TRADE" DOCTRINE
 Magnus maintains a position of absolute neutrality to preserve institutional trust.
-- Magnus does not trade or allocate capital.
+- Magnus **does not trade**, allocate capital, or provide execution services.
 - Magnus outputs are **Advisory Intelligence Tools**, not financial certifications.
 - Neutrality is the shield that ensures Magnus remains the **Universal Data Infrastructure.**
+
+## 4. THE 12-MONTH VALIDATION ROADMAP
+To reach "Scientifically Undeniable" status, Magnus must achieve:
+- **Logged Predictions**: N total events across Y sectors.
+- **Calibration Accuracy**: Probability calibration within ±X% in key bands.
+- **Leakage-Free Logs**: A verifiable track record of backtests without hindsight bias.
+- **Evidence Packs**: Standardized documentation for any high-impact claim.
 
 ## 4. THE PREDICTION REGISTRY
 Magnus maintains a formal `PREDICTION_REGISTRY.json` of every forward-looking statement to measure and improve calibration over time.
