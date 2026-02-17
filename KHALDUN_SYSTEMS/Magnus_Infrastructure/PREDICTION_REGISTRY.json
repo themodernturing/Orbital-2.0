@@ -1,0 +1,24 @@
+[
+    {
+        "prediction_id": "MAG-001",
+        "company_ticker": "STC (7010.SR)",
+        "prediction_date": "2026-02-12",
+        "horizon": "90d",
+        "event_type": "operational_inefficiency_exposure",
+        "direction": "down",
+        "probability": 0.85,
+        "expected_magnitude": "5-8% Opex variance",
+        "signals_used": [
+            "tower_yield_delta",
+            "generator_consumption_proxy"
+        ],
+        "model_version": "KSA_TEL_1.0",
+        "assumption_set": "BASE_SCENARIO_2026",
+        "outcome": {
+            "status": "pending",
+            "actual_value": null,
+            "verification_date": null,
+            "source_link": null
+        }
+    }
+]
