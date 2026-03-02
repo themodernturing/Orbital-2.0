@@ -1,0 +1,267 @@
+[
+    {
+        "prediction_id": "MAG-001",
+        "company_ticker": "STC (7010.SR)",
+        "prediction_date": "2026-02-12",
+        "horizon": "90d",
+        "event_type": "operational_inefficiency_exposure",
+        "direction": "down",
+        "probability": 0.85,
+        "expected_magnitude": "5-8% Opex variance",
+        "signals_used": [
+            "tower_yield_delta",
+            "generator_consumption_proxy"
+        ],
+        "model_version": "KSA_TEL_1.0",
+        "assumption_set": "BASE_SCENARIO_2026",
+        "outcome": {
+            "status": "pending",
+            "actual_value": null,
+            "verification_date": null,
+            "source_link": null
+        }
+    },
+    {
+        "prediction_id": "MAG-002",
+        "company_ticker": "KSA_SECTOR",
+        "prediction_date": "2026-02-16",
+        "horizon": "365d",
+        "event_type": "structural_redundancy",
+        "direction": "flat",
+        "probability": 0.95,
+        "expected_magnitude": "24% Steel Surplus",
+        "signals_used": [
+            "tower_yield_delta"
+        ],
+        "model_version": "KSA_TEL_1.0",
+        "assumption_set": "BASE_SCENARIO_2026",
+        "outcome": {
+            "status": "pending",
+            "actual_value": null,
+            "verification_date": null,
+            "source_link": null
+        }
+    },
+    {
+        "prediction_id": "MAG-003",
+        "company_ticker": "KSA_SECTOR",
+        "prediction_date": "2026-02-16",
+        "horizon": "730d",
+        "event_type": "cost_reduction",
+        "direction": "down",
+        "probability": 0.70,
+        "expected_magnitude": "60% Capex reduction (Sharing)",
+        "signals_used": [
+            "asset_sharing_intensity"
+        ],
+        "model_version": "KSA_TEL_1.0",
+        "assumption_set": "SHARING_ADOPTION_LOW",
+        "outcome": {
+            "status": "pending",
+            "actual_value": null,
+            "verification_date": null,
+            "source_link": null
+        }
+    },
+    {
+        "prediction_id": "MAG-004",
+        "company_ticker": "KSA_SECTOR",
+        "prediction_date": "2026-02-16",
+        "horizon": "1095d",
+        "event_type": "capital_recovery",
+        "direction": "up",
+        "probability": 0.65,
+        "expected_magnitude": "SAR 6.2B",
+        "signals_used": [
+            "tower_yield_math",
+            "spectrum_to_revenue"
+        ],
+        "model_version": "KSA_TEL_1.0",
+        "assumption_set": "VISION_2030_ALIGNMENT",
+        "outcome": {
+            "status": "pending",
+            "actual_value": null,
+            "verification_date": null,
+            "source_link": null
+        }
+    },
+    {
+        "prediction_id": "MAG-005",
+        "company_ticker": "KSA_SECTOR (Desert Clusters)",
+        "prediction_date": "2026-02-16",
+        "horizon": "1825d",
+        "event_type": "maintenance_leakage",
+        "direction": "up",
+        "probability": 0.90,
+        "expected_magnitude": "SAR 1.2M per tower",
+        "signals_used": [
+            "tower_loop_physics",
+            "generator_heat_signature"
+        ],
+        "model_version": "KSA_TEL_1.0",
+        "assumption_set": "OPEX_BENCHMARK_2024",
+        "outcome": {
+            "status": "pending",
+            "actual_value": null,
+            "verification_date": null,
+            "source_link": null
+        }
+    },
+    {
+        "prediction_id": "MAG-006",
+        "company_ticker": "KSA_SECTOR (Rural)",
+        "prediction_date": "2026-02-16",
+        "horizon": "365d",
+        "event_type": "ebitda_expansion",
+        "direction": "up",
+        "probability": 0.75,
+        "expected_magnitude": "12% YoY",
+        "signals_used": [
+            "energy_yield_stress",
+            "solar_hybrid_efficiency"
+        ],
+        "model_version": "KSA_TEL_1.0",
+        "assumption_set": "MODERATE_IMPLEMENTATION",
+        "outcome": {
+            "status": "pending",
+            "actual_value": null,
+            "verification_date": null,
+            "source_link": null
+        }
+    },
+    {
+        "prediction_id": "MAG-007",
+        "company_ticker": "UNZE_PK",
+        "prediction_date": "2026-02-16",
+        "horizon": "365d",
+        "event_type": "efficiency_upside",
+        "direction": "up",
+        "probability": 0.60,
+        "expected_magnitude": "PKR 1.3B",
+        "signals_used": [
+            "hfps_synthesis",
+            "geographic_yield_modeling"
+        ],
+        "model_version": "IMP_FOOT_1.0",
+        "assumption_set": "HIGH_RESOLUTION_AUDIT",
+        "outcome": {
+            "status": "pending",
+            "actual_value": null,
+            "verification_date": null,
+            "source_link": null
+        }
+    },
+    {
+        "prediction_id": "MAG-008",
+        "company_ticker": "GLOBAL_COMMODITY (Leather)",
+        "prediction_date": "2024-12-31",
+        "horizon": "365d",
+        "event_type": "input_cost_inflation",
+        "direction": "up",
+        "probability": 1.0,
+        "expected_magnitude": "264%",
+        "signals_used": [
+            "trade_manifest_logs",
+            "lme_metal_lag"
+        ],
+        "model_version": "RETAIL_PHYSICS_1.2",
+        "assumption_set": "HISTORICAL_VALIDATION",
+        "outcome": {
+            "status": "resolved",
+            "actual_value": 2.64,
+            "verification_date": "2025-01-01",
+            "source_link": "Sector_Audit_Internal"
+        }
+    },
+    {
+        "prediction_id": "MAG-009",
+        "company_ticker": "GBP/PKR",
+        "prediction_date": "2026-02-16",
+        "horizon": "365d",
+        "event_type": "currency_devaluation",
+        "direction": "up",
+        "probability": 0.80,
+        "expected_magnitude": "PKR 381-415",
+        "signals_used": [
+            "fx_signal_tracking",
+            "macro_fiscal_drift"
+        ],
+        "model_version": "MACRO_1.0",
+        "assumption_set": "FY2026_FORECAST",
+        "outcome": {
+            "status": "pending",
+            "actual_value": null,
+            "verification_date": null,
+            "source_link": null
+        }
+    },
+    {
+        "prediction_id": "ORB-001",
+        "company_ticker": "PASHA_RE_GROUP",
+        "prediction_date": "2026-03-01",
+        "horizon": "365d",
+        "event_type": "revenue_diversification",
+        "direction": "shift",
+        "probability": 0.55,
+        "expected_magnitude": "40% recurring revenue by 2028",
+        "signals_used": [
+            "revenue_mix_trajectory",
+            "hotel_operational_data",
+            "mall_rental_yield"
+        ],
+        "model_version": "ORB_PASHA_1.0",
+        "assumption_set": "STEADY_BUILD_SCENARIO",
+        "outcome": {
+            "status": "pending",
+            "actual_value": null,
+            "verification_date": null,
+            "source_link": null
+        }
+    },
+    {
+        "prediction_id": "ORB-002",
+        "company_ticker": "PASHA_BANK",
+        "prediction_date": "2026-03-01",
+        "horizon": "180d",
+        "event_type": "ipo_timeline_slip",
+        "direction": "delay",
+        "probability": 0.60,
+        "expected_magnitude": "Q3 2026 vs Spring 2026",
+        "signals_used": [
+            "ipo_governance_shift",
+            "baku_exchange_capacity",
+            "regulatory_filing_status"
+        ],
+        "model_version": "ORB_PASHA_1.0",
+        "assumption_set": "IPO_EXECUTION_SCENARIO",
+        "outcome": {
+            "status": "pending",
+            "actual_value": null,
+            "verification_date": null,
+            "source_link": null
+        }
+    },
+    {
+        "prediction_id": "ORB-003",
+        "company_ticker": "PASHA_RE_GROUP",
+        "prediction_date": "2026-03-01",
+        "horizon": "730d",
+        "event_type": "construction_delay",
+        "direction": "delay",
+        "probability": 0.65,
+        "expected_magnitude": ">6 months on Crescent Bay phase",
+        "signals_used": [
+            "conglomerate_circular_dependency",
+            "construction_bottleneck_intensity",
+            "karabakh_resource_competition"
+        ],
+        "model_version": "ORB_PASHA_1.0",
+        "assumption_set": "CAPACITY_CONSTRAINT_SCENARIO",
+        "outcome": {
+            "status": "pending",
+            "actual_value": null,
+            "verification_date": null,
+            "source_link": null
+        }
+    }
+]

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GFC Fans - Strategic Alignment Trinity Suite (Institutional V1.5)</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #f9fafb;
+            --bg-white: #ffffff;
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --text-main: #334155;
+            --text-bold: #0f172a;
+            --border-light: #e2e8f0;
+            --signal-box: #f8fafc;
+            --table-header: #f1f5f9;
+            --risk-high: #dc2626;
+            --recovery-green: #059669;
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            @page {
+                margin: 2cm;
+            }
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-page);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--bg-white);
+            padding: 80px 60px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            border-radius: 4px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .brand-header {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: -0.02em;
+            color: var(--primary);
+        }
+
+        .status-badge {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            color: var(--accent);
+            background: #eff6ff;
+            padding: 4px 12px;
+            border-radius: 99px;
+        }
+
+        .armor-disclaimer {
+            font-size: 11px;
+            color: #64748b;
+            border: 1px solid var(--border-light);
+            padding: 15px;
+            margin-bottom: 40px;
+            background: #fdfdfd;
+            font-style: italic;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: var(--text-bold);
+            letter-spacing: -0.01em;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .lead-line {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 25px;
+            font-weight: 600;
+            border-radius: 4px;
+            margin: 30px 0;
+            font-size: 18px;
+            position: relative;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            color: var(--text-bold);
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-bold);
+            margin-top: 25px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 14px;
+        }
+
+        th {
+            background: var(--table-header);
+            text-align: left;
+            padding: 12px 15px;
+            border-bottom: 2px solid var(--border-light);
+            font-weight: 600;
+            color: var(--text-bold);
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .highlight-recovery {
+            color: var(--recovery-green);
+            font-weight: 700;
+        }
+
+        .highlight-risk {
+            color: var(--risk-high);
+            font-weight: 700;
+        }
+
+        .signal-trace {
+            background: var(--signal-box);
+            border: 1px solid var(--border-light);
+            padding: 20px;
+            border-radius: 4px;
+            margin: 25px 0;
+            font-size: 13px;
+        }
+
+        .signal-title {
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 11px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .forensic-chain {
+            font-family: 'JetBrains Mono', monospace;
+            background: #ffffff;
+            border: 1px dashed var(--border-light);
+            padding: 15px;
+            font-size: 12px;
+            line-height: 1.8;
+            color: #475569;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-light);
+            font-size: 12px;
+            color: #94a3b8;
+            text-align: center;
+        }
+
+        .note-small {
+            font-size: 12px;
+            font-style: italic;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header-top">
+            <div class="brand-header">KHALDUN SYSTEMS</div>
+            <div class="status-badge">Institutional V1.5 - Board-Dominant</div>
+        </div>
+
+        <div class="armor-disclaimer">
+            <strong>Board-Armor Disclaimer:</strong> This draft is based on externally inferred signals and calibrated
+            baseline assumptions. Final audit-grade precision requires internal confirmation of volumes, procurement
+            terms, and COGS composition. All levers and deltas are presented with explicit assumptions to enable
+            verification.
+        </div>
+
+        <h1>GFC FANS: STRATEGIC ALIGNMENT TRINITY SUITE</h1>
+        <div class="subtitle">Diagnostic Audit & Capital Realignment Roadmap | February 18, 2026</div>
+
+        <div class="lead-line">
+            GFC Fans currently operates with an estimated PKR 250M annual structural leak, primarily driven by a
+            sourcing configuration mismatched to the current volatility regime.
+        </div>
+
+        <h2>1. Executive Summary (Answer-First)</h2>
+        <p>GFC’s current model relies on domestic intermediation for primary raw materials. While historically stable,
+            this configuration has decoupled from the current elevated copper regime, creating a <strong>Structural Cost
+                Drag</strong> that erodes competitive parity in export markets.</p>
+
+        <h3>The Financial Opportunity (Size of the Prize)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Conservative</th>
+                    <th><strong>Base Case</strong></th>
+                    <th>Aggressive</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Annual EBITDA Uplift</td>
+                    <td>PKR 185M</td>
+                    <td class="highlight-recovery">PKR 250M</td>
+                    <td>PKR 312M</td>
+                </tr>
+                <tr>
+                    <td>Monthly Margin Recovery</td>
+                    <td>PKR 15.4M</td>
+                    <td class="highlight-recovery">PKR 20.8M</td>
+                    <td>PKR 26.0M</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="note-small">*Note: Impact calculated based on estimated annual copper usage of 380 tons (Inferred from
+            production mix of ~1.2M units/year; copper usage ratio ~0.32kg per unit).</p>
+
+        <div class="page-break"></div>
+
+        <h2>2. The Leak Decomposition Exhibit</h2>
+        <p>The PKR 250M delta is the product of structural variances between legacy configuration and current market
+            physics.</p>
+
+        <h3>A. Procurement Structural Delta (Metal Math)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Value (Assumption)</th>
+                    <th>Impact (PKR)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Estimated Annual Copper Volume</td>
+                    <td>380 Tons</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Distributor Realized Price</td>
+                    <td><strong>PKR 5.45M/ton</strong> (PKR 5,450/kg)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Khaldun Landed Benchmark</td>
+                    <td><strong>PKR 4.79M/ton</strong> (PKR 4,790/kg)</td>
+                    <td class="highlight-risk">- PKR 0.66M/ton (PKR 660/kg)</td>
+                </tr>
+                <tr>
+                    <td><strong>Annual Copper Leak</strong></td>
+                    <td><strong>Sub-Total</strong></td>
+                    <td class="highlight-risk">PKR 250.8M</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="note-small"><em>*Note: This base-case delta is copper-driven; aluminum variance is excluded pending
+                confirmation of mix and purchasing terms.</em></p>
+
+        <h3>B. Illustrative components contributing to the landed build (sequential application applies; baseline factor
+            calibrated)</h3>
+        <div class="signal-trace">
+            <span class="signal-title">Audit Chain Persistence</span>
+            <p>Multiplier reflects cumulative applied duties and taxes as per FBR sequential calculation structure.
+                Exact landed multiplier varies by product code, exemption status, and sequential tax application; the
+                1.32x is a calibrated baseline.</p>
+            <div class="forensic-chain">
+                • Base (LME + Premium): 1.00<br>
+                • Customs Duty (CD): 0.05<br>
+                • Additional Customs Duty (ACD): 0.02 (SRO-1151 / March '26 Audit)<br>
+                • Sales Tax (ST): 0.18<br>
+                • Income Tax / WHT: 0.01 (Industrial)<br>
+                • Logistics & Port (Port-to-Lahore): 0.06<br>
+                <strong>• Cumulative Landed Multiplier: 1.32x Factor</strong>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2>3. Sector Physics (Magnus Reality)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Signal Source</th>
+                    <th>March 2026 Benchmark</th>
+                    <th>Trend</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Copper (LME)</td>
+                    <td>MG-SIG-042</td>
+                    <td><strong>$13,000 / Ton (Illustrative)</strong></td>
+                    <td class="highlight-risk">Bullish</td>
+                </tr>
+                <tr>
+                    <td>Aluminum (LME)</td>
+                    <td>MG-SIG-043</td>
+                    <td><strong>$3,000 / Ton</strong></td>
+                    <td>Stable</td>
+                </tr>
+                <tr>
+                    <td>Electricity (B4)</td>
+                    <td>NEPRA SRO-X</td>
+                    <td><strong>PKR 54.2 / kWh</strong></td>
+                    <td class="highlight-risk">Volatile</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="note-small"><em>*Note: The current copper price regime (illustrative baseline: ~$13,000/ton) is used
+                for scenario calibration.</em></p>
+
+        <h2>4. Competitive Structural Positioning</h2>
+        <p>Khurshid Fans has achieved "Structural Decoupling," gaining a net cost advantage exceeding 9% in export
+            markets.</p>
+
+        <h3>A. Competitive Advantage Derivation</h3>
+        <p class="note-small">Derived using comparative landed-cost modeling and estimated export-weighted margin
+            sensitivity under LME volatility.</p>
+        <ul>
+            <li>Direct Sourcing Ratio: Estimated at 45% (Via trade manifest analysis).</li>
+            <li>Observed pattern suggests Khurshid price stability during LME spikes.</li>
+            <li>Energy Intensity: Decoupled profile (Solar/Mixed) reduces grid-dependence sensitivity by 30%.</li>
+        </ul>
+
+        <h3>B. Structural Fragility Map</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fragility Axis</th>
+                    <th>GFC Fans Status</th>
+                    <th><strong>Khurshid Fans</strong></th>
+                    <th>Risk Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Commodity Exposure</td>
+                    <td>High (Distributor Spot)</td>
+                    <td>Med (Direct/Hedged)</td>
+                    <td class="highlight-risk">Critical</td>
+                </tr>
+                <tr>
+                    <td>Energy Intensity</td>
+                    <td>0.82 (Grid Dependent)</td>
+                    <td>0.54 (Decoupled)</td>
+                    <td>Strategic</td>
+                </tr>
+                <tr>
+                    <td>Revenue Concentration</td>
+                    <td>Domestic-Heavy</td>
+                    <td>Export-Driven</td>
+                    <td>Medium</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Visual Verdict:</strong> GFC is currently in the <strong>"High Vulnerability Zone"</strong> —
+            susceptible to severe margin compression risk in any LME shock scenario.</p>
+
+        <div class="page-break"></div>
+
+        <h2>5. Metals Sourcing Deep-Dive</h2>
+        <p>At > 650 tons/year combined sourcing, the Distributor Model becomes a <strong>"Structural Cost Drag"</strong>
+            subsidizing external risk at GFC's expense.</p>
+
+        <h3>Cost Stack Comparison (PKR / Ton)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Model A (Distributor)</th>
+                    <th>Model B (Direct)</th>
+                    <th>Variance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>LME Landed Base</td>
+                    <td>PKR 4.5M</td>
+                    <td>PKR 4.5M</td>
+                    <td>0%</td>
+                </tr>
+                <tr>
+                    <td>Handling/Logistics</td>
+                    <td>Embedded</td>
+                    <td>PKR 0.12M</td>
+                    <td>(Add)</td>
+                </tr>
+                <tr>
+                    <td>Distributor Margin</td>
+                    <td>PKR 0.58M (13%)</td>
+                    <td>—</td>
+                    <td class="highlight-recovery">-13%</td>
+                </tr>
+                <tr>
+                    <td>Finance/Buffer (WC)</td>
+                    <td>Embedded</td>
+                    <td>PKR 0.15M</td>
+                    <td>(Add)</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Effective Cost</strong></td>
+                    <td><strong>PKR 5.08M</strong></td>
+                    <td><strong>PKR 4.77M</strong></td>
+                    <td class="highlight-recovery">~6.1% Net</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Breakeven Threshold:</strong> Direct Sourcing becomes mathematically superior for GFC once
+            single-metal or combined sourcing volume reaches 650 Tons Annually. <strong>GFC Status:</strong> Copper
+            alone is ~380 tons; combined copper + aluminum (and related conductors) is estimated >800 tons based on
+            inferred unit output and BOM mix; to be verified.</p>
+
+        <div class="page-break"></div>
+
+        <h2>6. Scenario & Counterfactual Analysis</h2>
+        <p>"Do Nothing" results in a projected trajectory of 150bps margin contraction per quarter against a 10%
+            industry baseline.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Time Horizon</th>
+                    <th>LME Scenario</th>
+                    <th>Margin impact (pp vs baseline)</th>
+                    <th>Structural Outlook</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Current Baseline</td>
+                    <td>Stable Market</td>
+                    <td>10.0% GM</td>
+                    <td>Target Recovery</td>
+                </tr>
+                <tr>
+                    <td>Q3 2026</td>
+                    <td>Stable Baseline</td>
+                    <td>-2.1pp</td>
+                    <td>Strained</td>
+                </tr>
+                <tr>
+                    <td>Q4 2026</td>
+                    <td>+10% Metal Shock</td>
+                    <td class="highlight-risk">-14.2pp</td>
+                    <td class="highlight-risk">Severe Margin Compression</td>
+                </tr>
+                <tr>
+                    <td>FY 2027</td>
+                    <td>Competitive Expansion</td>
+                    <td>-5.0pp</td>
+                    <td>Market Share Atrophy</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="note-small">*Note: Margin estimates based on industry fan manufacturing norms (8–12% typical range).
+            -14.2pp in Q4 2026 is a worst-case no-pass-through scenario; -6 to -9pp likely impact.</p>
+
+        <h2>7. Governance & Monitoring Protocol</h2>
+        <h3>Monitoring Trigger Architecture</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>KPI</th>
+                    <th>Threshold</th>
+                    <th>Response Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Distributor Premium Gap</td>
+                    <td>> 12.0% vs Baseline</td>
+                    <td>Re-run sourcing scenario + Board Memo</td>
+                </tr>
+                <tr>
+                    <td>Energy Intensity Variance</td>
+                    <td>± 5.0% vs Benchmark</td>
+                    <td>Operational Efficiency Audit</td>
+                </tr>
+                <tr>
+                    <td>LME Volatility Shock</td>
+                    <td>> 8.0% in 30 days</td>
+                    <td>Immediate Margin Stress Test Refresh</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>8. Structural Positioning Statement</h2>
+        <p>GFC’s current configuration is a legacy of the unbuffered domestic market. In the 2026 volatility regime,
+            this configuration is a structural liability. Immediate realignment with the <strong>Khaldun Sourcing
+                Baseline</strong> is required to defend market parity and recover the estimated PKR 250M leakage.</p>
+
+        <div class="footer">
+            CONFIDENTIAL | KHALDUN SYSTEMS ORBITAL ADVISORY | 2026
+        </div>
+    </div>
+
+</body>
+
+</html>

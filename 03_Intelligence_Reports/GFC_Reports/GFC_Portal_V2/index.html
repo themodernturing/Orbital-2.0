@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GFC FANS | STRATEGIC INTELLIGENCE PORTAL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="portal-container">
+    <!-- NAVIGATION -->
+    <nav class="animate-fade">
+        <div class="nav-brand">KHALDUN <span class="text-accent-gold">ORBITAL</span></div>
+        <div class="nav-links no-print">
+            <span class="nav-status">V2.0 BOARD-DOMINANT</span>
+        </div>
+        <div class="text-mono text-dim" style="font-size: 0.7rem;">ID: GFC-STRAG-2026-X1</div>
+    </nav>
+
+    <!-- HERO / HERITAGE -->
+    <section id="heritage" class="animate-fade">
+        <div class="section-header">
+            <span class="section-label">Institutional DNA</span>
+            <h1 class="section-title">GFC Fans: <span class="text-accent-gold">60 Years of Engineering Moat</span></h1>
+            <p class="section-subtitle">From a single 1954 unit to a global engineering powerhouse. Analyzing the structural advantages that competitors cannot replicate.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="text-accent-gold" style="font-size: 2rem; margin-bottom: 10px;">🏆</div>
+                <h4 style="margin-bottom: 10px;">16x Export Champion</h4>
+                <p class="text-secondary" style="font-size: 0.9rem;">Pioneering Pakistan fan exports since 1993. The most recognized certified brand in the US/EU corridor.</p>
+            </div>
+            <div class="card">
+                <div class="text-accent-gold" style="font-size: 2rem; margin-bottom: 10px;">🛡️</div>
+                <h4 style="margin-bottom: 10px;">Vertical Integration</h4>
+                <p class="text-secondary" style="font-size: 0.9rem;">The only major player with own enameled copper wire & capacitor manufacturing. A defensibility layer against supply shocks.</p>
+            </div>
+            <div class="card">
+                <div class="text-accent-gold" style="font-size: 2rem; margin-bottom: 10px;">🌐</div>
+                <h4 style="margin-bottom: 10px;">UL/CE Certification</h4>
+                <p class="text-secondary" style="font-size: 0.9rem;">The "Gold Standard" barrier to entry. GFC maintains the highest technical compliance moat in the Gujrat cluster.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- METAL PHYSICS STRESS ENGINE -->
+    <section id="physics">
+        <div class="section-header">
+            <span class="section-label">Sector Physics stress-testing</span>
+            <h2 class="section-title">The <span class="text-accent-red">Steel & Aluminum</span> Sensitivity Engine</h2>
+            <p class="section-subtitle">Materials constitute 80% of production value. Simulate the 2026 volatility regime to visualize margin durability.</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="margin-bottom: 20px;">Stress-Test Controls</h3>
+                <div style="margin-bottom: 25px;">
+                    <label class="section-label" style="display: flex; justify-content: space-between;">Electrical Steel Sheet (Price/Ton) <span id="steelPriceVal" class="text-accent-red">PKR 260K</span></label>
+                    <input type="range" id="steelRange" min="200" max="400" value="260" style="width: 100%; accent-color: var(--acc-red);">
+                </div>
+                <div style="margin-bottom: 25px;">
+                    <label class="section-label" style="display: flex; justify-content: space-between;">Aluminum Energy Premium <span id="aluPriceVal" class="text-accent-red">$3,000</span></label>
+                    <input type="range" id="aluRange" min="2000" max="4500" value="3000" style="width: 100%; accent-color: var(--acc-red);">
+                </div>
+                <div class="card highlight-red" style="background: rgba(255, 68, 68, 0.05); border: 1px dashed var(--acc-red);">
+                    <h4 class="text-accent-red">MODELED MARGIN IMPACT</h4>
+                    <div class="text-mono" style="font-size: 2rem;" id="marginImpactVal">-2.1pp</div>
+                    <p class="text-dim" style="font-size: 0.8rem;">Relative to 10% Industry Gross Margin Baseline.</p>
+                </div>
+            </div>
+            <div class="card">
+                <canvas id="physicsChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPETITIVE WAR-MAP -->
+    <section id="competitors">
+        <div class="section-header">
+            <span class="section-label">Competitive War-Mapping</span>
+            <h2 class="section-title">The <span class="text-accent-green">Divergence Gap</span> vs. Peer Moats</h2>
+            <p class="section-subtitle">Benchmarking GFC's Heritage against Peer-Group Innovation and Retail Dominance.</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <canvas id="radarChart"></canvas>
+            </div>
+            <div class="card" style="display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="margin-bottom: 15px;">The "Bata Vacuum" Opportunity</h3>
+                <p class="text-secondary" style="font-size: 0.9rem; margin-bottom: 20px;">External data confirms <strong>43 Bata Store Closures</strong> in 2024/25. This creates a prime real-estate vacuum in Tier-1 Malls.</p>
+                <div class="card highlight-green" style="border-left: 4px solid var(--acc-green);">
+                    <h4 class="text-accent-green">TACTICAL RECOMMENDATION</h4>
+                    <p style="font-size: 0.9rem;">Acquisition of 12-15 former Bata Tier-1 locations in Karachi/Punjab can accelerate GFC's urban retail dominance by 24 months.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE CORPORATE INTERROGATOR (NB SYSTEM) -->
+    <section id="interrogator">
+        <div class="section-header">
+            <span class="section-label">Decision Support Layer</span>
+            <h2 class="section-title">The Corporate <span class="text-accent-blue">Interrogator</span></h2>
+            <p class="section-subtitle">Real-time "Red-Team" engine designed to handle aggressive boardroom skepticism via deterministic logic.</p>
+        </div>
+
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+            <div id="chatDisplay" style="height: 300px; overflow-y: auto; border: 1px solid var(--border); padding: 20px; border-radius: 4px; background: var(--bg-deep); margin-bottom: 20px;" class="text-mono">
+                <p class="text-accent-blue">[SYSTEM]: ORBITAL V2.0 INTERROGATOR ONLINE.</p>
+                <p class="text-secondary" style="margin-top: 10px;">[NB]: Ready for skepticism. Ask me about the PKR 250M leak math, the "Direct-Import" risk, or why Khurshid's BLDC lead is a structural threat.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="chatInput" style="flex: 1; background: var(--bg-deep); border: 1px solid var(--border); color: white; padding: 12px; font-family: var(--font-mono);" placeholder="Enter boardroom question...">
+                <button id="sendBtn" style="background: var(--acc-blue); color: white; border: none; padding: 0 30px; border-radius: 4px; font-weight: 700; cursor: pointer;">INTERROGATE</button>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 60px 0; text-align: center; border-top: 1px solid var(--border);">
+        <p class="text-dim" style="font-size: 0.8rem;">CONFIDENTIAL | KHALDUN SYSTEMS ORBITAL | © 2026<br>
+        <em>Grounded in 600+ external signals and sector physics modeling.</em></p>
+    </footer>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

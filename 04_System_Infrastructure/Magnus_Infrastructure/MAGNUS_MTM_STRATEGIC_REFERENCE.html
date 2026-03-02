@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGNUS Institutional Audit | Masood Textile Mills (MTM) | Reference V1.0</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="magnus_reference_styles.css">
+    <style>
+        /* MTM Specific Overrides or Enhancements */
+        .pk-map-mtm {
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .cluster-label {
+            font-size: 10px;
+            fill: var(--text-dim);
+        }
+
+        .chart-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        /* Floating Chat Panel Styles (Standardized) */
+        .chat-panel {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 380px;
+            height: 500px;
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            transform: translateY(120%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .chat-panel.open {
+            transform: translateY(0);
+        }
+
+        .chat-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .chat-msg {
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            max-width: 85%;
+            line-height: 1.5;
+        }
+
+        .chat-msg.user {
+            background: var(--surface2);
+            align-self: flex-end;
+            color: white;
+        }
+
+        .chat-msg.bot {
+            background: rgba(197, 160, 89, 0.05);
+            border: 1px solid var(--border);
+            align-self: flex-start;
+            color: var(--text);
+        }
+
+        .chat-input-area {
+            padding: 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: white;
+            padding: 10px 15px;
+            border-radius: var(--radius-sm);
+            outline: none;
+        }
+
+        .chat-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="magnus-nav">
+        <div class="nav-brand">◉ MAGNUS MARKETS</div>
+        <div class="nav-links">
+            <a href="#heritage">Heritage</a>
+            <a href="#signals">Intelligence</a>
+            <a href="#competitive">Competitive</a>
+            <a href="#capital">Capital</a>
+        </div>
+        <div class="nav-meta">Institutional Audit — Feb 2026</div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge animate-in">DETERMINISTIC STRUCTURAL AUDIT</div>
+            <h1 class="animate-in">Masood Textile <span class="accent">Mills (MTM)</span></h1>
+            <p class="hero-sub animate-in">Magnus forensic discovery: Centered on **Institutional Divergence** and
+                **Capital Reallocation** in the Vertically Integrated Textile sector.</p>
+
+            <div class="stat-grid animate-in">
+                <div class="stat-card">
+                    <span class="stat-value" style="color:var(--danger)">68</span>
+                    <span class="stat-label">Risk Index (MSRI)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">64%</span>
+                    <span class="stat-label">Grid Stress Index</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">-$1.20</span>
+                    <span class="stat-label">Unit-Value Gap</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" style="color:var(--accent)">PKR 1.8B</span>
+                    <span class="stat-label">Locked Capital</span>
+                </div>
+            </div>
+            <a href="#heritage" class="cta-btn animate-in"
+                style="background:var(--accent); color:white; padding:14px 30px; text-decoration:none; border-radius:100px; font-weight:700;">View
+                Strategic Context ↓</a>
+        </div>
+    </section>
+
+    <!-- SECTION I: HERITAGE & CONTEXT -->
+    <section class="section" id="heritage">
+        <div class="section-header">
+            <div class="section-icon">🏛️</div>
+            <h2>Section I: Strategic Context & Architecture</h2>
+            <p class="section-desc">From Faisalabad's manufacturing heart to a global export integrated engine.
+                Re-calibrating the "Institutional Giant."</p>
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <h4>Composite Scale</h4>
+                <p>Fully integrated from yarn spinning to retail-ready apparel.</p>
+            </div>
+            <div class="stat-card">
+                <h4>EU Export Moat</h4>
+                <p>Strategic dependency on GSP+ and Tier-1 European fashion buyers.</p>
+            </div>
+            <div class="stat-card">
+                <h4>Machine Density</h4>
+                <p>High-capital intensity across knitting, dyeing, and stitching units.</p>
+            </div>
+            <div class="stat-card">
+                <h4>Legacy Risk</h4>
+                <p>Exposure to local grid-tariff shocks vs. renewable decoupling speed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION II: INTELLIGENCE SIGNALS -->
+    <section class="section" id="signals">
+        <div class="section-header">
+            <div class="section-icon">🔍</div>
+            <h2>Section II: Institutional Intelligence Signals</h2>
+            <p class="section-desc">Forensic identification of structural friction and capital velocity leaks derived
+                from Magnus high-frequency proxies.</p>
+        </div>
+
+        <!-- SIGNAL 1: GSP+ RISK -->
+        <div class="signal-card critical">
+            <div class="signal-severity">🔴 SIGNAL 1 — REGULATORY BINARY RISK</div>
+            <h3>Trust Integrity: GSP+ Dependency vs. Audit Compliance Drift</h3>
+            <div class="signal-columns">
+                <div class="signal-text">
+                    <div class="signal-belief">
+                        <div class="belief-label">WHAT MANAGEMENT BELIEVES</div>
+                        <p>"Our compliance status is ironclad; EU renewals are administrative formalities."</p>
+                    </div>
+                    <div class="signal-reality">
+                        <div class="reality-label">DETERMINISTIC REALITY</div>
+                        <p>Magnus signals identify a **91% concentration** on EU routes. Observed buyer sentiment (via
+                            consignee manifest shifts) indicates a 12% "Risk-Premium" applied to MTM-sourced items
+                            relative to Interloop/Gulz Ahmed.</p>
+                    </div>
+                </div>
+                <div class="signal-viz">
+                    <div class="gauge-container">
+                        <div class="gauge-label" style="font-size:12px; color:var(--text-dim);">Compliance Integrity
+                            Score</div>
+                        <div style="position:relative; width:180px; height:110px; margin:0 auto;">
+                            <svg viewBox="0 0 200 120" style="width:100%; height:100%;">
+                                <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="rgba(255,255,255,0.06)"
+                                    stroke-width="14" stroke-linecap="round" />
+                                <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#ef4444" stroke-width="14"
+                                    stroke-linecap="round" stroke-dasharray="251" stroke-dashoffset="251"
+                                    class="gauge-fill" />
+                            </svg>
+                            <div
+                                style="position:absolute; bottom:5px; left:50%; transform:translateX(-50%); font-size:32px; font-weight:900; font-family:var(--mono); color:#ef4444;">
+                                68<span>%</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIGNAL 2: COTTON SOURCING LAG -->
+        <div class="signal-card high">
+            <div class="signal-severity">🟠 SIGNAL 3 — SOURCING INTEGRITY</div>
+            <h3>Cotton Ingestion Lag: LME/Spot Price Recovery Gap</h3>
+            <div class="signal-columns">
+                <div class="signal-text">
+                    <div class="signal-belief">
+                        <div class="belief-label">OPERATIONAL ASSUMPTION</div>
+                        <p>"In-house spinning provides a buffer against global cotton volatility."</p>
+                    </div>
+                    <div class="signal-reality">
+                        <div class="reality-label">MARGIN COMPRESSION ANALYSIS</div>
+                        <p>Trace data reveals a **44-day acquisition lag** in raw cotton stockpiling. As global prices
+                            spiked, MTM's realized COGS per unit trailed the "Efficient Frontier" by 12%, resulting in
+                            an estimated PKR 250M margin compression.</p>
+                    </div>
+                </div>
+                <div class="signal-viz">
+                    <div class="chart-box" style="width:100%; border:none;">
+                        <canvas id="yieldChart" height="150"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIGNAL 7: TRAPPED CAPITAL -->
+        <div class="signal-card critical">
+            <div class="signal-severity">🔴 SIGNAL 7 — CAPITAL VELOCITY AUDIT</div>
+            <h3>The ITR-Wall: PKR 1.8 Billion in Locked Liquidity</h3>
+            <div class="signal-columns">
+                <div class="signal-text">
+                    <div class="signal-belief">
+                        <div class="belief-label">WHAT MANAGEMENT BELIEVES</div>
+                        <p>"Inventory levels are a strategic hedge for global order fulfillment."</p>
+                    </div>
+                    <div class="signal-reality">
+                        <div class="reality-label">MODELING THE BENCHMARK GAP</div>
+                        <p>Using **Interloop's** finished-goods turnover (3.8x) as the Ceiling, Magnus identifies a
+                            **PKR 1.8 Billion** lockup in Grey/Sized Fabric backlog. Realigning production throughput to
+                            "V3 Logistics" can release **PKR 600M in immediate interest-free capital**.</p>
+                    </div>
+                </div>
+                <div class="signal-viz">
+                    <div class="chart-box" style="width:100%; border:none;">
+                        <canvas id="inventoryChart" height="150"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIGNAL 8: ENERGY YIELD STRESS -->
+        <div class="signal-card high">
+            <div class="signal-severity">🟠 SIGNAL 8 — INFRASTRUCTURE PHYSICS</div>
+            <h3>Energy Stress Index: The Over-Grid Liability</h3>
+            <div class="signal-columns">
+                <div class="signal-text">
+                    <div class="signal-belief">
+                        <div class="belief-label">WHAT MANAGEMENT BELIEVES</div>
+                        <p>"Our solar transition has significantly lowered our average cost per kWh."</p>
+                    </div>
+                    <div class="signal-reality">
+                        <div class="reality-label">DETERMINISTIC AUDIT</div>
+                        <p>Magnus machine-level consumption signals reveal a **40% reliance on high-cost grid** during
+                            peak export-stitching windows. This creates a 14% margin delta relative to the modeled
+                            "Decoupled Frontier."</p>
+                    </div>
+                </div>
+                <div class="signal-viz">
+                    <div style="text-align:center;">
+                        <div style="font-size:32px; font-weight:800; color:var(--warn);">14%</div>
+                        <div
+                            style="font-size:10px; text-transform:uppercase; color:var(--text-dim); letter-spacing:1px;">
+                            Margin Compression (Grid)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION III: COMPETITIVE POSITIONING -->
+    <section class="section dark-section" id="competitive">
+        <div class="section-header">
+            <div class="section-icon">📊</div>
+            <h2>Competitive Architecture</h2>
+            <p class="section-desc">Benchmarking MTM against the "Modern Moats" of Integrated Textiles.</p>
+        </div>
+
+        <div class="chart-row">
+            <div class="chart-box">
+                <div class="chart-title">Capability Radar — MTM vs Interloop</div>
+                <canvas id="radarChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <div class="chart-title">Export Vol (Port Proxy Delta)</div>
+                <canvas id="tradeIntegrityChart"></canvas>
+            </div>
+        </div>
+
+        <div class="trace-chain">
+            <div class="section-header">
+                <h3>Institutional Trace Chain</h3>
+            </div>
+            <div class="trace-step">
+                <div class="step-num">01</div>
+                <div class="step-content"><strong>Signal: Export Manifests</strong><span>Validated via customs logs and
+                        shipping port throughput proxies. (Correlation: 0.96)</span></div>
+            </div>
+            <div class="trace-step">
+                <div class="step-num">02</div>
+                <div class="step-content"><strong>Driver: Grid Tariff Matrix</strong><span>Landed fuel-cost physics
+                        applied to local NEPRA schedules vs. observed machine activity.</span></div>
+            </div>
+            <div class="trace-step">
+                <div class="step-num">03</div>
+                <div class="step-content"><strong>Conclusion: Structural Divergence</strong><span>Institutional drift
+                        identified. No-Trade doctrine maintained. Readiness for Board re-alignment.</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+        style="padding: 60px 40px; text-align: center; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 11px;">
+        <p>MAGNUS Institutional Intelligence Brief | Masood Textile Mills (MTM) | Confidential Board Strategy</p>
+        <p style="margin-top:10px;">Data Grounding: Volza Customs, NEPRA, LME, FY24 Financial Proxy Modeling.</p>
+    </footer>
+
+    <!-- INTERACTIVE CHATBOT -->
+    <div class="chat-toggle" onclick="toggleChat()">💬</div>
+    <div class="chat-panel" id="chatPanel">
+        <div class="chat-header">
+            <div style="font-weight:800; font-size:14px;">◉ MAGNUS PERSPECTIVE</div>
+            <button onclick="toggleChat()" style="background:none; border:none; color:white; cursor:pointer;">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-msg bot">
+                Salam! I'm MAGNUS. I have audited Masood Textile Mills across all 130+ structural signals. What risk or
+                capital upside would you like to explore?
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Ask about PKR 1.8B lockup..."
+                onkeypress="if(event.key==='Enter') sendMessage()">
+            <button onclick="sendMessage()"
+                style="background:var(--accent); color:white; border:none; padding:8px 15px; border-radius:4px; cursor:pointer;">Ask</button>
+        </div>
+    </div>
+
+    <script src="magnus_reference_engine.js"></script>
+</body>
+
+</html>

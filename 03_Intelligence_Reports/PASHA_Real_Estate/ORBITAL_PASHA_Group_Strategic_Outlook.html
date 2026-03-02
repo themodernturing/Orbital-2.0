@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORBITAL Predictive Intelligence | PASHA Real Estate Group</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0e1a;
+            --surface: #111827;
+            --surface2: #1a2235;
+            --border: #1e293b;
+            --text: #e2e8f0;
+            --text-dim: #94a3b8;
+            --accent: #6366f1;
+            --accent2: #818cf8;
+            --green: #10b981;
+            --green-dim: #064e3b;
+            --yellow: #f59e0b;
+            --yellow-dim: #78350f;
+            --red: #ef4444;
+            --red-dim: #7f1d1d;
+            --cyan: #22d3ee;
+            --orange: #f97316;
+            --purple: #a78bfa;
+            --font: 'Inter', sans-serif;
+            --mono: 'JetBrains Mono', monospace
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font);
+            line-height: 1.7;
+            font-size: 15px
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 32px
+        }
+
+        .cover {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(180deg, #0a0e1a 0%, #111827 50%, #0a0e1a 100%);
+            padding: 60px 32px;
+            position: relative;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%);
+            pointer-events: none
+        }
+
+        .cover-badge {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent2);
+            margin-bottom: 24px;
+            padding: 6px 16px;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 4px;
+            display: inline-block
+        }
+
+        .cover h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #e2e8f0, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        .cover h2 {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text-dim);
+            margin-bottom: 32px
+        }
+
+        .cover-meta {
+            font-size: 13px;
+            color: var(--text-dim);
+            font-family: var(--mono)
+        }
+
+        section {
+            padding: 64px 0;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .section-label {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent2);
+            margin-bottom: 8px
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px
+        }
+
+        .section-intro {
+            color: var(--text-dim);
+            margin-bottom: 32px;
+            max-width: 800px;
+            font-size: 15px
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px
+        }
+
+        .card-header {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px
+        }
+
+        .prediction-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08));
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .prediction-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--purple))
+        }
+
+        .pred-label {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--accent2);
+            margin-bottom: 8px
+        }
+
+        .pred-text {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 10px
+        }
+
+        .conf-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-family: var(--mono);
+            font-weight: 600
+        }
+
+        .conf-high {
+            background: var(--green-dim);
+            color: var(--green)
+        }
+
+        .conf-med {
+            background: var(--yellow-dim);
+            color: var(--yellow)
+        }
+
+        .conf-low {
+            background: var(--red-dim);
+            color: var(--red)
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px
+        }
+
+        .meta-item {
+            background: var(--surface2);
+            border-radius: 8px;
+            padding: 12px 14px
+        }
+
+        .meta-label {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            color: var(--accent2);
+            margin-bottom: 6px;
+            text-transform: uppercase
+        }
+
+        .meta-content {
+            font-size: 12px;
+            color: var(--text-dim);
+            line-height: 1.6
+        }
+
+        .callout {
+            border-left: 3px solid var(--accent);
+            background: rgba(99, 102, 241, 0.06);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 24px 0;
+            font-size: 14px
+        }
+
+        .callout strong {
+            color: var(--accent2)
+        }
+
+        .callout-warn {
+            border-left-color: var(--yellow);
+            background: rgba(245, 158, 11, 0.06)
+        }
+
+        .callout-warn strong {
+            color: var(--yellow)
+        }
+
+        .callout-green {
+            border-left-color: var(--green);
+            background: rgba(16, 185, 129, 0.06)
+        }
+
+        .callout-green strong {
+            color: var(--green)
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            color: var(--text-dim);
+            font-style: italic;
+            margin-top: 12px;
+            padding: 12px;
+            background: var(--surface2);
+            border-radius: 6px
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-family: var(--mono)
+        }
+
+        .b-green {
+            background: var(--green-dim);
+            color: var(--green)
+        }
+
+        .b-yellow {
+            background: var(--yellow-dim);
+            color: var(--yellow)
+        }
+
+        .b-red {
+            background: var(--red-dim);
+            color: var(--red)
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 13px
+        }
+
+        th {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 2px solid var(--border);
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-dim)
+        }
+
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .pbar {
+            height: 12px;
+            background: var(--surface2);
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 4px 0
+        }
+
+        .pfill {
+            height: 100%;
+            border-radius: 6px
+        }
+
+        svg text {
+            font-family: 'Inter', sans-serif
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: .5
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite
+        }
+
+        @media(max-width:768px) {
+
+            .grid-2,
+            .grid-3,
+            .meta-grid {
+                grid-template-columns: 1fr
+            }
+
+            .cover h1 {
+                font-size: 28px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- COVER -->
+    <div class="cover">
+        <div class="cover-badge">Orbital Predictive Intelligence</div>
+        <div style="font-size:14px;color:var(--cyan);font-weight:600;letter-spacing:1px;margin-bottom:12px">
+            FORWARD-LOOKING STRATEGIC MODELING — GROUP LEVEL</div>
+        <h1>PASHA Real Estate Group</h1>
+        <h2>Predictive Analytics, Probability Modeling & Scenario Intelligence</h2>
+        <div class="cover-meta">
+            Structured Probability Modeling | March 2026<br>
+            Prepared by Khaldun Systems — Orbital Advisory Division<br>
+            Classification: Strategic — Client Confidential
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- METHODOLOGY -->
+        <section style="padding:32px 0">
+            <div class="callout">
+                <strong>About This Report</strong><br>
+                This report uses <strong>structured probability modeling</strong> — not exact forecasts. Every
+                prediction is presented as a <strong>probability range</strong> under defined assumptions. We are not
+                claiming precise outcomes. We are mapping the envelope of likely results using public data, sector
+                benchmarks, and proxy signals. Where internal data would sharpen precision, we say so. All assumptions
+                are documented. All confidence levels are tagged.
+            </div>
+        </section>
+
+        <!-- S0: CONTEXT BRIEF -->
+        <section>
+            <div class="section-label">Section 00 — Context</div>
+            <div class="section-title">PASHA Group: Structural Context</div>
+            <div class="section-intro">Before we model forward, a brief context snapshot. This is the only place we
+                describe the group structure — every section after this is forward-looking.</div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header" style="color:var(--accent2)">Group Structure</div>
+                    <div style="margin-top:8px;font-size:13px;color:var(--text-dim);line-height:2">
+                        <strong style="color:var(--cyan)">PASHA Holding</strong> → Parent entity<br>
+                        └ <strong style="color:var(--cyan)">PASHA Bank</strong> → Financing (IPO planned 2026)<br>
+                        └ <strong style="color:var(--orange)">PASHA Construction</strong> → 22,000+ staff, builds
+                        assets<br>
+                        └ <strong style="color:var(--green)">PASHA Real Estate</strong> → Owns & operates portfolio<br>
+                        └ <strong style="color:var(--purple)">PASHA Insurance</strong> → Risk coverage
+                    </div>
+                    <div
+                        style="font-size:11px;color:var(--text-dim);margin-top:12px;padding-top:8px;border-top:1px solid var(--border)">
+                        Key: Bank finances Construction, which builds for Real Estate, which returns to Holding.
+                        Circular dependency — addressed once here, modeled in risk sections.</div>
+                </div>
+
+                <!-- Fragility Gauge -->
+                <div class="card" style="text-align:center">
+                    <div class="card-header" style="color:var(--accent2)">Structural Fragility Score</div>
+                    <div style="position:relative;width:200px;height:110px;margin:16px auto 0">
+                        <svg viewBox="0 0 200 110" style="width:200px;height:110px">
+                            <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#1e293b" stroke-width="14"
+                                stroke-linecap="round" />
+                            <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="url(#gaugeGrad)"
+                                stroke-width="14" stroke-linecap="round" stroke-dasharray="251"
+                                stroke-dashoffset="60" />
+                            <defs>
+                                <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#10b981" />
+                                    <stop offset="50%" style="stop-color:#f59e0b" />
+                                    <stop offset="100%" style="stop-color:#ef4444" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Needle at 76/100 -->
+                            <line x1="100" y1="100" x2="52" y2="38" stroke="var(--text)" stroke-width="2"
+                                stroke-linecap="round" />
+                            <circle cx="100" cy="100" r="4" fill="var(--accent2)" />
+                        </svg>
+                    </div>
+                    <div
+                        style="font-size:32px;font-weight:800;font-family:var(--mono);color:var(--yellow);margin-top:4px">
+                        76<span style="font-size:16px;color:var(--text-dim)">/100</span></div>
+                    <div style="font-size:12px;color:var(--yellow);font-weight:600;margin-top:4px">ELEVATED FRAGILITY
+                    </div>
+                    <div style="font-size:11px;color:var(--text-dim);margin-top:8px;text-align:left">
+                        Revenue concentration: <span style="color:var(--yellow)">70</span> · Geographic: <span
+                            style="color:var(--red)">85</span> · Brand reliance: <span
+                            style="color:var(--yellow)">75</span> · Financing: <span
+                            style="color:var(--yellow)">65</span> · Construction dependency: <span
+                            style="color:var(--red)">85</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-3" style="margin-top:4px">
+                <div class="card" style="text-align:center;padding:16px">
+                    <div style="font-size:22px;font-weight:800;font-family:var(--mono);color:var(--cyan)">3</div>
+                    <div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">Global
+                        Hotel Brands</div>
+                </div>
+                <div class="card" style="text-align:center;padding:16px">
+                    <div style="font-size:22px;font-weight:800;font-family:var(--mono);color:var(--green)">~55%</div>
+                    <div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">
+                        Capital Generating Revenue</div>
+                </div>
+                <div class="card" style="text-align:center;padding:16px">
+                    <div style="font-size:22px;font-weight:800;font-family:var(--mono);color:var(--orange)">~$1.2B</div>
+                    <div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">
+                        Estimated Capital Deployed</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S1: HOTEL REVENUE PROJECTION -->
+        <section>
+            <div class="section-label">Section 01 — Revenue Prediction</div>
+            <div class="section-title">Hotel Portfolio: 5-Year Revenue Projection</div>
+            <div class="section-intro">We model forward revenue for Three properties: Four Seasons (operational), JW
+                Marriott (operational), and Mandarin Oriental (expected ~2028). Revenue is driven by room count,
+                occupancy, and average daily rate — all benchmarked against comparable properties.</div>
+
+            <div class="prediction-box">
+                <div class="pred-label">ORBITAL PREDICTION</div>
+                <div class="pred-text">PASHA's hotel portfolio is projected to generate <strong
+                        style="color:var(--green)">$55–65M annually by 2030</strong> under base case, rising from ~$28M
+                    today. With Mandarin Oriental opening, the three-hotel portfolio reaches its full earning potential
+                    by 2029–2030.</div>
+                <span class="conf-tag conf-med">CONFIDENCE: MEDIUM</span>
+                <span style="font-size:11px;color:var(--text-dim);margin-left:8px">Based on benchmark occupancy and ADR
+                    — internal data would raise confidence to HIGH</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header" style="color:var(--accent2)">Fan Chart — Hotel Revenue Probability Bands
+                    (2025–2030)</div>
+                <svg viewBox="0 0 640 300" style="width:100%;height:auto;margin-top:12px">
+                    <!-- Grid -->
+                    <line x1="60" y1="260" x2="620" y2="260" stroke="#1e293b" stroke-width="1" />
+                    <line x1="60" y1="20" x2="60" y2="260" stroke="#1e293b" stroke-width="1" />
+                    <line x1="60" y1="200" x2="620" y2="200" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4" />
+                    <line x1="60" y1="140" x2="620" y2="140" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4" />
+                    <line x1="60" y1="80" x2="620" y2="80" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4" />
+                    <line x1="60" y1="20" x2="620" y2="20" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4" />
+                    <!-- Y-axis labels -->
+                    <text x="50" y="264" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$0</text>
+                    <text x="50" y="204" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$20M</text>
+                    <text x="50" y="144" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$40M</text>
+                    <text x="50" y="84" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$60M</text>
+                    <text x="50" y="24" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$80M</text>
+                    <!-- X-axis labels -->
+                    <text x="60" y="278" fill="#94a3b8" font-size="10" text-anchor="middle"
+                        font-family="JetBrains Mono">2025</text>
+                    <text x="172" y="278" fill="#94a3b8" font-size="10" text-anchor="middle"
+                        font-family="JetBrains Mono">2026</text>
+                    <text x="284" y="278" fill="#94a3b8" font-size="10" text-anchor="middle"
+                        font-family="JetBrains Mono">2027</text>
+                    <text x="396" y="278" fill="#94a3b8" font-size="10" text-anchor="middle"
+                        font-family="JetBrains Mono">2028</text>
+                    <text x="508" y="278" fill="#94a3b8" font-size="10" text-anchor="middle"
+                        font-family="JetBrains Mono">2029</text>
+                    <text x="620" y="278" fill="#94a3b8" font-size="10" text-anchor="middle"
+                        font-family="JetBrains Mono">2030</text>
+                    <!-- 90% CI band (wide) -->
+                    <polygon
+                        points="60,200 172,194 284,185 396,170 508,158 620,146 620,20 508,44 396,44 284,86 172,125 60,155"
+                        fill="rgba(99,102,241,0.07)" />
+                    <!-- 60% CI band (medium) -->
+                    <polygon
+                        points="60,188 172,179 284,170 396,152 508,140 620,128 620,44 508,65 396,65 284,104 172,140 60,164"
+                        fill="rgba(99,102,241,0.12)" />
+                    <!-- Base case line -->
+                    <polyline points="60,176 172,161 284,140 396,110 508,92 620,74" fill="none" stroke="#818cf8"
+                        stroke-width="2.5" />
+                    <!-- Data points -->
+                    <circle cx="60" cy="176" r="4" fill="#818cf8" />
+                    <circle cx="172" cy="161" r="4" fill="#818cf8" />
+                    <circle cx="284" cy="140" r="4" fill="#818cf8" />
+                    <circle cx="396" cy="110" r="4" fill="#818cf8" />
+                    <circle cx="508" cy="92" r="4" fill="#818cf8" />
+                    <circle cx="620" cy="74" r="4" fill="#818cf8" class="pulse" />
+                    <!-- Value labels -->
+                    <text x="60" y="170" fill="#e2e8f0" font-size="10" text-anchor="middle" font-weight="600"
+                        font-family="JetBrains Mono">$28M</text>
+                    <text x="396" y="104" fill="#e2e8f0" font-size="10" text-anchor="middle" font-weight="600"
+                        font-family="JetBrains Mono">$50M</text>
+                    <text x="620" y="66" fill="#10b981" font-size="11" text-anchor="middle" font-weight="700"
+                        font-family="JetBrains Mono">$62M</text>
+                    <!-- MO marker -->
+                    <line x1="396" y1="20" x2="396" y2="260" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3" />
+                    <text x="396" y="16" fill="#f59e0b" font-size="9" text-anchor="middle"
+                        font-family="JetBrains Mono">MO OPENS</text>
+                    <!-- Legend -->
+                    <rect x="430" y="30" width="12" height="12" rx="2" fill="rgba(99,102,241,0.12)" /><text x="446"
+                        y="40" fill="#94a3b8" font-size="9" font-family="Inter">60% confidence band</text>
+                    <rect x="430" y="48" width="12" height="12" rx="2" fill="rgba(99,102,241,0.07)" /><text x="446"
+                        y="58" fill="#94a3b8" font-size="9" font-family="Inter">90% confidence band</text>
+                    <line x1="430" y1="72" x2="442" y2="72" stroke="#818cf8" stroke-width="2.5" /><text x="446" y="75"
+                        fill="#94a3b8" font-size="9" font-family="Inter">Base case projection</text>
+                </svg>
+            </div>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <div class="meta-label">Based On</div>
+                    <div class="meta-content">Four Seasons global ADR benchmarks ($300-450), JW Marriott network data
+                        (4.8/5 rating), Baku tourism growth (+14% YoY), comparable luxury hotel occupancy (65-80%)</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">What Would Invalidate</div>
+                    <div class="meta-content">Major tourism disruption, Mandarin Oriental cancellation, AZN devaluation
+                        reducing USD-equivalent rates, new competitor luxury hotel in Baku</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Internal Data Would...</div>
+                    <div class="meta-content">Provide actual occupancy, ADR, and RevPAR data — would narrow bands by
+                        ~50% and raise confidence to HIGH</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S2: RESIDENTIAL ABSORPTION -->
+        <section>
+            <div class="section-label">Section 02 — Sales Prediction</div>
+            <div class="section-title">Residential Absorption: How Long to Sell Out?</div>
+            <div class="section-intro">Crescent Bay's residential component includes an estimated ~1,100 luxury units
+                priced at $3,500–5,500/sqm. The critical question: how fast will these sell? We model absorption under
+                three demand scenarios.</div>
+
+            <div class="prediction-box">
+                <div class="pred-label">ORBITAL PREDICTION</div>
+                <div class="pred-text">Under base case demand, full sell-out is projected by <strong
+                        style="color:var(--yellow)">2033–2035</strong>. Under accelerated demand (post-IPO confidence +
+                    strong oil), sell-out compresses to <strong style="color:var(--green)">2030–2031</strong>. Under
+                    weak demand, absorption slows dangerously — <strong style="color:var(--red)">700+ units could remain
+                        unsold by 2032</strong>.</div>
+                <span class="conf-tag conf-med">CONFIDENCE: MEDIUM</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header" style="color:var(--accent2)">Burn-Down Chart — Remaining Unsold Units by Year
+                </div>
+                <div style="margin-top:16px">
+                    <!-- Year labels -->
+                    <div style="display:flex;margin-bottom:4px;padding-left:90px">
+                        <div
+                            style="flex:1;font-size:9px;font-family:var(--mono);color:var(--text-dim);text-align:center">
+                            2026</div>
+                        <div
+                            style="flex:1;font-size:9px;font-family:var(--mono);color:var(--text-dim);text-align:center">
+                            2027</div>
+                        <div
+                            style="flex:1;font-size:9px;font-family:var(--mono);color:var(--text-dim);text-align:center">
+                            2028</div>
+                        <div
+                            style="flex:1;font-size:9px;font-family:var(--mono);color:var(--text-dim);text-align:center">
+                            2029</div>
+                        <div
+                            style="flex:1;font-size:9px;font-family:var(--mono);color:var(--text-dim);text-align:center">
+                            2030</div>
+                        <div
+                            style="flex:1;font-size:9px;font-family:var(--mono);color:var(--text-dim);text-align:center">
+                            2031</div>
+                        <div
+                            style="flex:1;font-size:9px;font-family:var(--mono);color:var(--text-dim);text-align:center">
+                            2032</div>
+                    </div>
+                    <!-- Accelerated -->
+                    <div style="display:flex;align-items:center;margin-bottom:8px">
+                        <div
+                            style="width:86px;font-size:11px;color:var(--green);font-weight:600;text-align:right;padding-right:8px">
+                            Accelerated</div>
+                        <div style="flex:1;display:flex;gap:3px;height:28px">
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:100%;background:var(--green);border-radius:4px;opacity:0.7">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    1100</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:82%;background:var(--green);border-radius:4px;opacity:0.7">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    900</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:60%;background:var(--green);border-radius:4px;opacity:0.7">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    660</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:36%;background:var(--green);border-radius:4px;opacity:0.7">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    400</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:13%;background:var(--green);border-radius:4px;opacity:0.7">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    140</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:0%;background:var(--green);border-radius:4px;opacity:0.7">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono);color:var(--green)">
+                                    ✓ SOLD</div>
+                            </div>
+                            <div style="flex:1"></div>
+                        </div>
+                    </div>
+                    <!-- Base case -->
+                    <div style="display:flex;align-items:center;margin-bottom:8px">
+                        <div
+                            style="width:86px;font-size:11px;color:var(--yellow);font-weight:600;text-align:right;padding-right:8px">
+                            Base Case</div>
+                        <div style="flex:1;display:flex;gap:3px;height:28px">
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:100%;background:var(--yellow);border-radius:4px;opacity:0.6">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    1100</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:91%;background:var(--yellow);border-radius:4px;opacity:0.6">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    1000</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:77%;background:var(--yellow);border-radius:4px;opacity:0.6">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    850</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:64%;background:var(--yellow);border-radius:4px;opacity:0.6">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    700</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:50%;background:var(--yellow);border-radius:4px;opacity:0.6">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    550</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:36%;background:var(--yellow);border-radius:4px;opacity:0.6">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    400</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:23%;background:var(--yellow);border-radius:4px;opacity:0.6">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    250</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pessimistic -->
+                    <div style="display:flex;align-items:center">
+                        <div
+                            style="width:86px;font-size:11px;color:var(--red);font-weight:600;text-align:right;padding-right:8px">
+                            Weak Demand</div>
+                        <div style="flex:1;display:flex;gap:3px;height:28px">
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:100%;background:var(--red);border-radius:4px;opacity:0.5">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    1100</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:95%;background:var(--red);border-radius:4px;opacity:0.5">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    1050</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:91%;background:var(--red);border-radius:4px;opacity:0.5">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    1000</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:86%;background:var(--red);border-radius:4px;opacity:0.5">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    950</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:82%;background:var(--red);border-radius:4px;opacity:0.5">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    900</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:77%;background:var(--red);border-radius:4px;opacity:0.5">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    850</div>
+                            </div>
+                            <div style="flex:1;position:relative">
+                                <div style="position:absolute;inset:0;background:var(--surface2);border-radius:4px">
+                                    <div
+                                        style="height:100%;width:68%;background:var(--red);border-radius:4px;opacity:0.5">
+                                    </div>
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono)">
+                                    750</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top:12px;display:flex;gap:12px;font-size:11px">
+                    <span style="color:var(--green)">● Accelerated: 150-200 units/yr — sell-out ~2031</span>
+                    <span style="color:var(--yellow)">● Base: 100-120 units/yr — sell-out ~2034</span>
+                    <span style="color:var(--red)">● Weak: 40-60 units/yr — sell-out 2040+</span>
+                </div>
+            </div>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <div class="meta-label">Based On</div>
+                    <div class="meta-content">Baku luxury residential absorption rates, price trends (+10-14% annual),
+                        mortgage availability declining since 2024, Port Baku Residence as comparable</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">What Would Invalidate</div>
+                    <div class="meta-content">Unexpected foreign buyer demand surge, major competitor pricing undercut
+                        (Sea Breeze), AZN devaluation killing purchasing power, government mortgage stimulus</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Internal Data Would...</div>
+                    <div class="meta-content">Provide actual pre-sales pipeline, pricing strategy, and buyer
+                        demographics — critical for narrowing the 3 scenarios</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S3: GROUP REVENUE TRAJECTORY -->
+        <section>
+            <div class="section-label">Section 03 — Growth Probability Distribution</div>
+            <div class="section-title">Group Revenue: 5-Year Stacked Projection</div>
+            <div class="section-intro">Combining hotel, retail, residential, and future commercial revenue to model the
+                group's total earnings trajectory. Each segment is modeled independently then stacked to show total and
+                diversification simultaneously.</div>
+
+            <div class="prediction-box">
+                <div class="pred-label">ORBITAL PREDICTION</div>
+                <div class="pred-text">Group revenue is projected to grow from <strong style="color:var(--text)">~$53M
+                        (2025)</strong> to <strong style="color:var(--green)">$120–165M by 2030</strong> under base
+                    case. Revenue diversification improves — no single segment exceeds 40% by 2029, reaching the <strong
+                        style="color:var(--cyan)">resilience threshold</strong>.</div>
+                <span class="conf-tag conf-med">CONFIDENCE: MEDIUM</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header" style="color:var(--accent2)">Stacked Revenue Projection with Confidence
+                    Corridor</div>
+                <svg viewBox="0 0 640 320" style="width:100%;height:auto;margin-top:8px">
+                    <!-- Grid -->
+                    <line x1="60" y1="270" x2="620" y2="270" stroke="#1e293b" stroke-width="1" />
+                    <line x1="60" y1="20" x2="60" y2="270" stroke="#1e293b" stroke-width="1" />
+                    <line x1="60" y1="220" x2="620" y2="220" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4" />
+                    <line x1="60" y1="170" x2="620" y2="170" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4" />
+                    <line x1="60" y1="120" x2="620" y2="120" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4" />
+                    <line x1="60" y1="70" x2="620" y2="70" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4" />
+                    <!-- Y labels -->
+                    <text x="50" y="274" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$0</text>
+                    <text x="50" y="224" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$40M</text>
+                    <text x="50" y="174" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$80M</text>
+                    <text x="50" y="124" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$120M</text>
+                    <text x="50" y="74" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$160M</text>
+                    <!-- X labels -->
+                    <text x="100" y="288" fill="#94a3b8" font-size="10" text-anchor="middle"
+                        font-family="JetBrains Mono">2025</text>
+                    <text x="204" y="288" fill="#94a3b8" font-size="10" text-anchor="middle"
+                        font-family="JetBrains Mono">2026</text>
+                    <text x="308" y="288" fill="#94a3b8" font-size="10" text-anchor="middle"
+                        font-family="JetBrains Mono">2027</text>
+                    <text x="412" y="288" fill="#94a3b8" font-size="10" text-anchor="middle"
+                        font-family="JetBrains Mono">2028</text>
+                    <text x="516" y="288" fill="#94a3b8" font-size="10" text-anchor="middle"
+                        font-family="JetBrains Mono">2029</text>
+                    <text x="620" y="288" fill="#94a3b8" font-size="10" text-anchor="middle"
+                        font-family="JetBrains Mono">2030</text>
+                    <!-- Confidence corridor (total) -->
+                    <polygon
+                        points="100,204 204,187 308,162 412,120 516,95 620,66 620,108 516,130 412,162 308,195 204,216 100,224"
+                        fill="rgba(99,102,241,0.08)" stroke="rgba(99,102,241,0.15)" stroke-width="1"
+                        stroke-dasharray="4" />
+                    <!-- Stacked bars -->
+                    <!-- 2025: Hotel 28 + Mall 18 + Res 5 + Other 2 = 53 -->
+                    <rect x="80" y="235" width="40" height="35" rx="2" fill="#10b981" opacity="0.8" /><text x="100"
+                        y="256" fill="#fff" font-size="8" text-anchor="middle" font-family="JetBrains Mono">$28M</text>
+                    <rect x="80" y="213" width="40" height="22" rx="2" fill="#22d3ee" opacity="0.8" />
+                    <rect x="80" y="207" width="40" height="6" rx="2" fill="#f59e0b" opacity="0.8" />
+                    <rect x="80" y="204" width="40" height="3" rx="2" fill="#94a3b8" opacity="0.5" />
+                    <!-- 2026: 33+20+10+3 = 66 -->
+                    <rect x="184" y="229" width="40" height="41" rx="2" fill="#10b981" opacity="0.8" />
+                    <rect x="184" y="204" width="40" height="25" rx="2" fill="#22d3ee" opacity="0.8" />
+                    <rect x="184" y="191" width="40" height="13" rx="2" fill="#f59e0b" opacity="0.8" />
+                    <rect x="184" y="187" width="40" height="4" rx="2" fill="#94a3b8" opacity="0.5" />
+                    <!-- 2027: 40+22+20+5 = 87 -->
+                    <rect x="288" y="220" width="40" height="50" rx="2" fill="#10b981" opacity="0.8" />
+                    <rect x="288" y="193" width="40" height="27" rx="2" fill="#22d3ee" opacity="0.8" />
+                    <rect x="288" y="168" width="40" height="25" rx="2" fill="#f59e0b" opacity="0.8" />
+                    <rect x="288" y="162" width="40" height="6" rx="2" fill="#94a3b8" opacity="0.5" />
+                    <!-- 2028: 50+24+30+8 = 112 -->
+                    <rect x="392" y="208" width="40" height="62" rx="2" fill="#10b981" opacity="0.8" /><text x="412"
+                        y="244" fill="#fff" font-size="8" text-anchor="middle" font-family="JetBrains Mono">$50M</text>
+                    <rect x="392" y="178" width="40" height="30" rx="2" fill="#22d3ee" opacity="0.8" />
+                    <rect x="392" y="140" width="40" height="38" rx="2" fill="#f59e0b" opacity="0.8" />
+                    <rect x="392" y="130" width="40" height="10" rx="2" fill="#94a3b8" opacity="0.5" />
+                    <!-- 2029: 56+26+35+10 = 127 -->
+                    <rect x="496" y="200" width="40" height="70" rx="2" fill="#10b981" opacity="0.8" />
+                    <rect x="496" y="168" width="40" height="32" rx="2" fill="#22d3ee" opacity="0.8" />
+                    <rect x="496" y="124" width="40" height="44" rx="2" fill="#f59e0b" opacity="0.8" />
+                    <rect x="496" y="112" width="40" height="12" rx="2" fill="#94a3b8" opacity="0.5" />
+                    <!-- 2030: 62+28+40+12 = 142 -->
+                    <rect x="600" y="193" width="40" height="77" rx="2" fill="#10b981" opacity="0.8" /><text x="620"
+                        y="236" fill="#fff" font-size="8" text-anchor="middle" font-family="JetBrains Mono">$62M</text>
+                    <rect x="600" y="158" width="40" height="35" rx="2" fill="#22d3ee" opacity="0.8" />
+                    <rect x="600" y="108" width="40" height="50" rx="2" fill="#f59e0b" opacity="0.8" />
+                    <rect x="600" y="93" width="40" height="15" rx="2" fill="#94a3b8" opacity="0.5" />
+                    <!-- Total labels -->
+                    <text x="100" y="198" fill="#818cf8" font-size="10" text-anchor="middle" font-weight="700"
+                        font-family="JetBrains Mono">$53M</text>
+                    <text x="620" y="86" fill="#10b981" font-size="11" text-anchor="middle" font-weight="700"
+                        font-family="JetBrains Mono">$142M</text>
+                    <!-- Legend -->
+                    <rect x="100" y="300" width="10" height="10" rx="1" fill="#10b981" /><text x="114" y="309"
+                        fill="#94a3b8" font-size="9">Hotels</text>
+                    <rect x="170" y="300" width="10" height="10" rx="1" fill="#22d3ee" /><text x="184" y="309"
+                        fill="#94a3b8" font-size="9">Retail (Mall)</text>
+                    <rect x="270" y="300" width="10" height="10" rx="1" fill="#f59e0b" /><text x="284" y="309"
+                        fill="#94a3b8" font-size="9">Residential</text>
+                    <rect x="370" y="300" width="10" height="10" rx="1" fill="#94a3b8" /><text x="384" y="309"
+                        fill="#94a3b8" font-size="9">Commercial/Other</text>
+                </svg>
+            </div>
+
+            <div class="callout-green callout">
+                <strong>Diversification Milestone:</strong> By 2029, hotels drop below 45% of revenue, residential rises
+                to ~28%, and retail holds at ~20%. This is the point where PASHA crosses the <strong>resilience
+                    threshold</strong> — no single shock to one segment can threaten the group's viability.
+            </div>
+        </section>
+
+        <!-- S4: CAPITAL VELOCITY -->
+        <section>
+            <div class="section-label">Section 04 — Capital Velocity Model</div>
+            <div class="section-title">Capital Break-Even: When Does the Investment Pay Back?</div>
+            <div class="section-intro">PASHA has deployed an estimated ~$1.2–1.4B into Crescent Bay and related assets.
+                Capital velocity measures how quickly that investment converts into cumulative revenue, and when the
+                crossover point arrives.</div>
+
+            <div class="prediction-box">
+                <div class="pred-label">ORBITAL PREDICTION</div>
+                <div class="pred-text">Cumulative revenue is projected to cross cumulative capital deployed between
+                    <strong style="color:var(--yellow)">2034–2037</strong> under base case. Under accelerated
+                    conditions, this compresses to <strong style="color:var(--green)">2032–2033</strong>. This is
+                    typical for mega mixed-use projects — Dubai Marina took 15+ years to break even.
+                </div>
+                <span class="conf-tag conf-low">CONFIDENCE: LOW</span>
+                <span style="font-size:11px;color:var(--text-dim);margin-left:8px">Capital figures are estimated —
+                    internal financials would significantly improve this model</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header" style="color:var(--accent2)">Crossover Chart — Cumulative Capital vs.
+                    Cumulative Revenue</div>
+                <svg viewBox="0 0 640 300" style="width:100%;height:auto;margin-top:12px">
+                    <!-- Grid -->
+                    <line x1="60" y1="260" x2="620" y2="260" stroke="#1e293b" stroke-width="1" />
+                    <line x1="60" y1="20" x2="60" y2="260" stroke="#1e293b" stroke-width="1" />
+                    <line x1="60" y1="200" x2="620" y2="200" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4" />
+                    <line x1="60" y1="140" x2="620" y2="140" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4" />
+                    <line x1="60" y1="80" x2="620" y2="80" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4" />
+                    <!-- Y labels -->
+                    <text x="50" y="264" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$0</text>
+                    <text x="50" y="204" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$400M</text>
+                    <text x="50" y="144" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$800M</text>
+                    <text x="50" y="84" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$1.2B</text>
+                    <text x="50" y="24" fill="#94a3b8" font-size="10" text-anchor="end"
+                        font-family="JetBrains Mono">$1.6B</text>
+                    <!-- X labels (2020-2036) -->
+                    <text x="60" y="278" fill="#94a3b8" font-size="9" text-anchor="middle"
+                        font-family="JetBrains Mono">2020</text>
+                    <text x="130" y="278" fill="#94a3b8" font-size="9" text-anchor="middle"
+                        font-family="JetBrains Mono">2022</text>
+                    <text x="200" y="278" fill="#94a3b8" font-size="9" text-anchor="middle"
+                        font-family="JetBrains Mono">2024</text>
+                    <text x="270" y="278" fill="#94a3b8" font-size="9" text-anchor="middle"
+                        font-family="JetBrains Mono">2026</text>
+                    <text x="340" y="278" fill="#94a3b8" font-size="9" text-anchor="middle"
+                        font-family="JetBrains Mono">2028</text>
+                    <text x="410" y="278" fill="#94a3b8" font-size="9" text-anchor="middle"
+                        font-family="JetBrains Mono">2030</text>
+                    <text x="480" y="278" fill="#94a3b8" font-size="9" text-anchor="middle"
+                        font-family="JetBrains Mono">2032</text>
+                    <text x="550" y="278" fill="#94a3b8" font-size="9" text-anchor="middle"
+                        font-family="JetBrains Mono">2034</text>
+                    <text x="620" y="278" fill="#94a3b8" font-size="9" text-anchor="middle"
+                        font-family="JetBrains Mono">2036</text>
+                    <!-- "NOW" marker -->
+                    <line x1="270" y1="20" x2="270" y2="260" stroke="rgba(99,102,241,0.3)" stroke-width="1"
+                        stroke-dasharray="3" />
+                    <text x="270" y="16" fill="#818cf8" font-size="9" text-anchor="middle"
+                        font-family="JetBrains Mono">NOW (2026)</text>
+                    <!-- Capital deployed line (red/orange, flattening) -->
+                    <polyline points="60,230 130,185 200,140 270,95 340,65 410,50 480,44 550,41 620,39" fill="none"
+                        stroke="#ef4444" stroke-width="2.5" stroke-dasharray="0" />
+                    <!-- Cumulative revenue line (green, accelerating) -->
+                    <polyline points="60,260 130,257 200,248 270,230" fill="none" stroke="#10b981" stroke-width="2.5" />
+                    <!-- Projected revenue (dashed) -->
+                    <polyline points="270,230 340,195 410,150 480,100 550,58 620,35" fill="none" stroke="#10b981"
+                        stroke-width="2.5" stroke-dasharray="6" />
+                    <!-- Crossover zone -->
+                    <circle cx="565" cy="47" r="12" fill="none" stroke="#f59e0b" stroke-width="2"
+                        stroke-dasharray="3" />
+                    <text x="565" y="70" fill="#f59e0b" font-size="9" text-anchor="middle" font-weight="600"
+                        font-family="JetBrains Mono">BREAK-EVEN</text>
+                    <text x="565" y="82" fill="#f59e0b" font-size="9" text-anchor="middle"
+                        font-family="JetBrains Mono">~2035</text>
+                    <!-- Labels -->
+                    <text x="410" y="42" fill="#ef4444" font-size="10" font-weight="600"
+                        font-family="JetBrains Mono">Capital Deployed (~$1.4B)</text>
+                    <text x="410" y="162" fill="#10b981" font-size="10" font-weight="600"
+                        font-family="JetBrains Mono">Cumulative Revenue</text>
+                    <!-- Legend for line styles -->
+                    <line x1="100" y1="290" x2="130" y2="290" stroke="#10b981" stroke-width="2" /><text x="134" y="293"
+                        fill="#94a3b8" font-size="9">Actual</text>
+                    <line x1="180" y1="290" x2="210" y2="290" stroke="#10b981" stroke-width="2" stroke-dasharray="6" />
+                    <text x="214" y="293" fill="#94a3b8" font-size="9">Projected (base case)</text>
+                </svg>
+            </div>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <div class="meta-label">Based On</div>
+                    <div class="meta-content">Estimated total capital ~$1.2-1.4B from public sources, projected revenue
+                        accumulation from S1-S3, comparable mega-project timelines (Dubai, Doha, Tbilisi)</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">What Would Invalidate</div>
+                    <div class="meta-content">Actual capital could be significantly different, debt structure unknown
+                        (interest costs affect break-even), major scope changes, asset disposals</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Internal Data Would...</div>
+                    <div class="meta-content">Provide actual capital deployed, debt service, operating costs — would
+                        transform this from LOW to HIGH confidence and narrow the break-even window by 3-4 years</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S5: MARGIN SENSITIVITY -->
+        <section>
+            <div class="section-label">Section 05 — Margin Sensitivity Model</div>
+            <div class="section-title">Sensitivity Analysis: What Shocks Hit Hardest?</div>
+            <div class="section-intro">Not all risks are equal. Some variables can swing PASHA's margins significantly;
+                others barely register. This tornado chart shows which external factors have the largest impact on group
+                profitability — ranked by severity.</div>
+
+            <div class="prediction-box">
+                <div class="pred-label">ORBITAL SENSITIVITY MODEL</div>
+                <div class="pred-text">The single most dangerous variable is <strong style="color:var(--red)">AZN
+                        currency devaluation</strong> — a 20% devaluation could compress margins by 10-15%. The second
+                    is <strong style="color:var(--orange)">oil price collapse</strong>, which propagates through
+                    government spending and consumer confidence.</div>
+                <span class="conf-tag conf-med">CONFIDENCE: MEDIUM</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header" style="color:var(--accent2)">Tornado Chart — Margin Impact by Shock Variable
+                </div>
+                <div style="margin-top:20px">
+                    <!-- Center line label -->
+                    <div
+                        style="text-align:center;font-size:10px;font-family:var(--mono);color:var(--text-dim);margin-bottom:12px">
+                        ← NEGATIVE IMPACT (%) ····· BASELINE ····· POSITIVE IMPACT (%) →</div>
+                    <!-- AZN Devaluation -->
+                    <div style="display:flex;align-items:center;margin-bottom:8px;height:36px">
+                        <div style="width:160px;text-align:right;padding-right:12px;font-size:12px;font-weight:600">AZN
+                            Devaluation (20%)</div>
+                        <div style="flex:1;position:relative;height:28px">
+                            <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border)">
+                            </div>
+                            <div
+                                style="position:absolute;right:50%;top:4px;height:20px;width:37%;background:linear-gradient(270deg,var(--red),rgba(239,68,68,0.3));border-radius:4px 0 0 4px">
+                            </div>
+                            <div
+                                style="position:absolute;right:52%;top:7px;font-size:10px;font-family:var(--mono);color:var(--red);font-weight:700">
+                                -12 to -15%</div>
+                        </div>
+                    </div>
+                    <!-- Oil Price -->
+                    <div style="display:flex;align-items:center;margin-bottom:8px;height:36px">
+                        <div style="width:160px;text-align:right;padding-right:12px;font-size:12px;font-weight:600">Oil
+                            Price (-$30/bbl)</div>
+                        <div style="flex:1;position:relative;height:28px">
+                            <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border)">
+                            </div>
+                            <div
+                                style="position:absolute;right:50%;top:4px;height:20px;width:30%;background:linear-gradient(270deg,var(--orange),rgba(249,115,22,0.3));border-radius:4px 0 0 4px">
+                            </div>
+                            <div
+                                style="position:absolute;left:50%;top:4px;height:20px;width:8%;background:linear-gradient(90deg,var(--green),rgba(16,185,129,0.3));border-radius:0 4px 4px 0">
+                            </div>
+                            <div
+                                style="position:absolute;right:55%;top:7px;font-size:10px;font-family:var(--mono);color:var(--orange);font-weight:700">
+                                -8 to -12%</div>
+                            <div
+                                style="position:absolute;left:55%;top:7px;font-size:10px;font-family:var(--mono);color:var(--green);font-weight:600">
+                                +2%</div>
+                        </div>
+                    </div>
+                    <!-- Tourism Decline -->
+                    <div style="display:flex;align-items:center;margin-bottom:8px;height:36px">
+                        <div style="width:160px;text-align:right;padding-right:12px;font-size:12px;font-weight:600">
+                            Tourism Decline (-25%)</div>
+                        <div style="flex:1;position:relative;height:28px">
+                            <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border)">
+                            </div>
+                            <div
+                                style="position:absolute;right:50%;top:4px;height:20px;width:22%;background:linear-gradient(270deg,var(--yellow),rgba(245,158,11,0.3));border-radius:4px 0 0 4px">
+                            </div>
+                            <div
+                                style="position:absolute;right:52%;top:7px;font-size:10px;font-family:var(--mono);color:var(--yellow);font-weight:700">
+                                -6 to -9%</div>
+                        </div>
+                    </div>
+                    <!-- Interest Rates -->
+                    <div style="display:flex;align-items:center;margin-bottom:8px;height:36px">
+                        <div style="width:160px;text-align:right;padding-right:12px;font-size:12px;font-weight:600">
+                            Interest Rates (+3%)</div>
+                        <div style="flex:1;position:relative;height:28px">
+                            <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border)">
+                            </div>
+                            <div
+                                style="position:absolute;right:50%;top:4px;height:20px;width:17%;background:linear-gradient(270deg,var(--yellow),rgba(245,158,11,0.3));border-radius:4px 0 0 4px">
+                            </div>
+                            <div
+                                style="position:absolute;right:52%;top:7px;font-size:10px;font-family:var(--mono);color:var(--yellow);font-weight:700">
+                                -4 to -6%</div>
+                        </div>
+                    </div>
+                    <!-- Construction Materials -->
+                    <div style="display:flex;align-items:center;margin-bottom:8px;height:36px">
+                        <div style="width:160px;text-align:right;padding-right:12px;font-size:12px;font-weight:600">
+                            Steel/Cement (+30%)</div>
+                        <div style="flex:1;position:relative;height:28px">
+                            <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border)">
+                            </div>
+                            <div
+                                style="position:absolute;right:50%;top:4px;height:20px;width:12%;background:linear-gradient(270deg,var(--yellow),rgba(245,158,11,0.2));border-radius:4px 0 0 4px">
+                            </div>
+                            <div
+                                style="position:absolute;right:52%;top:7px;font-size:10px;font-family:var(--mono);color:var(--yellow);font-weight:700">
+                                -3 to -5%</div>
+                        </div>
+                    </div>
+                    <!-- Energy Costs -->
+                    <div style="display:flex;align-items:center;height:36px">
+                        <div style="width:160px;text-align:right;padding-right:12px;font-size:12px;font-weight:600">
+                            Energy Costs (+25%)</div>
+                        <div style="flex:1;position:relative;height:28px">
+                            <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border)">
+                            </div>
+                            <div
+                                style="position:absolute;right:50%;top:4px;height:20px;width:8%;background:linear-gradient(270deg,#94a3b8,rgba(148,163,184,0.2));border-radius:4px 0 0 4px">
+                            </div>
+                            <div
+                                style="position:absolute;right:52%;top:7px;font-size:10px;font-family:var(--mono);color:var(--text-dim);font-weight:700">
+                                -2 to -3%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="disclaimer">Sensitivity ranges modeled from IMF Azerbaijan reports, World Bank commodity
+                    analyses, RICS construction cost benchmarks, and comparable luxury market studies. Oil positive
+                    impact reflects reduced construction input costs in certain scenarios.</div>
+            </div>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <div class="meta-label">Based On</div>
+                    <div class="meta-content">IMF Article IV Azerbaijan, World Bank commodity sensitivity, 2014-2016 oil
+                        crash impact data, RICS/Turner &amp; Townsend cost benchmarks</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">What Would Invalidate</div>
+                    <div class="meta-content">Government intervention (price caps, subsidies), hedging strategies
+                        already in place, USD-denominated revenue providing natural FX hedge</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Internal Data Would...</div>
+                    <div class="meta-content">Reveal actual cost structure, hedging positions, and debt terms — could
+                        eliminate 2 variables entirely and narrow ranges on others</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S6: OPERATING VOLATILITY -->
+        <section>
+            <div class="section-label">Section 06 — Volatility Mapping</div>
+            <div class="section-title">Operating Environment: How Stable Is the Ground?</div>
+            <div class="section-intro">Volatility mapping combines multiple environmental factors into a single
+                assessment of how predictable the operating environment is. Higher volatility = harder to plan, more
+                margin buffer needed.</div>
+
+            <div class="prediction-box">
+                <div class="pred-label">ORBITAL VOLATILITY ASSESSMENT</div>
+                <div class="pred-text">PASHA's operating environment is classified as <strong
+                        style="color:var(--yellow)">MODERATE VOLATILITY</strong> — not crisis-level, but above the
+                    stability threshold where standard assumptions hold reliably. The primary volatility driver is
+                    <strong style="color:var(--orange)">commodity exposure</strong> through Azerbaijan's oil-dependent
+                    economy.</div>
+                <span class="conf-tag conf-high">CONFIDENCE: HIGH</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header" style="color:var(--accent2)">Multi-Axis Volatility Assessment</div>
+                <div style="margin-top:20px">
+                    <!-- FX Volatility -->
+                    <div style="margin-bottom:16px">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                            <span style="font-size:13px;font-weight:600">💱 FX Volatility (AZN/USD)</span>
+                            <span class="badge b-green">LOW (Pegged)</span>
+                        </div>
+                        <div class="pbar">
+                            <div class="pfill" style="width:25%;background:var(--green)"></div>
+                        </div>
+                        <div style="font-size:11px;color:var(--text-dim);margin-top:2px">AZN pegged at 1.70. Stable now,
+                            but peg breaks are binary — all-or-nothing risk. Currently 25/100.</div>
+                    </div>
+                    <!-- Commodity -->
+                    <div style="margin-bottom:16px">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                            <span style="font-size:13px;font-weight:600">🛢️ Commodity Price Volatility</span>
+                            <span class="badge b-red">ELEVATED</span>
+                        </div>
+                        <div class="pbar">
+                            <div class="pfill" style="width:78%;background:var(--red)"></div>
+                        </div>
+                        <div style="font-size:11px;color:var(--text-dim);margin-top:2px">Oil swings directly impact GDP,
+                            government spending, and consumer confidence. Currently 78/100.</div>
+                    </div>
+                    <!-- Interest Rate -->
+                    <div style="margin-bottom:16px">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                            <span style="font-size:13px;font-weight:600">📈 Interest Rate Environment</span>
+                            <span class="badge b-yellow">MODERATE</span>
+                        </div>
+                        <div class="pbar">
+                            <div class="pfill" style="width:50%;background:var(--yellow)"></div>
+                        </div>
+                        <div style="font-size:11px;color:var(--text-dim);margin-top:2px">Central bank rate at 7.25%.
+                            Mortgage rates high. Credit availability declining. Currently 50/100.</div>
+                    </div>
+                    <!-- Regulatory -->
+                    <div style="margin-bottom:16px">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                            <span style="font-size:13px;font-weight:600">📋 Regulatory Stability</span>
+                            <span class="badge b-green">LOW</span>
+                        </div>
+                        <div class="pbar">
+                            <div class="pfill" style="width:30%;background:var(--green)"></div>
+                        </div>
+                        <div style="font-size:11px;color:var(--text-dim);margin-top:2px">Azerbaijan regulatory
+                            environment is stable for established players like PASHA. Currently 30/100.</div>
+                    </div>
+                    <!-- Demand -->
+                    <div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                            <span style="font-size:13px;font-weight:600">🏠 Demand Predictability</span>
+                            <span class="badge b-yellow">MODERATE</span>
+                        </div>
+                        <div class="pbar">
+                            <div class="pfill" style="width:55%;background:var(--yellow)"></div>
+                        </div>
+                        <div style="font-size:11px;color:var(--text-dim);margin-top:2px">Tourism growing (+14%) but
+                            luxury residential demand untested at PASHA's price point. Currently 55/100.</div>
+                    </div>
+                </div>
+                <div
+                    style="margin-top:20px;text-align:center;padding:16px;background:var(--surface2);border-radius:8px">
+                    <div
+                        style="font-size:10px;font-family:var(--mono);color:var(--accent2);letter-spacing:2px;margin-bottom:4px">
+                        COMPOSITE VOLATILITY SCORE</div>
+                    <div style="font-size:36px;font-weight:800;font-family:var(--mono);color:var(--yellow)">48<span
+                            style="font-size:16px;color:var(--text-dim)">/100</span></div>
+                    <div style="font-size:12px;color:var(--yellow);font-weight:600">MODERATE — Plan with buffers, expect
+                        deviations</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S7: COMPETITOR TIMING + CURRENCY RISK -->
+        <section>
+            <div class="section-label">Section 07 — Timing & Currency Intelligence</div>
+            <div class="section-title">Competitor Race & Currency Risk Matrix</div>
+            <div class="section-intro">Two critical forward-looking models: (1) When does Sea Breeze compete directly in
+                luxury residential? (2) What's the probability of AZN devaluation under different oil scenarios?</div>
+
+            <!-- Gantt Timeline -->
+            <div class="prediction-box">
+                <div class="pred-label">ORBITAL TIMING PREDICTION</div>
+                <div class="pred-text">PASHA has an estimated <strong style="color:var(--green)">18-24 month first-mover
+                        window</strong> for luxury residential before Sea Breeze's comparable phases launch. Missing
+                    this window means competing on price rather than exclusivity.</div>
+                <span class="conf-tag conf-med">CONFIDENCE: MEDIUM</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header" style="color:var(--accent2)">Competitive Timeline — Who Launches What, When
+                </div>
+                <div style="margin-top:16px">
+                    <div
+                        style="display:flex;font-size:9px;font-family:var(--mono);color:var(--text-dim);margin-bottom:4px;padding-left:180px">
+                        <div style="flex:1;text-align:center">2025</div>
+                        <div style="flex:1;text-align:center">2026</div>
+                        <div style="flex:1;text-align:center">2027</div>
+                        <div style="flex:1;text-align:center">2028</div>
+                        <div style="flex:1;text-align:center">2029</div>
+                        <div style="flex:1;text-align:center">2030</div>
+                        <div style="flex:1;text-align:center">2031</div>
+                        <div style="flex:1;text-align:center">2032</div>
+                    </div>
+                    <!-- PASHA Residential -->
+                    <div style="display:flex;align-items:center;margin-bottom:6px">
+                        <div
+                            style="width:176px;font-size:11px;font-weight:600;color:var(--accent2);text-align:right;padding-right:8px">
+                            PASHA Crescent Res.</div>
+                        <div style="flex:8;display:flex;height:22px;gap:1px">
+                            <div style="flex:1;background:var(--surface2);border-radius:3px 0 0 3px"></div>
+                            <div
+                                style="flex:5;background:linear-gradient(90deg,var(--accent),var(--green));border-radius:0;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;letter-spacing:0.5px">
+                                CONSTRUCTION → SALES LAUNCH → DELIVERY</div>
+                            <div style="flex:2;background:var(--surface2);border-radius:0 3px 3px 0"></div>
+                        </div>
+                    </div>
+                    <!-- PASHA MO -->
+                    <div style="display:flex;align-items:center;margin-bottom:6px">
+                        <div
+                            style="width:176px;font-size:11px;font-weight:600;color:var(--purple);text-align:right;padding-right:8px">
+                            PASHA Mandarin Oriental</div>
+                        <div style="flex:8;display:flex;height:22px;gap:1px">
+                            <div style="flex:1;background:var(--surface2);border-radius:3px 0 0 3px"></div>
+                            <div
+                                style="flex:3;background:linear-gradient(90deg,var(--purple),rgba(167,139,250,0.5));display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700">
+                                CONSTRUCTION → OPENING</div>
+                            <div style="flex:4;background:var(--surface2);border-radius:0 3px 3px 0"></div>
+                        </div>
+                    </div>
+                    <!-- Sea Breeze -->
+                    <div style="display:flex;align-items:center;margin-bottom:6px">
+                        <div
+                            style="width:176px;font-size:11px;font-weight:600;color:var(--orange);text-align:right;padding-right:8px">
+                            Sea Breeze Residential</div>
+                        <div style="flex:8;display:flex;height:22px;gap:1px">
+                            <div style="flex:2;background:var(--surface2);border-radius:3px 0 0 3px"></div>
+                            <div
+                                style="flex:4;background:linear-gradient(90deg,var(--orange),rgba(249,115,22,0.5));display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700">
+                                PHASES LAUNCHING → DIRECT COMPETITION</div>
+                            <div style="flex:2;background:var(--surface2);border-radius:0 3px 3px 0"></div>
+                        </div>
+                    </div>
+                    <!-- White City -->
+                    <div style="display:flex;align-items:center;margin-bottom:6px">
+                        <div
+                            style="width:176px;font-size:11px;font-weight:600;color:var(--text-dim);text-align:right;padding-right:8px">
+                            White City (ADEC)</div>
+                        <div style="flex:8;display:flex;height:22px;gap:1px">
+                            <div style="flex:3;background:var(--surface2);border-radius:3px 0 0 3px"></div>
+                            <div
+                                style="flex:4;background:rgba(148,163,184,0.2);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:600;color:var(--text-dim)">
+                                SLOW PROGRESS — UNCERTAIN</div>
+                            <div style="flex:1;background:var(--surface2);border-radius:0 3px 3px 0"></div>
+                        </div>
+                    </div>
+                    <!-- Window highlight -->
+                    <div style="display:flex;align-items:center;margin-top:4px">
+                        <div
+                            style="width:176px;font-size:11px;font-weight:700;color:var(--green);text-align:right;padding-right:8px">
+                            ⚡ FIRST-MOVER WINDOW</div>
+                        <div style="flex:8;display:flex;height:22px;gap:1px">
+                            <div style="flex:1;background:transparent;border-radius:3px 0 0 3px"></div>
+                            <div
+                                style="flex:2;background:rgba(16,185,129,0.15);border:1px dashed var(--green);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:var(--green)">
+                                18-24 MONTHS</div>
+                            <div style="flex:5;background:transparent;border-radius:0 3px 3px 0"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Currency Heatmap -->
+            <div class="card" style="margin-top:16px">
+                <div class="card-header" style="color:var(--accent2)">AZN Devaluation Probability Matrix — Oil Price vs.
+                    Time Horizon</div>
+                <table style="margin-top:12px">
+                    <tr>
+                        <th>Oil Price (Brent)</th>
+                        <th style="text-align:center">1-Year Risk</th>
+                        <th style="text-align:center">3-Year Risk</th>
+                        <th style="text-align:center">5-Year Risk</th>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600">$80/bbl (Current)</td>
+                        <td style="text-align:center">
+                            <div
+                                style="display:inline-block;padding:4px 12px;background:rgba(16,185,129,0.15);color:var(--green);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600">
+                                2%</div>
+                        </td>
+                        <td style="text-align:center">
+                            <div
+                                style="display:inline-block;padding:4px 12px;background:rgba(16,185,129,0.15);color:var(--green);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600">
+                                5%</div>
+                        </td>
+                        <td style="text-align:center">
+                            <div
+                                style="display:inline-block;padding:4px 12px;background:rgba(16,185,129,0.15);color:var(--green);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600">
+                                10%</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600">$60/bbl</td>
+                        <td style="text-align:center">
+                            <div
+                                style="display:inline-block;padding:4px 12px;background:rgba(245,158,11,0.15);color:var(--yellow);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600">
+                                8%</div>
+                        </td>
+                        <td style="text-align:center">
+                            <div
+                                style="display:inline-block;padding:4px 12px;background:rgba(245,158,11,0.15);color:var(--yellow);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600">
+                                20%</div>
+                        </td>
+                        <td style="text-align:center">
+                            <div
+                                style="display:inline-block;padding:4px 12px;background:rgba(249,115,22,0.15);color:var(--orange);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600">
+                                35%</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600">$50/bbl</td>
+                        <td style="text-align:center">
+                            <div
+                                style="display:inline-block;padding:4px 12px;background:rgba(245,158,11,0.15);color:var(--yellow);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600">
+                                15%</div>
+                        </td>
+                        <td style="text-align:center">
+                            <div
+                                style="display:inline-block;padding:4px 12px;background:rgba(249,115,22,0.15);color:var(--orange);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600">
+                                40%</div>
+                        </td>
+                        <td style="text-align:center">
+                            <div
+                                style="display:inline-block;padding:4px 12px;background:rgba(239,68,68,0.15);color:var(--red);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600">
+                                60%</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600">$40/bbl (Crash)</td>
+                        <td style="text-align:center">
+                            <div
+                                style="display:inline-block;padding:4px 12px;background:rgba(239,68,68,0.15);color:var(--red);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600">
+                                30%</div>
+                        </td>
+                        <td style="text-align:center">
+                            <div
+                                style="display:inline-block;padding:4px 12px;background:rgba(239,68,68,0.25);color:var(--red);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600">
+                                65%</div>
+                        </td>
+                        <td style="text-align:center">
+                            <div
+                                style="display:inline-block;padding:4px 12px;background:rgba(239,68,68,0.35);color:var(--red);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600">
+                                80%</div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="disclaimer">Devaluation probability modeled from Azerbaijan's SOFAZ reserves (~$45B), import
+                    coverage ratios, 2015 precedent (50% devaluation after oil crashed to $30-40), and IMF fiscal
+                    sustainability analyses.</div>
+            </div>
+        </section>
+
+        <!-- S8: PREDICTIVE DASHBOARD -->
+        <section>
+            <div class="section-label">Section 08 — Consolidated Intelligence</div>
+            <div class="section-title">Predictive Dashboard & Early Warning System</div>
+            <div class="section-intro">Every prediction from this report consolidated into a single registry. Each entry
+                shows what we're predicting, our confidence, the time horizon, and what data would sharpen our view.
+                Below that: 10 leading indicators with live status.</div>
+
+            <div class="card">
+                <div class="card-header" style="color:var(--accent2)">🔮 Orbital Prediction Registry — All Forward
+                    Models</div>
+                <table style="margin-top:8px;font-size:12px">
+                    <tr>
+                        <th style="width:25%">Prediction</th>
+                        <th style="width:20%">Projected Range</th>
+                        <th style="width:10%">Horizon</th>
+                        <th style="width:12%">Confidence</th>
+                        <th style="width:33%">Key Assumption</th>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600">Hotel Portfolio Revenue</td>
+                        <td style="font-family:var(--mono);color:var(--green)">$55–65M/yr by 2030</td>
+                        <td style="font-family:var(--mono)">5 yr</td>
+                        <td><span class="conf-tag conf-med" style="font-size:9px">MEDIUM</span></td>
+                        <td style="font-size:11px;color:var(--text-dim)">MO opens 2028, Baku tourism sustains 10%+
+                            growth, no new luxury competitors</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600">Residential Sell-Out</td>
+                        <td style="font-family:var(--mono);color:var(--yellow)">2033–2035 (base)</td>
+                        <td style="font-family:var(--mono)">7-9 yr</td>
+                        <td><span class="conf-tag conf-med" style="font-size:9px">MEDIUM</span></td>
+                        <td style="font-size:11px;color:var(--text-dim)">100-120 units/yr absorption, pricing at
+                            $3,500-5,500/sqm, mortgage availability stable</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600">Group Revenue (Total)</td>
+                        <td style="font-family:var(--mono);color:var(--green)">$120–165M/yr by 2030</td>
+                        <td style="font-family:var(--mono)">5 yr</td>
+                        <td><span class="conf-tag conf-med" style="font-size:9px">MEDIUM</span></td>
+                        <td style="font-size:11px;color:var(--text-dim)">Combined hotel + mall + residential
+                            projections, commercial minimal before 2030</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600">Capital Break-Even</td>
+                        <td style="font-family:var(--mono);color:var(--yellow)">2034–2037</td>
+                        <td style="font-family:var(--mono)">8-11 yr</td>
+                        <td><span class="conf-tag conf-low" style="font-size:9px">LOW</span></td>
+                        <td style="font-size:11px;color:var(--text-dim)">Capital est. ~$1.2-1.4B — actual figure could
+                            shift break-even by ±3 years</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600">Biggest Margin Risk</td>
+                        <td style="font-family:var(--mono);color:var(--red)">AZN deval: -12 to -15%</td>
+                        <td style="font-family:var(--mono)">1-5 yr</td>
+                        <td><span class="conf-tag conf-med" style="font-size:9px">MEDIUM</span></td>
+                        <td style="font-size:11px;color:var(--text-dim)">Based on 2015 precedent, USD hotel revenue
+                            provides partial natural hedge</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600">Competitor Timing</td>
+                        <td style="font-family:var(--mono);color:var(--green)">18-24 month window</td>
+                        <td style="font-family:var(--mono)">2 yr</td>
+                        <td><span class="conf-tag conf-med" style="font-size:9px">MEDIUM</span></td>
+                        <td style="font-size:11px;color:var(--text-dim)">Sea Breeze residential launches ~2027, PASHA
+                            should launch before to secure first-mover</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600">Devaluation Risk (Current)</td>
+                        <td style="font-family:var(--mono);color:var(--green)">5% over 3 years</td>
+                        <td style="font-family:var(--mono)">3 yr</td>
+                        <td><span class="conf-tag conf-high" style="font-size:9px">HIGH</span></td>
+                        <td style="font-size:11px;color:var(--text-dim)">Oil at $75-80, SOFAZ reserves strong (~$45B),
+                            peg well-defended at current prices</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Early Warning -->
+            <div class="card" style="margin-top:16px">
+                <div class="card-header" style="color:var(--accent2)">⚡ Early Warning Indicators — Q1 2026 Status</div>
+                <div style="margin-top:12px">
+                    <div
+                        style="font-size:10px;font-family:var(--mono);color:var(--accent2);letter-spacing:2px;margin-bottom:8px">
+                        MACRO</div>
+                    <div style="display:flex;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+                        <div
+                            style="width:12px;height:12px;border-radius:50%;background:var(--green);margin-right:12px;flex-shrink:0;box-shadow:0 0 6px rgba(16,185,129,0.4)">
+                        </div>
+                        <div style="flex:1;font-size:12px"><strong>Oil Price</strong> — $75-80/bbl</div>
+                        <div style="font-size:10px;font-family:var(--mono);color:var(--green)">STABLE</div>
+                    </div>
+                    <div style="display:flex;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+                        <div
+                            style="width:12px;height:12px;border-radius:50%;background:var(--green);margin-right:12px;flex-shrink:0;box-shadow:0 0 6px rgba(16,185,129,0.4)">
+                        </div>
+                        <div style="flex:1;font-size:12px"><strong>AZN Peg</strong> — Holding at 1.70</div>
+                        <div style="font-size:10px;font-family:var(--mono);color:var(--green)">STABLE</div>
+                    </div>
+                    <div style="display:flex;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+                        <div
+                            style="width:12px;height:12px;border-radius:50%;background:var(--green);margin-right:12px;flex-shrink:0;box-shadow:0 0 6px rgba(16,185,129,0.4)">
+                        </div>
+                        <div style="flex:1;font-size:12px"><strong>GDP Growth</strong> — +4.1%</div>
+                        <div style="font-size:10px;font-family:var(--mono);color:var(--green)">POSITIVE</div>
+                    </div>
+                    <div
+                        style="font-size:10px;font-family:var(--mono);color:var(--accent2);letter-spacing:2px;margin:12px 0 8px">
+                        GROUP SIGNALS</div>
+                    <div style="display:flex;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+                        <div
+                            style="width:12px;height:12px;border-radius:50%;background:var(--yellow);margin-right:12px;flex-shrink:0;box-shadow:0 0 6px rgba(245,158,11,0.4)">
+                        </div>
+                        <div style="flex:1;font-size:12px"><strong>PASHA Bank IPO</strong> — Announced, no filing yet
+                        </div>
+                        <div style="font-size:10px;font-family:var(--mono);color:var(--yellow)">WATCH</div>
+                    </div>
+                    <div style="display:flex;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+                        <div
+                            style="width:12px;height:12px;border-radius:50%;background:var(--green);margin-right:12px;flex-shrink:0;box-shadow:0 0 6px rgba(16,185,129,0.4)">
+                        </div>
+                        <div style="flex:1;font-size:12px"><strong>Hiring Activity</strong> — 400+ active postings</div>
+                        <div style="font-size:10px;font-family:var(--mono);color:var(--green)">POSITIVE</div>
+                    </div>
+                    <div style="display:flex;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+                        <div
+                            style="width:12px;height:12px;border-radius:50%;background:var(--green);margin-right:12px;flex-shrink:0;box-shadow:0 0 6px rgba(16,185,129,0.4)">
+                        </div>
+                        <div style="flex:1;font-size:12px"><strong>Brand Partners</strong> — All 3 confirmed (FS, JWM,
+                            MO)</div>
+                        <div style="font-size:10px;font-family:var(--mono);color:var(--green)">STABLE</div>
+                    </div>
+                    <div
+                        style="font-size:10px;font-family:var(--mono);color:var(--accent2);letter-spacing:2px;margin:12px 0 8px">
+                        MARKET</div>
+                    <div style="display:flex;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+                        <div
+                            style="width:12px;height:12px;border-radius:50%;background:var(--green);margin-right:12px;flex-shrink:0;box-shadow:0 0 6px rgba(16,185,129,0.4)">
+                        </div>
+                        <div style="flex:1;font-size:12px"><strong>Baku Residential Prices</strong> — +10-14% annual
+                        </div>
+                        <div style="font-size:10px;font-family:var(--mono);color:var(--green)">FAVORABLE</div>
+                    </div>
+                    <div style="display:flex;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+                        <div
+                            style="width:12px;height:12px;border-radius:50%;background:var(--yellow);margin-right:12px;flex-shrink:0;box-shadow:0 0 6px rgba(245,158,11,0.4)">
+                        </div>
+                        <div style="flex:1;font-size:12px"><strong>Home Loan Availability</strong> — Declining since
+                            2024</div>
+                        <div style="font-size:10px;font-family:var(--mono);color:var(--yellow)">WATCH</div>
+                    </div>
+                    <div style="display:flex;align-items:center;padding:8px 0">
+                        <div
+                            style="width:12px;height:12px;border-radius:50%;background:var(--yellow);margin-right:12px;flex-shrink:0;box-shadow:0 0 6px rgba(245,158,11,0.4)">
+                        </div>
+                        <div style="flex:1;font-size:12px"><strong>Sea Breeze Residential</strong> — Phases advancing
+                        </div>
+                        <div style="font-size:10px;font-family:var(--mono);color:var(--yellow)">WATCH</div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
+                    <div style="display:flex;align-items:center;gap:4px;font-size:10px">
+                        <div style="width:8px;height:8px;border-radius:50%;background:var(--green)"></div><span
+                            style="color:var(--text-dim)">Stable (7)</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:4px;font-size:10px">
+                        <div style="width:8px;height:8px;border-radius:50%;background:var(--yellow)"></div><span
+                            style="color:var(--text-dim)">Watch (3)</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:4px;font-size:10px">
+                        <div style="width:8px;height:8px;border-radius:50%;background:var(--red)"></div><span
+                            style="color:var(--text-dim)">Risk (0)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLOSING -->
+        <section style="border:none;padding-top:48px">
+            <div class="callout">
+                <strong>Methodology & Disclaimer:</strong> This report uses <strong>structured probability
+                    modeling</strong> based on public information, international benchmarks (IMF, World Bank, RICS,
+                Turner & Townsend), industry comparables, and proxy signals. All projections are probability-weighted
+                ranges under documented assumptions — not exact forecasts. This is <strong>strategic intelligence, not
+                    an audit or financial certification</strong>. Where internal data would sharpen precision, we have
+                noted this explicitly. With client financial data, Orbital would narrow these bands by 40-60% and raise
+                confidence levels across all modules.
+            </div>
+
+            <div class="card"
+                style="margin-top:16px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.08));border-color:rgba(99,102,241,0.3)">
+                <div class="card-header" style="color:var(--accent2)">🔍 Precision Upgrade Path — What Internal Data
+                    Unlocks</div>
+                <div class="grid-2" style="margin-top:8px">
+                    <div style="font-size:12px;color:var(--text-dim);line-height:1.8">
+                        • Actual hotel RevPAR → Hotel projection: <span style="color:var(--green)">LOW→HIGH</span><br>
+                        • Pre-sales pipeline → Absorption: <span style="color:var(--green)">MED→HIGH</span><br>
+                        • Debt structure → Break-even: <span style="color:var(--green)">LOW→MED</span>
+                    </div>
+                    <div style="font-size:12px;color:var(--text-dim);line-height:1.8">
+                        • Operating cost structure → Margin model: <span style="color:var(--green)">MED→HIGH</span><br>
+                        • Brand contract terms → Brand risk: <span style="color:var(--green)">MED→HIGH</span><br>
+                        • Construction timeline → Completion: <span style="color:var(--green)">MED→HIGH</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <section style="text-align:center;padding:48px 0;border:none">
+            <div
+                style="font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--accent2);margin-bottom:8px">
+                ORBITAL PREDICTIVE INTELLIGENCE SYSTEM</div>
+            <div style="font-size:18px;font-weight:700;margin-bottom:8px">Forward-Looking Strategic Model Complete</div>
+            <div style="font-size:13px;color:var(--text-dim);margin-bottom:24px">Structured probability modeling — not
+                speculation, not exact forecasts.</div>
+            <div style="font-size:11px;color:var(--text-dim);font-family:var(--mono)">
+                REPORT 1 — Detailed Intelligence Report (Diagnostic)<br>
+                REPORT 2 — Visual Executive Snapshot (CEO Briefing)<br>
+                REPORT 3 — Crescent Bay Forward Outlook (Project Deep-Dive)<br>
+                REPORT 4 — Group Predictive Intelligence (This Report)<br><br>
+                Prepared by Khaldun Systems — Orbital Advisory Division<br>
+                Classification: Strategic — Client Confidential
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

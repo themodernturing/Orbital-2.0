@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PASHA Real Estate Group — Strategic Forward Outlook</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0e1a;
+            --surface: #111827;
+            --surface2: #1a2035;
+            --border: #1e293b;
+            --text: #e2e8f0;
+            --text-dim: #94a3b8;
+            --accent: #6366f1;
+            --accent2: #22d3ee;
+            --green: #10b981;
+            --yellow: #f59e0b;
+            --orange: #f97316;
+            --red: #ef4444;
+            --purple: #a78bfa;
+            --mono: 'JetBrains Mono', monospace;
+            --sans: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--sans);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        section {
+            padding: 64px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-label {
+            font-family: var(--mono);
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent2);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-intro {
+            font-size: 15px;
+            color: var(--text-dim);
+            line-height: 1.8;
+            margin-bottom: 32px;
+            max-width: 900px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 16px;
+        }
+
+        .card-header {
+            font-family: var(--mono);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent2);
+            margin-bottom: 16px;
+        }
+
+        .callout {
+            border-left: 3px solid var(--accent);
+            padding: 20px 24px;
+            background: var(--surface);
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .callout-warn {
+            border-left-color: var(--orange);
+        }
+
+        .callout-red {
+            border-left-color: var(--red);
+        }
+
+        .callout-green {
+            border-left-color: var(--green);
+        }
+
+        .callout strong:first-child {
+            color: var(--accent2);
+        }
+
+        .callout-warn strong:first-child {
+            color: var(--orange);
+        }
+
+        .callout-red strong:first-child {
+            color: var(--red);
+        }
+
+        .callout-green strong:first-child {
+            color: var(--green);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        th {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+        }
+
+        .pbar {
+            height: 8px;
+            background: var(--surface2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .pfill {
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            font-family: var(--mono);
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            font-style: italic;
+            color: var(--text-dim);
+            margin-top: 12px;
+            padding: 12px;
+            background: var(--surface2);
+            border-radius: 6px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 24px;
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            font-family: var(--mono);
+        }
+
+        .stat-label {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+
+        .scenario-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            border-top: 3px solid;
+        }
+
+        .eco-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            text-align: center;
+        }
+
+        .eco-flow {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 20px;
+            text-align: center;
+        }
+
+        .highlight {
+            color: var(--accent2);
+            text-decoration: underline;
+        }
+
+        .highlight-red {
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        .highlight-green {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .highlight-orange {
+            color: var(--orange);
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- COVER -->
+        <section
+            style="min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:none">
+            <div
+                style="font-family:var(--mono);font-size:13px;letter-spacing:4px;color:var(--text-dim);border:1px solid var(--border);padding:8px 24px;border-radius:6px;margin-bottom:24px">
+                ORBITAL INTELLIGENCE SYSTEM</div>
+            <div
+                style="font-family:var(--mono);font-size:14px;letter-spacing:3px;color:var(--accent2);margin-bottom:16px">
+                STRATEGIC FORWARD OUTLOOK — GROUP LEVEL</div>
+            <h1
+                style="font-size:52px;font-weight:800;margin-bottom:16px;background:linear-gradient(135deg,#e2e8f0,#94a3b8);-webkit-background-clip:text;-webkit-text-fill-color:transparent">
+                PASHA Real Estate Group</h1>
+            <div style="font-size:20px;color:var(--text-dim);margin-bottom:32px">Ecosystem Analysis, Structural Modeling
+                &amp; Scenario Intelligence</div>
+            <div style="font-family:var(--mono);font-size:12px;color:var(--text-dim);line-height:2">
+                Probabilistic Strategic Modeling | February 2026<br>
+                Prepared by Khaldun Systems — Orbital Advisory Division<br>
+                Classification: Strategic — Client Confidential
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <div class="callout" style="margin-top:48px">
+            <strong>About This Report</strong><br>
+            This strategic outlook analyzes PASHA Real Estate Group at the <span class="highlight">ecosystem
+                level</span> — not individual projects, but the structural relationships, dependencies, and strategic
+            trajectories that determine the group's long-term position. All modeling uses probability bands, not exact
+            forecasts. Assumptions are documented throughout. For project-level deep-dives, see the companion Crescent
+            Bay Forward Outlook report.
+        </div>
+
+        <!-- S1: ECOSYSTEM -->
+        <section>
+            <div class="section-label">Section 01 — Ecosystem Architecture</div>
+            <div class="section-title">The PASHA Ecosystem: How Everything Connects</div>
+            <div class="section-intro">PASHA Real Estate doesn't operate in isolation. It sits within a conglomerate
+                where the bank finances the construction arm, which builds the real estate assets, which generate
+                returns for the holding company. Understanding this interconnected system is essential before any
+                strategic modeling.</div>
+
+            <div class="card">
+                <div class="card-header">PASHA Holding — Ecosystem Flow</div>
+                <div style="text-align:center;margin-bottom:24px">
+                    <div class="eco-box" style="max-width:400px;margin:0 auto 12px;border-color:var(--accent)">
+                        <div style="font-size:18px;font-weight:700">🏛️ PASHA Holding</div>
+                        <div style="font-size:12px;color:var(--text-dim)">Parent entity — owns all operating companies
+                        </div>
+                    </div>
+                    <div style="font-size:20px;color:var(--text-dim);margin:8px 0">↓ ownership ↓</div>
+                </div>
+                <div class="grid-4" style="margin-bottom:24px">
+                    <div class="eco-box" style="border-color:var(--accent)">
+                        <div style="font-weight:700;color:var(--accent)">🏦 PASHA Bank</div>
+                        <div style="font-size:12px;color:var(--text-dim)">Financing arm</div>
+                        <div style="font-size:12px;color:var(--text-dim)">IPO Spring 2026</div>
+                    </div>
+                    <div class="eco-box" style="border-color:var(--orange)">
+                        <div style="font-weight:700;color:var(--orange)">🏗️ PASHA Construction</div>
+                        <div style="font-size:12px;color:var(--text-dim)">Builds the assets</div>
+                        <div style="font-size:12px;color:var(--text-dim)">22,000+ staff</div>
+                    </div>
+                    <div class="eco-box" style="border-color:var(--green)">
+                        <div style="font-weight:700;color:var(--green)">🏢 PASHA Real Estate</div>
+                        <div style="font-size:12px;color:var(--text-dim)">Owns &amp; operates</div>
+                        <div style="font-size:12px;color:var(--text-dim)">Crescent Bay + portfolio</div>
+                    </div>
+                    <div class="eco-box" style="border-color:var(--purple)">
+                        <div style="font-weight:700;color:var(--purple)">🛡️ PASHA Insurance</div>
+                        <div style="font-size:12px;color:var(--text-dim)">Risk underwriting</div>
+                        <div style="font-size:12px;color:var(--text-dim)">Group coverage</div>
+                    </div>
+                </div>
+                <div class="grid-3">
+                    <div class="eco-flow">
+                        <div style="font-size:20px;margin-bottom:4px">💰 → 🏗️</div>
+                        <div style="font-size:13px;font-weight:600;color:var(--green)">PASHA Bank finances construction
+                        </div>
+                        <div style="font-size:11px;color:var(--text-dim)">Lending flows from bank to builder</div>
+                    </div>
+                    <div class="eco-flow">
+                        <div style="font-size:20px;margin-bottom:4px">🏗️ → 🏢</div>
+                        <div style="font-size:13px;font-weight:600;color:var(--orange)">Construction builds real estate
+                        </div>
+                        <div style="font-size:11px;color:var(--text-dim)">Projects delivered to RE portfolio</div>
+                    </div>
+                    <div class="eco-flow">
+                        <div style="font-size:20px;margin-bottom:4px">🏢 → 🏛️</div>
+                        <div style="font-size:13px;font-weight:600;color:var(--accent2)">Real estate returns to holding
+                        </div>
+                        <div style="font-size:11px;color:var(--text-dim)">Revenue, dividends, asset value</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout callout-warn">
+                <strong>The Circular Dependency:</strong> PASHA Bank lends to PASHA Construction, which builds for PASHA
+                Real Estate, which generates revenue for PASHA Holding, which owns PASHA Bank. This is a <span
+                    class="highlight">closed-loop system</span>. If any one link weakens — a bank lending contraction, a
+                construction delay, a demand drop — the stress propagates through the entire chain. This is the #1
+                structural factor we model throughout this report.
+            </div>
+
+            <div class="card">
+                <div class="card-header">Group Snapshot</div>
+                <div class="grid-4">
+                    <div class="stat-card">
+                        <div class="stat-value" style="color:var(--green)">22,000+</div>
+                        <div class="stat-label">Employees</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" style="color:var(--accent2)">12+</div>
+                        <div class="stat-label">Subsidiaries</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">Global Hotel Brands</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" style="color:var(--accent2)">2012</div>
+                        <div class="stat-label">Flagship Start</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S2: CAPITAL -->
+        <section>
+            <div class="section-label">Section 02 — Capital Intelligence</div>
+            <div class="section-title">Portfolio Capital Allocation: Where Is the Money?</div>
+            <div class="section-intro">Think of this like an X-ray of the group's capital. It shows where money is
+                deployed, where it's generating returns, and where it's still locked in construction. The goal: identify
+                where capital is working hard and where it's sitting idle.</div>
+
+            <div class="card">
+                <div class="card-header">Capital Deployment by Asset Category (Estimated)</div>
+                <!-- Hospitality -->
+                <div style="margin-bottom:20px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                        <span style="font-weight:600">🏨 Hospitality (FS, JWM, Mandarin Oriental)</span>
+                        <span style="font-family:var(--mono);font-size:11px;color:var(--green)">GENERATING
+                            REVENUE</span>
+                    </div>
+                    <div class="pbar" style="height:28px;margin-bottom:4px">
+                        <div class="pfill"
+                            style="width:35%;background:linear-gradient(90deg,var(--accent2),var(--green));display:flex;align-items:center;padding-left:12px;font-size:12px;font-weight:700;border-radius:4px">
+                            ~35% of capital</div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between"><span
+                            style="font-size:11px;color:var(--text-dim)">FS (9.2-9.9 rating) + JWM (4.8/5) fully
+                            operational. Mandarin Oriental under development.</span><span
+                            style="font-family:var(--mono);font-size:11px;color:var(--green)">HIGH ROI</span></div>
+                </div>
+                <!-- Retail -->
+                <div style="margin-bottom:20px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                        <span style="font-weight:600">🏬 Retail (Crescent Bay Mall)</span>
+                        <span style="font-family:var(--mono);font-size:11px;color:var(--green)">GENERATING
+                            REVENUE</span>
+                    </div>
+                    <div class="pbar" style="height:28px;margin-bottom:4px">
+                        <div class="pfill"
+                            style="width:20%;background:linear-gradient(90deg,var(--yellow),var(--orange));display:flex;align-items:center;padding-left:12px;font-size:12px;font-weight:700;border-radius:4px">
+                            ~20% of capital</div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between"><span
+                            style="font-size:11px;color:var(--text-dim)">99% occupancy reported. Stable cash flow
+                            engine. Lower capital intensity than hotels.</span><span
+                            style="font-family:var(--mono);font-size:11px;color:var(--green)">HIGH ROI</span></div>
+                </div>
+                <!-- Residential -->
+                <div style="margin-bottom:20px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                        <span style="font-weight:600">🏡 Residential (Port Baku + Crescent Residences)</span>
+                        <span style="font-family:var(--mono);font-size:11px;color:var(--yellow)">PARTIALLY
+                            DEPLOYED</span>
+                    </div>
+                    <div class="pbar" style="height:28px;margin-bottom:4px">
+                        <div class="pfill"
+                            style="width:25%;background:linear-gradient(90deg,var(--orange),var(--yellow));display:flex;align-items:center;padding-left:12px;font-size:12px;font-weight:700;border-radius:4px">
+                            ~25% of capital</div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between"><span
+                            style="font-size:11px;color:var(--text-dim)">Port Baku Residence ~85% done. Crescent
+                            Residences ~35%. Capital locked, limited returns yet.</span><span
+                            style="font-family:var(--mono);font-size:11px;color:var(--yellow)">BUILDING</span></div>
+                </div>
+                <!-- Commercial -->
+                <div style="margin-bottom:20px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                        <span style="font-weight:600">🏢 Commercial / Office</span>
+                        <span style="font-family:var(--mono);font-size:11px;color:var(--orange)">EARLY STAGE</span>
+                    </div>
+                    <div class="pbar" style="height:28px;margin-bottom:4px">
+                        <div class="pfill"
+                            style="width:10%;background:var(--red);display:flex;align-items:center;padding-left:12px;font-size:12px;font-weight:700;border-radius:4px">
+                            ~10%</div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between"><span
+                            style="font-size:11px;color:var(--text-dim)">Planned but not materially progressed. Capital
+                            exposure is limited so far.</span><span
+                            style="font-family:var(--mono);font-size:11px;color:var(--orange)">PRE-REV</span></div>
+                </div>
+                <!-- Land -->
+                <div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                        <span style="font-weight:600">🌐 Land Bank &amp; Infrastructure</span>
+                        <span style="font-family:var(--mono);font-size:11px;color:var(--text-dim)">HOLDING</span>
+                    </div>
+                    <div class="pbar" style="height:28px;margin-bottom:4px">
+                        <div class="pfill"
+                            style="width:10%;background:var(--purple);display:flex;align-items:center;padding-left:12px;font-size:12px;font-weight:700;border-radius:4px">
+                            ~10%</div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between"><span
+                            style="font-size:11px;color:var(--text-dim)">Waterfront land, public amenity zones,
+                            infrastructure. Essential but non-revenue.</span><span
+                            style="font-family:var(--mono);font-size:11px;color:var(--text-dim)">NO REV</span></div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card" style="text-align:center;border-color:rgba(16,185,129,0.3)">
+                    <div class="stat-value" style="color:var(--green)">~55%</div>
+                    <div
+                        style="font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--green);margin-top:4px">
+                        CAPITAL GENERATING REVENUE</div>
+                    <div style="font-size:12px;color:var(--text-dim);margin-top:4px">Hospitality + Retail operational
+                    </div>
+                </div>
+                <div class="card" style="text-align:center;border-color:rgba(249,115,22,0.3)">
+                    <div class="stat-value" style="color:var(--orange)">~45%</div>
+                    <div
+                        style="font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--orange);margin-top:4px">
+                        CAPITAL LOCKED / PRE-REVENUE</div>
+                    <div style="font-size:12px;color:var(--text-dim);margin-top:4px">Residential + Commercial + Land
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout callout-green">
+                <strong>The Capital Efficiency Insight:</strong> About 55% of deployed capital is in revenue-generating
+                assets (hospitality and retail). That's actually a healthy ratio for a project still in
+                mid-construction. But the critical question is: <span class="highlight">how fast can the remaining 45%
+                    start earning?</span> Every quarter of delay on residential and commercial increases the group's
+                overall capital lock-up cost.
+            </div>
+        </section>
+
+        <!-- S3: REVENUE -->
+        <section>
+            <div class="section-label">Section 03 — Revenue Trajectory</div>
+            <div class="section-title">Revenue Diversification: Getting Less Fragile or More?</div>
+            <div class="section-intro">Revenue concentration is a fragility indicator. When too much revenue comes from
+                too few sources, one bad year in one segment can threaten the whole group. We map how PASHA's revenue
+                mix has evolved and where it's heading under three scenarios.</div>
+
+            <div class="card">
+                <div class="card-header">Revenue Mix Evolution (Estimated)</div>
+                <!-- 2020 -->
+                <div style="margin-bottom:20px">
+                    <div style="font-family:var(--mono);font-size:12px;color:var(--text-dim);margin-bottom:6px">2020 —
+                        CONSTRUCTION PHASE</div>
+                    <div style="display:flex;height:32px;border-radius:6px;overflow:hidden">
+                        <div
+                            style="width:15%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">
+                            Hotel</div>
+                        <div style="width:5%;background:var(--accent2)"></div>
+                        <div
+                            style="width:80%;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text-dim)">
+                            No major revenue — construction phase</div>
+                    </div>
+                </div>
+                <!-- 2024 -->
+                <div style="margin-bottom:20px">
+                    <div style="font-family:var(--mono);font-size:12px;color:var(--text-dim);margin-bottom:6px">2024 —
+                        MALL + HOTELS OPERATIONAL</div>
+                    <div style="display:flex;height:32px;border-radius:6px;overflow:hidden">
+                        <div
+                            style="width:40%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">
+                            Hospitality ~40%</div>
+                        <div
+                            style="width:35%;background:var(--accent2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">
+                            Retail ~35%</div>
+                        <div
+                            style="width:15%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">
+                            Res ~15%</div>
+                        <div
+                            style="width:10%;background:var(--text-dim);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">
+                            Other</div>
+                    </div>
+                </div>
+                <!-- 2026 -->
+                <div>
+                    <div style="font-family:var(--mono);font-size:12px;color:var(--accent2);margin-bottom:6px">2026 —
+                        CURRENT (ESTIMATED)</div>
+                    <div style="display:flex;height:32px;border-radius:6px;overflow:hidden">
+                        <div
+                            style="width:38%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">
+                            Hospitality ~38%</div>
+                        <div
+                            style="width:32%;background:var(--accent2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">
+                            Retail ~32%</div>
+                        <div
+                            style="width:18%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">
+                            Res ~18%</div>
+                        <div
+                            style="width:12%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">
+                            Other</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Projected Revenue Mix — Three Scenarios (2030)</div>
+                <div class="grid-3" style="margin-top:8px">
+                    <div>
+                        <div
+                            style="font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--green);margin-bottom:8px">
+                            ACCELERATED DIVERSIFICATION</div>
+                        <div style="display:flex;height:24px;border-radius:4px;overflow:hidden;margin-bottom:8px">
+                            <div style="width:25%;background:var(--green)"></div>
+                            <div style="width:20%;background:var(--accent2)"></div>
+                            <div style="width:25%;background:var(--yellow)"></div>
+                            <div style="width:15%;background:var(--purple)"></div>
+                            <div style="width:15%;background:var(--orange)"></div>
+                        </div>
+                        <div style="font-size:12px;color:var(--text-dim)">5 revenue streams active. No single source
+                            >30%. <span style="color:var(--green);font-weight:600">Diversified.</span></div>
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--green);margin-top:4px">
+                            Probability: 15-25%</div>
+                    </div>
+                    <div>
+                        <div
+                            style="font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--yellow);margin-bottom:8px">
+                            STEADY TRANSITION</div>
+                        <div style="display:flex;height:24px;border-radius:4px;overflow:hidden;margin-bottom:8px">
+                            <div style="width:30%;background:var(--green)"></div>
+                            <div style="width:25%;background:var(--accent2)"></div>
+                            <div style="width:20%;background:var(--yellow)"></div>
+                            <div style="width:15%;background:var(--purple)"></div>
+                            <div style="width:10%;background:var(--orange)"></div>
+                        </div>
+                        <div style="font-size:12px;color:var(--text-dim)">4 streams. Hospitality still dominant. <span
+                                style="color:var(--yellow);font-weight:600">Improving.</span></div>
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--yellow);margin-top:4px">
+                            Probability: 50-60%</div>
+                    </div>
+                    <div>
+                        <div
+                            style="font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--red);margin-bottom:8px">
+                            STALLED DIVERSIFICATION</div>
+                        <div style="display:flex;height:24px;border-radius:4px;overflow:hidden;margin-bottom:8px">
+                            <div style="width:35%;background:var(--green)"></div>
+                            <div style="width:30%;background:var(--accent2)"></div>
+                            <div style="width:20%;background:var(--yellow)"></div>
+                            <div style="width:15%;background:var(--orange)"></div>
+                        </div>
+                        <div style="font-size:12px;color:var(--text-dim)">Still 2-stream dependent. Residential delayed.
+                            <span class="highlight-red">Fragile.</span>
+                        </div>
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--red);margin-top:4px">Probability:
+                            20-30%</div>
+                    </div>
+                </div>
+                <div style="margin-top:12px;display:flex;gap:16px;font-size:11px;color:var(--text-dim)">
+                    <span>■ <span style="color:var(--green)">Hospitality</span></span>
+                    <span>■ <span style="color:var(--accent2)">Retail</span></span>
+                    <span>■ <span style="color:var(--yellow)">Residential</span></span>
+                    <span>■ <span style="color:var(--purple)">Commercial</span></span>
+                    <span>■ <span style="color:var(--orange)">Other/Mixed</span></span>
+                </div>
+            </div>
+
+            <div class="callout callout-green">
+                <strong>The Key Insight:</strong> PASHA is in a critical transition window. Right now, ~70% of estimated
+                revenue comes from hospitality + retail (just two segments). Under steady transition, that drops to ~63%
+                by 2030 as residential comes online. Under stalled diversification, concentration worsens. <span
+                    class="highlight-red">The speed of residential completion directly determines the group's structural
+                    resilience.</span>
+            </div>
+        </section>
+
+        <!-- S4: IPO -->
+        <section>
+            <div class="section-label">Section 04 — Event Simulation</div>
+            <div class="section-title">The PASHA Bank IPO: Downstream Impact on Real Estate</div>
+            <div class="section-intro">PASHA Bank's announced Spring 2026 IPO on the Baku Stock Exchange isn't just a
+                banking event — it's a structural moment for the entire PASHA ecosystem. We model three outcomes and
+                trace each through to its impact on the real estate portfolio.</div>
+
+            <div class="grid-3">
+                <div class="scenario-card" style="border-top-color:var(--green)">
+                    <div
+                        style="font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--green);margin-bottom:8px">
+                        SCENARIO A</div>
+                    <div style="font-size:20px;font-weight:700;margin-bottom:12px">IPO Succeeds — Full Subscription
+                    </div>
+                    <div style="font-size:13px;color:var(--text-dim);margin-bottom:16px">Strong demand. Capital raised
+                        meets or exceeds target. PASHA Bank gains public market credibility.</div>
+                    <div style="margin-bottom:8px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Capital Access</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:60px;height:8px;border-radius:4px;background:var(--green)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--green)">↑ HIGH</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:8px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Construction Speed</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:60px;height:8px;border-radius:4px;background:var(--green)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--green)">↑ FASTER</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:8px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Brand Premium</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:60px;height:8px;border-radius:4px;background:var(--green)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--green)">↑ BOOST</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:16px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Scrutiny Level</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:60px;height:8px;border-radius:4px;background:var(--yellow)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--yellow)">↑ MORE</span>
+                        </div>
+                    </div>
+                    <div style="font-family:var(--mono);font-size:12px;color:var(--green)">Probability: 40-50%</div>
+                </div>
+
+                <div class="scenario-card" style="border-top-color:var(--yellow)">
+                    <div
+                        style="font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--yellow);margin-bottom:8px">
+                        SCENARIO B</div>
+                    <div style="font-size:20px;font-weight:700;margin-bottom:12px">IPO Delayed to 2027</div>
+                    <div style="font-size:13px;color:var(--text-dim);margin-bottom:16px">Market conditions, regulatory
+                        timing, or internal readiness cause postponement. Not catastrophic but sends a signal.</div>
+                    <div style="margin-bottom:8px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Capital Access</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:60px;height:8px;border-radius:4px;background:var(--yellow)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--yellow)">→ FLAT</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:8px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Construction Speed</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:60px;height:8px;border-radius:4px;background:var(--yellow)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--yellow)">→ SAME</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:8px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Brand Perception</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:60px;height:8px;border-radius:4px;background:var(--yellow)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--purple)">↓ DENT</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:16px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Competitor Window</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:60px;height:8px;border-radius:4px;background:var(--orange)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--orange)">↑ OPENS</span>
+                        </div>
+                    </div>
+                    <div style="font-family:var(--mono);font-size:12px;color:var(--yellow)">Probability: 30-40%</div>
+                </div>
+
+                <div class="scenario-card" style="border-top-color:var(--red)">
+                    <div
+                        style="font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--red);margin-bottom:8px">
+                        SCENARIO C</div>
+                    <div style="font-size:20px;font-weight:700;margin-bottom:12px">IPO Underperforms</div>
+                    <div style="font-size:13px;color:var(--text-dim);margin-bottom:16px">IPO proceeds but raises less
+                        capital than targeted. Market values PASHA Bank below expectations.</div>
+                    <div style="margin-bottom:8px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Capital Raised</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:60px;height:8px;border-radius:4px;background:var(--red)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--red)">↓ BELOW</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:8px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">RE Investment</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:60px;height:8px;border-radius:4px;background:var(--red)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--red)">↓ SLOWER</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:8px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Market Signal</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:60px;height:8px;border-radius:4px;background:var(--orange)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--red)">↓ NEG</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:16px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Holding Pressure</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:60px;height:8px;border-radius:4px;background:var(--red)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--red)">↑ HIGH</span>
+                        </div>
+                    </div>
+                    <div style="font-family:var(--mono);font-size:12px;color:var(--red)">Probability: 15-25%</div>
+                </div>
+            </div>
+
+            <div class="callout" style="margin-top:24px">
+                <strong>Why This Matters for Real Estate:</strong> The IPO isn't just about PASHA Bank. A successful IPO
+                unlocks capital that can accelerate Crescent Bay completion, brings governance scrutiny that strengthens
+                institutional credibility, and validates the PASHA brand in public markets. A failed or delayed IPO does
+                the opposite — it keeps capital locked, extends construction timelines, and opens a window for
+                competitors. <span class="highlight-red">The IPO is arguably the single most impactful near-term event
+                    for the real estate portfolio.</span>
+            </div>
+        </section>
+
+        <!-- S5: OIL SHOCK -->
+        <section>
+            <div class="section-label">Section 05 — Sensitivity Analysis</div>
+            <div class="section-title">Oil Shock Propagation: How a Price Drop Moves Through PASHA</div>
+            <div class="section-intro">Azerbaijan's GDP is ~47% oil-dependent. This isn't just a macro statistic — it's
+                the foundation of every business decision in the country. We model exactly how an oil shock propagates
+                through the PASHA ecosystem, step by step, with estimated impact at each stage.</div>
+
+            <div class="card">
+                <div class="card-header">Transmission Chain — Three Oil Price Scenarios</div>
+                <table>
+                    <tr>
+                        <th>Transmission Stage</th>
+                        <th style="text-align:center;color:var(--green)">$70/BBL<br><span style="font-size:9px">MILD
+                                DIP</span></th>
+                        <th style="text-align:center;color:var(--yellow)">$55/BBL<br><span
+                                style="font-size:9px">MODERATE</span></th>
+                        <th style="text-align:center;color:var(--red)">$40/BBL<br><span
+                                style="font-size:9px">SEVERE</span></th>
+                    </tr>
+                    <tr>
+                        <td><strong>🛢️ Oil Price Impact</strong><br><span
+                                style="font-size:11px;color:var(--text-dim)">Direct commodity price effect</span></td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--green)">-10%</td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--yellow)">-30%</td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--red)">-50%</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"
+                            style="text-align:center;border:none;padding:4px;font-size:16px;color:var(--text-dim)">↓
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>🇦🇿 Azerbaijan GDP Effect</strong><br><span
+                                style="font-size:11px;color:var(--text-dim)">Oil revenue transmission to economy</span>
+                        </td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--green)">-0.5 to -1%</td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--yellow)">-2 to -3%</td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--red)">-4 to -6%</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"
+                            style="text-align:center;border:none;padding:4px;font-size:16px;color:var(--text-dim)">↓
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>💰 Consumer Spending</strong><br><span
+                                style="font-size:11px;color:var(--text-dim)">Luxury demand sensitivity</span></td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--green)">-2 to -5%</td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--yellow)">-8 to -15%</td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--red)">-20 to -30%</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"
+                            style="text-align:center;border:none;padding:4px;font-size:16px;color:var(--text-dim)">↓
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>🏦 PASHA Bank Lending</strong><br><span
+                                style="font-size:11px;color:var(--text-dim)">Credit tightening effect</span></td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--green)">STABLE</td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--yellow)">TIGHTER</td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--red)">RESTRICTED</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"
+                            style="text-align:center;border:none;padding:4px;font-size:16px;color:var(--text-dim)">↓
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>🏗️ Construction Pace</strong><br><span
+                                style="font-size:11px;color:var(--text-dim)">Project delivery timeline</span></td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--green)">ON TRACK</td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--yellow)">SLOWER</td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--red)">PAUSED</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"
+                            style="text-align:center;border:none;padding:4px;font-size:16px;color:var(--text-dim)">↓
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>🏡 Residential Demand</strong><br><span
+                                style="font-size:11px;color:var(--text-dim)">Buyer appetite and pricing</span></td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--green)">-3 to -5%</td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--yellow)">-10 to -20%</td>
+                        <td style="text-align:center;font-family:var(--mono);color:var(--red)">-25 to -40%</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"
+                            style="text-align:center;border:none;padding:4px;font-size:16px;color:var(--text-dim)">↓
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>📊 PASHA Group Revenue Impact</strong><br><span
+                                style="font-size:11px;color:var(--text-dim)">Net estimated effect on group</span></td>
+                        <td style="text-align:center;font-family:var(--mono);font-weight:700;color:var(--green)">-3 to
+                            -8%</td>
+                        <td style="text-align:center;font-family:var(--mono);font-weight:700;color:var(--yellow)">-12 to
+                            -22%</td>
+                        <td style="text-align:center;font-family:var(--mono);font-weight:700;color:var(--red)">-25 to
+                            -45%</td>
+                    </tr>
+                </table>
+                <div class="disclaimer">Transmission elasticities are based on IMF Azerbaijan Article IV reports, World
+                    Bank commodity sensitivity analyses, and historical precedent from the 2014-2016 oil price decline.
+                    Luxury demand sensitivity amplifies the GDP effect by a factor of 1.5-3x based on global luxury
+                    sector studies.</div>
+            </div>
+
+            <div class="callout callout-red">
+                <strong>The Structural Reality:</strong> At $40/bbl, the estimated group revenue impact is <span
+                    class="highlight-red">-25% to -45%</span>. This isn't hypothetical — Azerbaijan experienced this
+                during the 2014-2016 oil crash when GDP contracted 3.1% and the AZN was devalued by 50%. PASHA's hotels
+                partially shield against this (international tourists pay in USD), but residential demand would be
+                severely impacted. <span class="highlight-red">Oil price is the single most important exogenous variable
+                    for this group.</span>
+            </div>
+        </section>
+
+        <!-- S6: STRUCTURAL RISK -->
+        <section>
+            <div class="section-label">Section 06 — Structural Risk</div>
+            <div class="section-title">Conglomerate Interdependency: The Circular Chain</div>
+            <div class="section-intro">Most conglomerates have entities that depend on each other. PASHA is no
+                exception. The question isn't whether dependencies exist — it's how deep they are, and what happens when
+                one link is stressed.</div>
+            <div class="card">
+                <div class="card-header">Interdependency Mapping — Link-by-Link Risk Assessment</div>
+                <div
+                    style="display:flex;gap:24px;align-items:flex-start;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border)">
+                    <div style="min-width:120px;text-align:center">
+                        <div style="font-size:24px;margin-bottom:4px">🏦 → 🏗️</div>
+                        <div style="font-size:11px;color:var(--accent2)">Bank → Construction</div>
+                    </div>
+                    <div style="flex:1;border-left:3px solid var(--orange);padding-left:16px">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                            <span style="font-size:16px;font-weight:700">Financing Dependency</span><span class="badge"
+                                style="background:var(--orange);color:#000">ELEVATED</span></div>
+                        <div style="font-size:13px;color:var(--text-dim);margin-bottom:10px">PASHA Bank is likely the
+                            primary lender for PASHA Construction's projects. If the bank tightens lending (due to NPLs,
+                            regulatory requirements, or capital constraints), construction pace slows directly.</div>
+                        <div class="pbar" style="height:10px;margin-bottom:4px">
+                            <div class="pfill" style="width:70%;background:var(--orange)"></div>
+                        </div>
+                        <div style="font-size:11px;color:var(--text-dim)">Dependency intensity: 70% (estimated)</div>
+                    </div>
+                </div>
+                <div
+                    style="display:flex;gap:24px;align-items:flex-start;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border)">
+                    <div style="min-width:120px;text-align:center">
+                        <div style="font-size:24px;margin-bottom:4px">🏗️ → 🏢</div>
+                        <div style="font-size:11px;color:var(--accent2)">Construction → Real Estate</div>
+                    </div>
+                    <div style="flex:1;border-left:3px solid var(--red);padding-left:16px">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                            <span style="font-size:16px;font-weight:700">Delivery Dependency</span><span class="badge"
+                                style="background:var(--red);color:#fff">HIGH</span></div>
+                        <div style="font-size:13px;color:var(--text-dim);margin-bottom:10px">PASHA Real Estate's asset
+                            pipeline depends entirely on PASHA Construction for delivery. If construction faces labor
+                            shortages, material procurement issues, or management bandwidth constraints, the real estate
+                            portfolio expansion stalls.</div>
+                        <div class="pbar" style="height:10px;margin-bottom:4px">
+                            <div class="pfill" style="width:90%;background:var(--red)"></div>
+                        </div>
+                        <div style="font-size:11px;color:var(--text-dim)">Dependency intensity: 90% (estimated — no
+                            external contractor diversification visible)</div>
+                    </div>
+                </div>
+                <div
+                    style="display:flex;gap:24px;align-items:flex-start;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border)">
+                    <div style="min-width:120px;text-align:center">
+                        <div style="font-size:24px;margin-bottom:4px">🏢 → 🏛️</div>
+                        <div style="font-size:11px;color:var(--accent2)">Real Estate → Holding</div>
+                    </div>
+                    <div style="flex:1;border-left:3px solid var(--yellow);padding-left:16px">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                            <span style="font-size:16px;font-weight:700">Value Concentration</span><span class="badge"
+                                style="background:var(--yellow);color:#000">MODERATE</span></div>
+                        <div style="font-size:13px;color:var(--text-dim);margin-bottom:10px">Crescent Bay is likely the
+                            single most valuable asset cluster in PASHA Holding's portfolio. Underperformance here would
+                            disproportionately affect group valuation — especially relevant as PASHA Bank prepares for
+                            IPO.</div>
+                        <div class="pbar" style="height:10px;margin-bottom:4px">
+                            <div class="pfill" style="width:55%;background:var(--yellow)"></div>
+                        </div>
+                        <div style="font-size:11px;color:var(--text-dim)">Dependency intensity: 55% (significant but
+                            PASHA Holding has other assets)</div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:24px;align-items:flex-start">
+                    <div style="min-width:120px;text-align:center">
+                        <div style="font-size:24px;margin-bottom:4px">🏛️ → 🏦</div>
+                        <div style="font-size:11px;color:var(--accent2)">Holding → Bank (Loop)</div>
+                    </div>
+                    <div style="flex:1;border-left:3px solid var(--purple);padding-left:16px">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                            <span style="font-size:16px;font-weight:700">Ownership Loop</span><span class="badge"
+                                style="background:var(--purple);color:#000">STRUCTURAL</span></div>
+                        <div style="font-size:13px;color:var(--text-dim);margin-bottom:10px">PASHA Holding owns PASHA
+                            Bank. If the holding company's real estate assets lose value, this could affect the bank's
+                            perceived backing strength — particularly relevant post-IPO when public shareholders will
+                            scrutinize parent strength.</div>
+                        <div class="pbar" style="height:10px;margin-bottom:4px">
+                            <div class="pfill" style="width:45%;background:var(--purple)"></div>
+                        </div>
+                        <div style="font-size:11px;color:var(--text-dim)">Loop sensitivity: 45% (indirect but
+                            structurally important)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="callout callout-warn">
+                <strong>The Weakest Link:</strong> Construction → Real Estate has the highest dependency (90%). The
+                entire pipeline depends on a single construction entity. Any capacity constraint, labor dispute, or
+                management distraction at PASHA Construction creates a bottleneck for the entire group. <span
+                    class="highlight-red">We see no signal of contractor diversification.</span>
+            </div>
+        </section>
+
+        <!-- S7: BRAND -->
+        <section>
+            <div class="section-label">Section 07 — Brand Analysis</div>
+            <div class="section-title">Brand Portfolio: What Are the Names Worth?</div>
+            <div class="section-intro">PASHA's premium positioning comes from Four Seasons, JW Marriott, and Mandarin
+                Oriental. These brands bring credibility, pricing power, and international standards. But they also
+                create dependency. What happens if one exits?</div>
+            <div class="grid-3" style="margin-bottom:24px">
+                <div class="scenario-card" style="border-top-color:var(--green)">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><span
+                            style="font-size:18px;font-weight:700">Four Seasons</span><span class="badge"
+                            style="background:var(--green);color:#000">OPERATIONAL</span></div>
+                    <div style="font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-bottom:4px">BRAND
+                        DEPENDENCY SCORE</div>
+                    <div class="pbar" style="height:8px;margin-bottom:4px">
+                        <div class="pfill" style="width:85%;background:var(--green)"></div>
+                    </div>
+                    <div style="font-family:var(--mono);font-size:12px;color:var(--green);margin-bottom:12px">85/100 —
+                        Critical</div>
+                    <div style="font-size:13px;color:var(--text-dim);margin-bottom:16px">Flagship. Sets pricing
+                        benchmark. 9.2-9.9 Booking.com rating. Anchors the ultra-luxury positioning.</div>
+                    <div
+                        style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);border-radius:6px;padding:12px">
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--red);margin-bottom:4px">IF EXIT
+                            SCENARIO:</div>
+                        <div style="font-size:12px;color:var(--text-dim)">Room rates could drop 25-40%. Residential
+                            "halo effect" weakens. Project repositions from ultra-luxury to luxury.</div>
+                    </div>
+                </div>
+                <div class="scenario-card" style="border-top-color:var(--accent2)">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><span
+                            style="font-size:18px;font-weight:700">JW Marriott</span><span class="badge"
+                            style="background:var(--green);color:#000">OPERATIONAL</span></div>
+                    <div style="font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-bottom:4px">BRAND
+                        DEPENDENCY SCORE</div>
+                    <div class="pbar" style="height:8px;margin-bottom:4px">
+                        <div class="pfill" style="width:65%;background:var(--accent2)"></div>
+                    </div>
+                    <div style="font-family:var(--mono);font-size:12px;color:var(--accent2);margin-bottom:12px">65/100 —
+                        Significant</div>
+                    <div style="font-size:13px;color:var(--text-dim);margin-bottom:16px">Business traveler anchor. 4.8/5
+                        rating. Marriott loyalty network drives occupancy. Broader market reach than FS.</div>
+                    <div
+                        style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);border-radius:6px;padding:12px">
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--red);margin-bottom:4px">IF EXIT
+                            SCENARIO:</div>
+                        <div style="font-size:12px;color:var(--text-dim)">Business travel volume would drop. Marriott
+                            loyalty funnel lost. More replaceable than FS — other luxury chains available.</div>
+                    </div>
+                </div>
+                <div class="scenario-card" style="border-top-color:var(--purple)">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><span
+                            style="font-size:18px;font-weight:700">Mandarin Oriental</span><span class="badge"
+                            style="background:var(--purple);color:#000">PLANNED</span></div>
+                    <div style="font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-bottom:4px">BRAND
+                        DEPENDENCY SCORE</div>
+                    <div class="pbar" style="height:8px;margin-bottom:4px">
+                        <div class="pfill" style="width:45%;background:var(--purple)"></div>
+                    </div>
+                    <div style="font-family:var(--mono);font-size:12px;color:var(--purple);margin-bottom:12px">45/100 —
+                        Moderate (pre-operational)</div>
+                    <div style="font-size:13px;color:var(--text-dim);margin-bottom:16px">Not yet operational.
+                        Strengthens brand diversity. Signals continued upmarket trajectory. Asian luxury positioning.
+                    </div>
+                    <div
+                        style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);border-radius:6px;padding:12px">
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--red);margin-bottom:4px">IF
+                            CANCELLATION:</div>
+                        <div style="font-size:12px;color:var(--text-dim)">Lower impact than FS exit but sends negative
+                            signal about project momentum. Could deter future brand partners.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Estimated Brand Premium Value</div>
+                <table>
+                    <tr>
+                        <th>Metric</th>
+                        <th style="color:var(--accent2)">With Brands</th>
+                        <th>Without Brands</th>
+                        <th style="color:var(--green)">Premium Gap</th>
+                    </tr>
+                    <tr>
+                        <td>Hotel room rates (ADR)</td>
+                        <td style="color:var(--accent2)">$250-450/night</td>
+                        <td>$120-200/night</td>
+                        <td style="color:var(--green)">+100-125%</td>
+                    </tr>
+                    <tr>
+                        <td>Residential price/sqm</td>
+                        <td style="color:var(--accent2)">$3,500-5,500</td>
+                        <td>$2,000-3,000</td>
+                        <td style="color:var(--green)">+75-85%</td>
+                    </tr>
+                    <tr>
+                        <td>Mall tenant quality</td>
+                        <td style="color:var(--accent2)">Luxury &amp; premium tier</td>
+                        <td>Mid-market tier</td>
+                        <td style="color:var(--green)">+40-60% rental yield</td>
+                    </tr>
+                    <tr>
+                        <td>International visibility</td>
+                        <td style="color:var(--accent2)">Global booking networks</td>
+                        <td>Local/regional only</td>
+                        <td style="color:var(--green)">10x+ reach</td>
+                    </tr>
+                </table>
+                <div class="disclaimer">Brand premium estimates based on comparable branded vs. unbranded properties in
+                    Caspian and Eastern Mediterranean markets.</div>
+            </div>
+            <div class="callout callout-green">
+                <strong>The Bottom Line:</strong> The brand premium is worth <span
+                    class="highlight-green">+75-125%</span> on pricing across segments. This is the difference between a
+                profitable luxury project and an uncompetitive one. <span class="highlight-red">Four Seasons is the most
+                    critical — its departure would fundamentally reshape the project's market position.</span>
+            </div>
+        </section>
+
+        <!-- S8: COMPETITIVE -->
+        <section>
+            <div class="section-label">Section 08 — Market Position</div>
+            <div class="section-title">Competitive Ecosystem: Where PASHA Stands in Baku</div>
+            <div class="section-intro">PASHA doesn't compete against one rival — it operates within an ecosystem of
+                developers, each targeting different segments of Baku's premium real estate market.</div>
+            <div class="card">
+                <div class="card-header">Developer Positioning Matrix — Scale vs. Brand Strength</div>
+                <div
+                    style="position:relative;height:400px;background:var(--surface2);border-radius:8px;overflow:hidden;padding:40px">
+                    <div
+                        style="position:absolute;left:16px;top:50%;transform:rotate(-90deg) translateX(50%);font-family:var(--mono);font-size:11px;color:var(--text-dim)">
+                        SCALE ↑</div>
+                    <div
+                        style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;color:var(--text-dim)">
+                        BRAND STRENGTH →</div>
+                    <div
+                        style="position:absolute;bottom:20px;left:40px;font-family:var(--mono);font-size:10px;color:var(--text-dim)">
+                        LOW SCALE + WEAK BRAND</div>
+                    <div
+                        style="position:absolute;top:16px;right:20px;font-family:var(--mono);font-size:10px;color:var(--green)">
+                        HIGH SCALE + STRONG BRAND</div>
+                    <div
+                        style="position:absolute;left:35%;top:25%;width:100px;height:100px;border-radius:50%;background:var(--orange);display:flex;flex-direction:column;align-items:center;justify-content:center">
+                        <div style="font-size:14px;font-weight:800">SEA BREEZE</div>
+                        <div style="font-size:10px">$6B mega</div>
+                    </div>
+                    <div
+                        style="position:absolute;right:18%;top:38%;width:90px;height:90px;border-radius:50%;background:var(--accent);display:flex;flex-direction:column;align-items:center;justify-content:center">
+                        <div style="font-size:14px;font-weight:800">PASHA</div>
+                        <div style="font-size:10px">RE Group</div>
+                    </div>
+                    <div
+                        style="position:absolute;left:28%;top:52%;width:65px;height:65px;border-radius:50%;background:#6b7280;display:flex;flex-direction:column;align-items:center;justify-content:center">
+                        <div style="font-size:11px;font-weight:700">ADEC</div>
+                        <div style="font-size:9px">White City</div>
+                    </div>
+                    <div
+                        style="position:absolute;left:18%;top:68%;width:50px;height:50px;border-radius:50%;background:#4b5563;display:flex;flex-direction:column;align-items:center;justify-content:center">
+                        <div style="font-size:10px;font-weight:700">Others</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Competitive Advantage Assessment</div>
+                <table>
+                    <tr>
+                        <th>Dimension</th>
+                        <th style="color:var(--accent2)">Pasha</th>
+                        <th style="color:var(--orange)">Sea Breeze</th>
+                        <th>White City (ADEC)</th>
+                    </tr>
+                    <tr>
+                        <td>Brand Partners</td>
+                        <td style="color:var(--accent2)">FS, JWM, MO ✓✓✓</td>
+                        <td style="color:var(--orange)">Local/regional brands</td>
+                        <td>Limited visibility</td>
+                    </tr>
+                    <tr>
+                        <td>Operational Assets</td>
+                        <td style="color:var(--accent2)">Mall + 2 Hotels live ✓</td>
+                        <td style="color:var(--orange)">Some phases live</td>
+                        <td>Early stage</td>
+                    </tr>
+                    <tr>
+                        <td>Total Investment</td>
+                        <td style="color:var(--accent2)">~$1-1.5B est.</td>
+                        <td style="color:var(--orange)">~$6B (claimed)</td>
+                        <td>Undisclosed</td>
+                    </tr>
+                    <tr>
+                        <td>Location Premium</td>
+                        <td style="color:var(--accent2)">Baku waterfront ✓</td>
+                        <td style="color:var(--orange)">Coastal, outside city</td>
+                        <td>Urban regeneration</td>
+                    </tr>
+                    <tr>
+                        <td>Residential Progress</td>
+                        <td style="color:var(--accent2)">~35% (Crescent)</td>
+                        <td style="color:var(--orange)">Phases advancing</td>
+                        <td>Early</td>
+                    </tr>
+                    <tr>
+                        <td>Execution Speed</td>
+                        <td style="color:var(--accent2)">Moderate</td>
+                        <td style="color:var(--orange)">Moderate</td>
+                        <td>Slow</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="callout callout-green">
+                <strong>PASHA's Structural Advantage:</strong> PASHA is the <span class="highlight">only developer in
+                    Azerbaijan with three global luxury hotel brands</span> attached to a single project. Sea Breeze is
+                larger in scale but lacks this brand density. White City is urban but hasn't demonstrated the same
+                brand-partnership ability. <span class="highlight-green">PASHA's moat is brand credibility, not scale —
+                    and that moat is deep.</span>
+            </div>
+        </section>
+
+        <!-- S9: SCENARIOS -->
+        <section>
+            <div class="section-label">Section 09 — Strategic Scenarios</div>
+            <div class="section-title">Three Futures for PASHA Real Estate Group</div>
+            <div class="section-intro">Instead of predicting one outcome, we model three distinct strategic paths — each
+                with different triggers, trajectories, and implications. Leadership should prepare for all three.</div>
+            <div class="grid-3" style="margin-bottom:24px">
+                <div class="scenario-card" style="border-top-color:var(--green)">
+                    <div
+                        style="font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--green);margin-bottom:8px">
+                        PATH 1 — ACCELERATION</div>
+                    <div style="font-size:20px;font-weight:700;margin-bottom:8px">The Growth Window</div>
+                    <div style="font-family:var(--mono);font-size:11px;color:var(--green);margin-bottom:12px">
+                        Probability: 15-25%</div>
+                    <div style="font-size:13px;color:var(--text-dim);margin-bottom:16px"><strong>Triggers:</strong> Oil
+                        stays >$70, IPO succeeds, Baku demand accelerates, AZN stable.</div>
+                    <div style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Revenue Growth</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:50px;height:6px;border-radius:3px;background:var(--green)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--green)">+15-25%</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Completion</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:50px;height:6px;border-radius:3px;background:var(--green)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--green)">2028-29</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">New Projects</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:50px;height:6px;border-radius:3px;background:var(--green)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--green)">LIKELY</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:16px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Diversification</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:50px;height:6px;border-radius:3px;background:var(--green)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--green)">STRONG</span>
+                        </div>
+                    </div>
+                    <div style="font-size:12px;color:var(--text-dim)">PASHA expands beyond Crescent Bay. Becomes
+                        regional developer. IPO validates brand.</div>
+                </div>
+                <div class="scenario-card" style="border-top-color:var(--yellow)">
+                    <div
+                        style="font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--yellow);margin-bottom:8px">
+                        PATH 2 — STEADY BUILD</div>
+                    <div style="font-size:20px;font-weight:700;margin-bottom:8px">The Marathon</div>
+                    <div style="font-family:var(--mono);font-size:11px;color:var(--yellow);margin-bottom:12px">
+                        Probability: 50-60%</div>
+                    <div style="font-size:13px;color:var(--text-dim);margin-bottom:16px"><strong>Triggers:</strong> Oil
+                        $55-70, IPO proceeds with moderate success, demand stable, gradual progress.</div>
+                    <div style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Revenue Growth</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:50px;height:6px;border-radius:3px;background:var(--yellow)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--yellow)">+5-10%</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Completion</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:50px;height:6px;border-radius:3px;background:var(--yellow)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--yellow)">2030-31</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">New Projects</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:50px;height:6px;border-radius:3px;background:var(--yellow)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--yellow)">UNLIKELY</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:16px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Diversification</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:50px;height:6px;border-radius:3px;background:var(--yellow)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--yellow)">GRADUAL</span>
+                        </div>
+                    </div>
+                    <div style="font-size:12px;color:var(--text-dim)">Crescent Bay completes. Portfolio stabilizes.
+                        Growth measured but sustainable.</div>
+                </div>
+                <div class="scenario-card" style="border-top-color:var(--red)">
+                    <div
+                        style="font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--red);margin-bottom:8px">
+                        PATH 3 — CONSOLIDATION</div>
+                    <div style="font-size:20px;font-weight:700;margin-bottom:8px">The Defensive Pivot</div>
+                    <div style="font-family:var(--mono);font-size:11px;color:var(--red);margin-bottom:12px">Probability:
+                        20-30%</div>
+                    <div style="font-size:13px;color:var(--text-dim);margin-bottom:16px"><strong>Triggers:</strong> Oil
+                        below $55, IPO delayed/weak, AZN pressure, demand softening.</div>
+                    <div style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Revenue</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:50px;height:6px;border-radius:3px;background:var(--red)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--red)">-5-15%</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Completion</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:50px;height:6px;border-radius:3px;background:var(--red)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--red)">2032-34</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Scope Changes</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:50px;height:6px;border-radius:3px;background:var(--red)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--red)">POSSIBLE</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:16px;display:flex;justify-content:space-between;align-items:center"><span
+                            style="font-size:13px">Capital Stress</span>
+                        <div style="display:flex;align-items:center;gap:8px">
+                            <div style="width:50px;height:6px;border-radius:3px;background:var(--red)"></div><span
+                                style="font-family:var(--mono);font-size:11px;color:var(--red)">HIGH</span>
+                        </div>
+                    </div>
+                    <div style="font-size:12px;color:var(--text-dim)">Focus shifts to protecting operational assets. New
+                        development paused. Capital preservation mode.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Probability-Weighted Outlook</div>
+                <div style="display:flex;height:48px;border-radius:8px;overflow:hidden">
+                    <div
+                        style="width:20%;background:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center">
+                        <div style="font-family:var(--mono);font-size:13px;font-weight:700">15-25%</div>
+                        <div style="font-family:var(--mono);font-size:9px;letter-spacing:1px">ACCELERATION</div>
+                    </div>
+                    <div
+                        style="width:55%;background:var(--yellow);display:flex;flex-direction:column;align-items:center;justify-content:center">
+                        <div style="font-family:var(--mono);font-size:13px;font-weight:700;color:#000">50-60%</div>
+                        <div style="font-family:var(--mono);font-size:9px;letter-spacing:1px;color:#000">STEADY BUILD —
+                            MOST LIKELY</div>
+                    </div>
+                    <div
+                        style="width:25%;background:var(--red);display:flex;flex-direction:column;align-items:center;justify-content:center">
+                        <div style="font-family:var(--mono);font-size:13px;font-weight:700">20-30%</div>
+                        <div style="font-family:var(--mono);font-size:9px;letter-spacing:1px">CONSOLIDATION</div>
+                    </div>
+                </div>
+            </div>
+            <div class="callout">
+                <strong>Strategic Implication:</strong> The base case (Steady Build) is a positive outcome — Crescent
+                Bay completes and the portfolio generates diversified revenue. But it takes time. <span
+                    class="highlight-red">The critical decision window is the next 18-24 months.</span> The IPO outcome,
+                oil trajectory, and residential launch speed will largely determine which path PASHA ends up on.
+            </div>
+        </section>
+
+        <!-- S10: DASHBOARD -->
+        <section>
+            <div class="section-label">Section 10 — Intelligence Dashboard</div>
+            <div class="section-title">Group-Level Early Warning System</div>
+            <div class="section-intro">10 leading indicators covering the full PASHA ecosystem — from macro conditions
+                to operational signals. Each is tracked against defined watch and risk thresholds. This dashboard should
+                be reviewed quarterly.</div>
+            <div class="card">
+                <div class="card-header">Strategic Monitoring Dashboard — Q1 2026</div>
+                <div
+                    style="font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--orange);margin-bottom:12px">
+                    MACRO ENVIRONMENT</div>
+                <div
+                    style="display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)">
+                    <div style="display:flex;align-items:flex-start;gap:10px">
+                        <div style="width:10px;height:10px;border-radius:50%;background:var(--green);margin-top:4px">
+                        </div>
+                        <div>
+                            <div style="font-weight:600">Oil Price (Brent)</div>
+                            <div style="font-size:12px;color:var(--text-dim)">~$75-80/bbl — above Azerbaijan comfort
+                                zone</div>
+                        </div>
+                    </div>
+                    <div style="text-align:right">
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--green)">STABLE</div>
+                        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)">Watch: &lt;$60 | Risk:
+                            &lt;$50</div>
+                    </div>
+                </div>
+                <div
+                    style="display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)">
+                    <div style="display:flex;align-items:flex-start;gap:10px">
+                        <div style="width:10px;height:10px;border-radius:50%;background:var(--green);margin-top:4px">
+                        </div>
+                        <div>
+                            <div style="font-weight:600">AZN Currency Stability</div>
+                            <div style="font-size:12px;color:var(--text-dim)">Pegged to USD at 1.70 — holding steady
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align:right">
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--green)">STABLE</div>
+                        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)">Watch: Peg pressure |
+                            Risk: Devaluation</div>
+                    </div>
+                </div>
+                <div
+                    style="display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)">
+                    <div style="display:flex;align-items:flex-start;gap:10px">
+                        <div style="width:10px;height:10px;border-radius:50%;background:var(--green);margin-top:4px">
+                        </div>
+                        <div>
+                            <div style="font-weight:600">Azerbaijan GDP Growth</div>
+                            <div style="font-size:12px;color:var(--text-dim)">+4.1% — positive macro backdrop</div>
+                        </div>
+                    </div>
+                    <div style="text-align:right">
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--green)">POSITIVE</div>
+                        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)">Watch: &lt;2% | Risk:
+                            Negative</div>
+                    </div>
+                </div>
+                <div
+                    style="font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--orange);margin:20px 0 12px">
+                    PASHA GROUP SIGNALS</div>
+                <div
+                    style="display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)">
+                    <div style="display:flex;align-items:flex-start;gap:10px">
+                        <div style="width:10px;height:10px;border-radius:50%;background:var(--yellow);margin-top:4px">
+                        </div>
+                        <div>
+                            <div style="font-weight:600">PASHA Bank IPO Progress</div>
+                            <div style="font-size:12px;color:var(--text-dim)">Announced Spring 2026 — no filing
+                                confirmation yet</div>
+                        </div>
+                    </div>
+                    <div style="text-align:right">
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--yellow)">WATCH</div>
+                        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)">Target: Q2 filing |
+                            Risk: Postponement</div>
+                    </div>
+                </div>
+                <div
+                    style="display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)">
+                    <div style="display:flex;align-items:flex-start;gap:10px">
+                        <div style="width:10px;height:10px;border-radius:50%;background:var(--green);margin-top:4px">
+                        </div>
+                        <div>
+                            <div style="font-weight:600">PASHA Hiring Activity</div>
+                            <div style="font-size:12px;color:var(--text-dim)">400+ active job postings — expansion
+                                signal</div>
+                        </div>
+                    </div>
+                    <div style="text-align:right">
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--green)">POSITIVE</div>
+                        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)">Watch: &lt;100
+                            postings | Risk: Freeze</div>
+                    </div>
+                </div>
+                <div
+                    style="display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)">
+                    <div style="display:flex;align-items:flex-start;gap:10px">
+                        <div style="width:10px;height:10px;border-radius:50%;background:var(--green);margin-top:4px">
+                        </div>
+                        <div>
+                            <div style="font-weight:600">Brand Partner Stability</div>
+                            <div style="font-size:12px;color:var(--text-dim)">All 3 brands (FS, JWM, MO) confirmed and
+                                active</div>
+                        </div>
+                    </div>
+                    <div style="text-align:right">
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--green)">STABLE</div>
+                        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)">Watch: Contract
+                            signals | Risk: Exit</div>
+                    </div>
+                </div>
+                <div
+                    style="font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--orange);margin:20px 0 12px">
+                    MARKET &amp; COMPETITION</div>
+                <div
+                    style="display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)">
+                    <div style="display:flex;align-items:flex-start;gap:10px">
+                        <div style="width:10px;height:10px;border-radius:50%;background:var(--green);margin-top:4px">
+                        </div>
+                        <div>
+                            <div style="font-weight:600">Baku Residential Price Index</div>
+                            <div style="font-size:12px;color:var(--text-dim)">+10-14% annual growth — strong upward
+                                trend</div>
+                        </div>
+                    </div>
+                    <div style="text-align:right">
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--green)">FAVORABLE</div>
+                        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)">Watch: &lt;5% | Risk:
+                            Declining</div>
+                    </div>
+                </div>
+                <div
+                    style="display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)">
+                    <div style="display:flex;align-items:flex-start;gap:10px">
+                        <div style="width:10px;height:10px;border-radius:50%;background:var(--yellow);margin-top:4px">
+                        </div>
+                        <div>
+                            <div style="font-weight:600">Home Loan Availability</div>
+                            <div style="font-size:12px;color:var(--text-dim)">Declining since 2024 — potential demand
+                                constraint</div>
+                        </div>
+                    </div>
+                    <div style="text-align:right">
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--yellow)">WATCH</div>
+                        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)">Watch: Continued drop
+                            | Risk: Credit freeze</div>
+                    </div>
+                </div>
+                <div
+                    style="display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)">
+                    <div style="display:flex;align-items:flex-start;gap:10px">
+                        <div style="width:10px;height:10px;border-radius:50%;background:var(--yellow);margin-top:4px">
+                        </div>
+                        <div>
+                            <div style="font-weight:600">Competitor Progress (Sea Breeze)</div>
+                            <div style="font-size:12px;color:var(--text-dim)">Residential phases advancing — timing race
+                                active</div>
+                        </div>
+                    </div>
+                    <div style="text-align:right">
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--yellow)">WATCH</div>
+                        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)">Watch: Pre-sales
+                            launch | Risk: Lower pricing</div>
+                    </div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0">
+                    <div style="display:flex;align-items:flex-start;gap:10px">
+                        <div style="width:10px;height:10px;border-radius:50%;background:var(--green);margin-top:4px">
+                        </div>
+                        <div>
+                            <div style="font-weight:600">Tourism Arrivals (Hotel Proxy)</div>
+                            <div style="font-size:12px;color:var(--text-dim)">Azerbaijan tourism growing — supports
+                                hotel occupancy</div>
+                        </div>
+                    </div>
+                    <div style="text-align:right">
+                        <div style="font-family:var(--mono);font-size:11px;color:var(--green)">POSITIVE</div>
+                        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)">Watch: Flat growth |
+                            Risk: Decline</div>
+                    </div>
+                </div>
+                <div style="margin-top:16px;font-size:12px;color:var(--text-dim)"><span style="margin-right:16px">🟢
+                        Stable / Favorable (7)</span><span style="margin-right:16px">🟡 Watch — Monitor
+                        (3)</span><span>🔴 Risk Emerging (0)</span></div>
+            </div>
+            <div class="callout callout-green">
+                <strong>Current Group-Level Reading:</strong> 7 of 10 indicators are stable/favorable. 3 are on watch
+                (IPO timing, lending availability, competitor timing). Zero are in risk territory. The overall strategic
+                environment is <span class="highlight">supportive but time-sensitive</span> — the favorable window is
+                open now, but the question is whether PASHA can execute fast enough to capture it.
+            </div>
+        </section>
+
+        <!-- INTERNAL DATA + METHODOLOGY -->
+        <section>
+            <div class="card">
+                <div class="card-header">🔍 What Internal Data Would Sharpen This Intelligence</div>
+                <div class="grid-2">
+                    <div>
+                        <div style="font-weight:700;margin-bottom:10px">Financial Data</div>
+                        <ul style="font-size:13px;color:var(--text-dim);line-height:2;padding-left:16px">
+                            <li>Group consolidated financials</li>
+                            <li>Segment-level revenue / margin</li>
+                            <li>PASHA Bank lending terms to construction</li>
+                            <li>Debt structure and covenant details</li>
+                            <li>IPO prospectus (when available)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div style="font-weight:700;margin-bottom:10px">Operational Data</div>
+                        <ul style="font-size:13px;color:var(--text-dim);line-height:2;padding-left:16px">
+                            <li>Hotel occupancy and ADR data</li>
+                            <li>Mall tenant mix and rental yield</li>
+                            <li>Residential pre-sales / absorption</li>
+                            <li>Construction pipeline and timelines</li>
+                            <li>Brand contract terms and renewal dates</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top:16px;font-size:13px"><strong style="color:var(--accent2)">With internal data,
+                        Orbital transforms these structural models from range-based estimates into precision strategic
+                        tools.</strong> <span style="color:var(--text-dim)">This report demonstrates the framework.
+                        Phase 1 engagement delivers 3-5x sharper resolution.</span></div>
+            </div>
+            <div class="callout" style="margin-top:24px">
+                <strong>Methodology Note:</strong> This Strategic Outlook uses probabilistic structural modeling based
+                on public information, international benchmarks (IMF, World Bank, RICS, Turner &amp; Townsend), industry
+                comparables, and scenario intelligence. All projections are presented as probability-weighted ranges.
+                This is strategic intelligence — not an audit, forecast, or financial certification.
+            </div>
+        </section>
+
+        <!-- CLOSING -->
+        <section
+            style="min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:none">
+            <div
+                style="font-family:var(--mono);font-size:13px;letter-spacing:3px;color:var(--text-dim);margin-bottom:16px">
+                ORBITAL INTELLIGENCE SYSTEM</div>
+            <h2 style="font-size:28px;font-weight:700;margin-bottom:16px">Strategic Forward Outlook Complete</h2>
+            <div style="font-size:15px;color:var(--text-dim);max-width:600px;margin-bottom:32px">This report should be
+                read alongside the companion reports for comprehensive strategic understanding.</div>
+            <div style="font-family:var(--mono);font-size:12px;color:var(--text-dim);line-height:2.2">
+                REPORT 1 — Detailed Intelligence Report (Diagnostic)<br>
+                REPORT 2 — Visual Executive Snapshot (CEO Briefing)<br>
+                REPORT 3 — Crescent Bay Forward Outlook (Project Deep-Dive)<br>
+                REPORT 4 — Group Strategic Outlook (This Report)
+            </div>
+            <div style="margin-top:32px;font-family:var(--mono);font-size:11px;color:var(--text-dim);line-height:2">
+                Prepared by Khaldun Systems — Orbital Advisory Division<br>
+                Classification: Strategic — Client Confidential
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

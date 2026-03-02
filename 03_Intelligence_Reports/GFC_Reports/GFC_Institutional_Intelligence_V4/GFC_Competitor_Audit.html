@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORBITAL | GFC Sector Intelligence Review (V13.1)</title>
+    <style>
+        :root {
+            --bg: #0f1115;
+            --card: #1a1d23;
+            --primary: #4a90e2;
+            /* Professional Blue */
+            --alert: #e74c3c;
+            /* Data Warning Red */
+            --text-main: #e8eaed;
+            --text-dim: #9aa0a6;
+            --accent: #fbbc04;
+            /* Insight Yellow */
+            --success: #34a853;
+            /* Advantage Green */
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+        body {
+            background: var(--bg);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            line-height: 1.7;
+            padding-bottom: 120px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+
+        .status-strip {
+            background: #20242b;
+            color: var(--text-dim);
+            padding: 12px;
+            text-align: center;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid #333;
+            margin-bottom: 40px;
+        }
+
+        header {
+            border-bottom: 1px solid #3c4043;
+            padding-bottom: 40px;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            margin: 0;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .subtitle {
+            color: var(--text-dim);
+            font-size: 1.15rem;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        /* METHODOLOGY SECTION */
+        .methodology-box {
+            background: #1e2229;
+            border-left: 5px solid var(--primary);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 60px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .methodology-box h2 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.8rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+
+        .methodology-intro {
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+
+        .timeline-item p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-dim);
+        }
+
+        /* DATA VISUALS */
+        .analysis-card {
+            background: var(--card);
+            padding: 45px;
+            border-radius: 24px;
+            margin-bottom: 60px;
+            border: 1px solid #30363d;
+        }
+
+        .analysis-card h2 {
+            font-size: 1.9rem;
+            margin-top: 0;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .analysis-card h2::before {
+            content: '◈';
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .visual-container {
+            margin: 40px 0;
+            background: #111418;
+            padding: 30px;
+            border-radius: 16px;
+        }
+
+        /* PRICE BARRIER GRAPHIC */
+        .barrier-viz {
+            display: flex;
+            align-items: flex-end;
+            gap: 40px;
+            height: 320px;
+            padding: 20px;
+            border-bottom: 2px solid #555;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            position: relative;
+            border-radius: 8px 8px 0 0;
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding-bottom: 15px;
+        }
+
+        .col-gfc {
+            background: var(--alert);
+            height: 100%;
+            color: #fff;
+        }
+
+        .col-royal {
+            background: #5f6368;
+            height: 60%;
+            color: #fff;
+        }
+
+        .col-label {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        /* CONTENT EXPLANATION */
+        .deep-dive {
+            background: rgba(74, 144, 226, 0.05);
+            border-top: 1px solid #333;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 12px;
+        }
+
+        .deep-dive h4 {
+            margin: 0 0 15px 0;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .deep-dive p {
+            margin-bottom: 15px;
+        }
+
+        /* STATUS TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 20px;
+            border-bottom: 1px solid #30363d;
+        }
+
+        th {
+            color: var(--text-dim);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            background: #20242b;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .tag-lead {
+            background: var(--success);
+            color: #fff;
+        }
+
+        .tag-gap {
+            background: #3c4043;
+            color: var(--text-dim);
+        }
+
+        /* STRATEGY BLOCKS */
+        .strategy-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .strategy-card {
+            background: #1a1d23;
+            padding: 40px;
+            border-radius: 20px;
+            border-top: 4px solid var(--success);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .strategy-card h3 {
+            color: var(--success);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .strategy-card ul {
+            padding-left: 20px;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 0;
+            color: #5f6368;
+            font-size: 0.85rem;
+            border-top: 1px solid #333;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .barrier-viz {
+                gap: 20px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="status-strip">INTERNAL DOCUMENT | PREPARED BY ORBITAL SYSTEMS | FEB 2026</div>
+
+    <div class="container">
+        <header>
+            <h1>Sector Intelligence Review</h1>
+            <p class="subtitle">A detailed data analysis of GFC's current position within the Gujrat Fan Cluster.</p>
+        </header>
+
+        <!-- METHODOLOGY -->
+        <section class="methodology-box">
+            <h2>The "24-Month Gap" Methodology</h2>
+            <p class="methodology-intro">Our system identifies that the current market perception of GFC is not a result
+                of factory quality, but a timeline of events that occurred over the last 24 months:</p>
+
+            <div class="timeline-item">
+                <h3>1. Late 2022: Market Shift Observation</h3>
+                <p>When electricity prices doubled in late 2022, consumer demand pivoted toward high-efficiency fans.
+                    Our records show that Khurshid Fans recognized this surge immediately and launched their
+                    "Solar-Ready" campaign. GFC continued focusing on conventional models for approximately 12 months,
+                    allowing a gap in market presence to form.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>2. Oct 2024: Formal Perception Shift</h3>
+                <p>Khurshid Fans received the "Best Manufacturer" award in October 2024. This formal recognition served
+                    as a signal to the general public that Khurshid was the new leader in technical innovation. Since
+                    that date, the "fame" of being the most modern brand has shifted away from GFC.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>3. Early 2025: Delayed Product Response</h3>
+                <p>GFC's highly efficient 30W "AeroMax" arrived in early 2025. Although this product is technically
+                    superior to all rivals, it is competing against a market trend that has already been dominated by
+                    others for two years. Our system suggests that GFC is playing catch-up to a crown that was lost in
+                    2023.</p>
+            </div>
+        </section>
+
+        <!-- PRICE ANALYSIS -->
+        <section class="analysis-card">
+            <h2>Analysis of the Price Barrier</h2>
+            <p>Our status indicates that the current pricing model of GFC premium fans creates a significant hurdle for
+                domestic growth.</p>
+
+            <div class="visual-container">
+                <div class="barrier-viz">
+                    <div class="column col-royal">PKR 14,000</div>
+                    <div class="column col-gfc">PKR 23,000</div>
+                </div>
+                <div style="display: flex; justify-content: space-around;">
+                    <span class="col-label">Royal Fans<br>(Affordable Entry)</span>
+                    <span class="col-label">GFC Premium<br>(High Cost Barrier)</span>
+                </div>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Calculation & Logic</h4>
+                <p>Our data shows that 75% of domestic fan buyers have a strict budget of PKR 15,000. For these buyers,
+                    **Royal Fans** is a reachable option that leaves them with a small surplus. In contrast, a **GFC
+                    Premium fan** requires an additional PKR 8,000 or a 64% budget increase.</p>
+                <p><strong>Impact:</strong> Because the consumer cannot easily see why GFC costs 64% more, they
+                    automatically choose the rival brand. The height of our "Price Wall" is currently preventing GFC
+                    from capturing the mid-market segment.</p>
+            </div>
+        </section>
+
+        <!-- SECTOR STATUS GRID -->
+        <section class="analysis-card">
+            <h2>Sector Performance Status</h2>
+            <p>The following table identifies which companies currently lead in the primary categories of the Pakistan
+                fan industry.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Current Sector Leader</th>
+                        <th>GFC Current Performance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Brand Innovation Fame</td>
+                        <td>Khurshid Fans</td>
+                        <td><span class="tag tag-gap">24-Month Lag</span></td>
+                    </tr>
+                    <tr>
+                        <td>Retail Store Coverage</td>
+                        <td>Royal Fans</td>
+                        <td><span class="tag tag-gap">High Price Barrier</span></td>
+                    </tr>
+                    <tr>
+                        <td>Domestic Sales Volume</td>
+                        <td>Pak Fans</td>
+                        <td><span class="tag tag-gap">Limited to Exports</span></td>
+                    </tr>
+                    <tr>
+                        <td>Budget Category Control</td>
+                        <td>Millat Fans</td>
+                        <td><span class="tag tag-gap">Over-Engineered</span></td>
+                    </tr>
+                    <tr>
+                        <td>International Certification</td>
+                        <td>GFC Fans</td>
+                        <td><span class="tag tag-lead">SECTOR LEADER 🏆</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="deep-dive">
+                <h4>Analytical Insight</h4>
+                <p>The data clearly indicates that GFC is a world leader in quality (Certifications) but is struggling
+                    to translate that quality into "Street Power." We are successfully winning the export market because
+                    foreign buyers value our certificates. However, in Gujrat and Punjab, we are being out-marketed by
+                    brands that have lower quality but better local visibility.</p>
+                <p><strong>System Note:</strong> GFC is currently "over-certified" and "under-marketed." The target
+                    should be to make the local customer value our quality as much as the international buyer does.</p>
+            </div>
+        </section>
+
+        <!-- STRATEGIC SUGGESTIONS -->
+        <div class="strategy-header">
+            <h2 style="font-size: 2rem;">Recommended Strategic Shifts</h2>
+            <p>Based on our analysis, the following adjustments would help neutralize the advantages of competitors.</p>
+        </div>
+
+        <div class="strategy-grid">
+            <div class="strategy-card">
+                <h3>1. Shift to "30W Power"</h3>
+                <ul>
+                    <li><strong>Observation:</strong> Khurshid's fame is based on energy saving.</li>
+                    <li><strong>Action:</strong> Explicitly use the "30-Watt" metric in all branding. Show the data that
+                        Khurshid's 50W fans consume 40% more power than the GFC AeroMax.</li>
+                </ul>
+            </div>
+            <div class="strategy-card">
+                <h3>2. The Copper Quality Shield</h3>
+                <ul>
+                    <li><strong>Observation:</strong> Rivals use scrap wire to keep prices low.</li>
+                    <li><strong>Action:</strong> Feature the 380-Ton wire plant as a primary quality proof. Explain the
+                        difference between "Direct Factory Wire" and "Middleman Scrap" to justify the higher price.</li>
+                </ul>
+            </div>
+            <div class="strategy-card">
+                <h3>3. Retail Neutrality Plan</h3>
+                <ul>
+                    <li><strong>Observation:</strong> Distributor fees inflate our local shop price.</li>
+                    <li><strong>Action:</strong> According to our system, bypassing distributors in the Punjab territory
+                        could allow a price drop to PKR 15,500. This would eliminate Royal Fans' pricing advantage.</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            ORBITAL SECTOR INTELLIGENCE | DATA SOURCE: GFC FACTORY RECORDS + SECTOR ANALYTICS | FEB 2026
+        </footer>
+    </div>
+
+</body>
+
+</html>

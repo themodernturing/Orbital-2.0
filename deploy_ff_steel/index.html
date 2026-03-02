@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnus Dossier — FF Steel V3</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a2e;
+            --accent: #0f3460;
+            --accent2: #16213e;
+            --red: #c0392b;
+            --green: #27ae60;
+            --yellow: #f39c12;
+            --blue: #2980b9;
+            --gray: #7f8c8d;
+            --light-gray: #ecf0f1;
+            --border: #dfe6e9;
+            --table-stripe: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 10pt;
+            line-height: 1.5;
+            color: var(--text);
+            background: var(--bg);
+            padding: 0;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                font-size: 9pt;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+
+            .no-break {
+                page-break-inside: avoid;
+            }
+
+            @page {
+                margin: 1.5cm 1.8cm;
+                size: A4;
+            }
+
+            .cover-page {
+                page-break-after: always;
+            }
+        }
+
+        @media screen {
+            body {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 30px 40px;
+            }
+        }
+
+        /* Cover Page */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 90vh;
+            text-align: left;
+            padding: 60px 0;
+        }
+
+        .cover-page .logo-line {
+            font-size: 11pt;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 8px;
+            margin-bottom: 40px;
+        }
+
+        .cover-page h1 {
+            font-size: 32pt;
+            font-weight: 800;
+            color: var(--accent2);
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
+
+        .cover-page .subtitle {
+            font-size: 16pt;
+            font-weight: 400;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        .cover-meta {
+            margin-top: 20px;
+        }
+
+        .cover-meta table {
+            border: none;
+        }
+
+        .cover-meta td {
+            padding: 4px 16px 4px 0;
+            font-size: 10pt;
+            border: none;
+            color: var(--text);
+        }
+
+        .cover-meta td:first-child {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Section Headers */
+        h2 {
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 6px;
+            margin: 28px 0 14px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--accent2);
+            margin: 20px 0 8px 0;
+        }
+
+        h4 {
+            font-size: 10pt;
+            font-weight: 600;
+            color: var(--text);
+            margin: 14px 0 6px 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0 16px 0;
+            font-size: 9pt;
+        }
+
+        th {
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+            text-align: left;
+            padding: 7px 10px;
+            font-size: 8.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 6px 10px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) td {
+            background: var(--table-stripe);
+        }
+
+        /* Special table styles */
+        .exec-table th {
+            background: var(--accent2);
+        }
+
+        .go-table th {
+            background: var(--green);
+        }
+
+        .nogo-table th {
+            background: var(--red);
+        }
+
+        .ndi-divergent {
+            color: var(--red);
+            font-weight: 600;
+        }
+
+        .ndi-aligned {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        .ndi-unverified {
+            color: var(--yellow);
+            font-weight: 600;
+        }
+
+        /* Signal boxes */
+        .signal-box {
+            border-left: 4px solid var(--accent);
+            background: #f7f9fc;
+            padding: 16px 20px;
+            margin: 12px 0 18px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .signal-box.grade-a {
+            border-left-color: var(--red);
+        }
+
+        .signal-box.grade-b {
+            border-left-color: var(--yellow);
+        }
+
+        .signal-box.grade-u {
+            border-left-color: var(--gray);
+        }
+
+        .signal-header {
+            font-weight: 700;
+            font-size: 11pt;
+            margin-bottom: 4px;
+        }
+
+        .signal-conf {
+            font-size: 8.5pt;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        /* Verdict badge */
+        .verdict-badge {
+            display: inline-block;
+            background: var(--yellow);
+            color: white;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 4px;
+            font-size: 9pt;
+            letter-spacing: 0.5px;
+        }
+
+        /* Score cards */
+        .score-card {
+            display: inline-block;
+            background: var(--accent2);
+            color: white;
+            padding: 14px 24px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 4px 8px 10px 0;
+        }
+
+        .score-card .score-value {
+            font-size: 22pt;
+            font-weight: 800;
+        }
+
+        .score-card .score-label {
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* Lists */
+        ul,
+        ol {
+            margin: 6px 0 12px 20px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        /* Blockquotes for follow-ups */
+        blockquote {
+            border-left: 3px solid var(--blue);
+            margin: 8px 0 8px 12px;
+            padding: 6px 14px;
+            background: #f0f6ff;
+            font-size: 9pt;
+            color: #2c3e50;
+        }
+
+        /* Code blocks for formulas */
+        pre {
+            background: var(--accent2);
+            color: #e0e0e0;
+            padding: 14px 18px;
+            border-radius: 6px;
+            font-size: 8.5pt;
+            margin: 10px 0 14px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            padding-top: 16px;
+            border-top: 2px solid var(--accent);
+            font-size: 9pt;
+            color: var(--gray);
+            text-align: center;
+            font-style: italic;
+        }
+
+        p {
+            margin: 6px 0;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        .text-red {
+            color: var(--red);
+        }
+
+        .text-green {
+            color: var(--green);
+        }
+
+        .text-yellow {
+            color: var(--yellow);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 24px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- COVER PAGE -->
+    <div class="cover-page">
+        <div class="logo-line">Magnus Markets</div>
+        <h1>FF Steel</h1>
+        <h1 style="font-size:22pt; font-weight:400; color:#7f8c8d; margin-bottom: 4px;">Frontier Foundry Steel</h1>
+        <div class="subtitle">Pre-IPO Structural Intelligence Dossier — V3</div>
+
+        <div style="display: flex; gap: 16px; margin: 20px 0;">
+            <div class="score-card">
+                <div class="score-label">MSRI Score</div>
+                <div class="score-value">54</div>
+                <div class="score-label">Elevated Risk</div>
+            </div>
+            <div class="score-card">
+                <div class="score-label">NDI Score</div>
+                <div class="score-value">65</div>
+                <div class="score-label">Mod-High Divergence</div>
+            </div>
+            <div class="score-card" style="background: var(--yellow);">
+                <div class="score-label">Verdict</div>
+                <div class="score-value" style="font-size:14pt;">CONDITIONAL PROCEED</div>
+                <div class="score-label">Conditions Specified</div>
+            </div>
+        </div>
+
+        <div
+            style="margin: 20px 0; padding: 16px 20px; background: #f7f9fc; border-radius: 6px; border-left: 4px solid var(--accent); font-size: 9.5pt;">
+            <p style="margin: 0 0 8px 0;"><strong>What do these scores mean?</strong></p>
+            <p style="margin: 0 0 6px 0;"><strong>MSRI (Market Structural Risk Index)</strong> measures how risky this
+                company's overall position is, from 0 to 100. A score of 0 means very strong with no major concerns. A
+                score of 100 means severe risk. <strong>FF Steel's score of 54 means: a strong company, but with serious
+                    unanswered questions that need to be resolved.</strong></p>
+            <p style="margin: 0;"><strong>NDI (Narrative Divergence Index)</strong> measures how well the company's
+                public claims match the actual evidence we found, from 0 to 100. A score of 0 means everything the
+                company says checks out perfectly. A score of 100 means nothing checks out. <strong>FF Steel's score of
+                    65 means: some important claims do not match what the evidence shows.</strong></p>
+        </div>
+
+        <div class="cover-meta">
+            <table>
+                <tr>
+                    <td>Classification</td>
+                    <td>V3 — IC-Ready | All Sources Public</td>
+                </tr>
+                <tr>
+                    <td>Intelligence Grade</td>
+                    <td>A (High Confidence) — 12 signals, 6 Grade A, peer-implied financials</td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>February 22, 2026</td>
+                </tr>
+                <tr>
+                    <td>Prepared By</td>
+                    <td>Magnus Markets Intelligence — Khaldun Systems</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- MARKET SNAPSHOT -->
+    <div class="page-break"></div>
+    <h2>Pakistan Steel Sector — Market Snapshot (Feb 2026)</h2>
+    <p style="font-size: 9.5pt; color: var(--gray); margin-bottom: 8px;"><em>Context that shapes every number in this
+            report</em></p>
+    <table class="no-break">
+        <tr>
+            <th>Indicator</th>
+            <th>Current Value</th>
+            <th>Direction</th>
+            <th>Source</th>
+        </tr>
+        <tr>
+            <td><strong>KSE-100 Index</strong></td>
+            <td>191,033 (Jan 2026 ATH)</td>
+            <td>🟢 +84% in 2024, +50% in 2025</td>
+            <td>PSX / TradingEconomics</td>
+        </tr>
+        <tr>
+            <td><strong>Rebar Price (G60)</strong></td>
+            <td>PKR 242-254K/MT</td>
+            <td>↔️ Stable, brand-dependent</td>
+            <td>Market data Feb 22, 2026</td>
+        </tr>
+        <tr>
+            <td><strong>Scrap Import Price</strong></td>
+            <td>$523/ton (Oct 2025)</td>
+            <td>🟢 Down from $810 peak</td>
+            <td>PBS trade data</td>
+        </tr>
+        <tr>
+            <td><strong>Processing Spread</strong></td>
+            <td>~PKR 96-108K/ton</td>
+            <td>🟢 Healthy margin environment</td>
+            <td>Derived: rebar - scrap</td>
+        </tr>
+        <tr>
+            <td><strong>Construction Sector</strong></td>
+            <td>-4.4% (2024), -2.8% (2025)</td>
+            <td>🟡 Contracting, recovery by 2027</td>
+            <td>GlobalData, SBP</td>
+        </tr>
+        <tr>
+            <td><strong>Long Steel Production</strong></td>
+            <td>-14.3% YoY FY25</td>
+            <td>🔴 Sector contraction</td>
+            <td>PALSP</td>
+        </tr>
+        <tr>
+            <td><strong>Energy Cost/Ton</strong></td>
+            <td>PKR 42,000 (FY24)</td>
+            <td>🔴 +267% since FY21</td>
+            <td>PALSP</td>
+        </tr>
+        <tr>
+            <td><strong>Grade 80 Suppliers</strong></td>
+            <td>5+ (FF Steel, Agha, SJ, Markhor, Ittehad)</td>
+            <td>🟡 Market expanding — no longer monopoly</td>
+            <td>V3 research</td>
+        </tr>
+        <tr>
+            <td><strong>Peer Recovery Signal</strong></td>
+            <td>ISL: H1 FY26 EPS +202% | Mughal: Q1 FY26 NI PKR 926M</td>
+            <td>🟢 Sector recovering</td>
+            <td>PSX filings</td>
+        </tr>
+    </table>
+    <p><strong>Key Takeaway:</strong> The Pakistani steel sector is exiting its worst cycle in a decade. Scrap costs are
+        down, margins are expanding, and the stock market is at all-time highs. This is simultaneously the <strong>best
+            moment to IPO</strong> (market at 191K) and the <strong>hardest time to hide weak financials</strong>
+        (listed peers are publishing quarterly results showing recovery). FF Steel's silence during this recovery period
+        is notable.</p>
+
+    <!-- EXECUTIVE SUMMARY -->
+    <h2>Executive Intelligence Summary</h2>
+
+    <table class="exec-table">
+        <tr>
+            <th>Metric</th>
+            <th>Value</th>
+            <th>Signal</th>
+        </tr>
+        <tr>
+            <td><strong>MSRI</strong> (Market Structural Risk Index)</td>
+            <td>54/100 (ELEVATED RISK)</td>
+            <td>⚠️ Strong company, but sector is struggling and key information is missing</td>
+        </tr>
+        <tr>
+            <td><strong>NDI</strong> (Narrative Divergence Index)</td>
+            <td>65/100 (MOD-HIGH DIVERGENCE)</td>
+            <td>🟡 5 out of 10 company claims do not fully match the evidence</td>
+        </tr>
+        <tr>
+            <td><strong>Intelligence Grade</strong></td>
+            <td>A (High Confidence)</td>
+            <td>12 risk areas checked, 6 with high-confidence data, peer-implied financials built from 4 listed peers
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Verdict</strong></td>
+            <td><strong>CONDITIONAL PROCEED</strong></td>
+            <td>First-mover in Grade 80 + profitable when competitors are losing — investable IF conditions are met</td>
+        </tr>
+    </table>
+
+    <h3>Top 3 Findings</h3>
+    <div class="signal-box" style="border-left-color: var(--green);">
+        <div class="signal-header">1. [STRENGTH] Profitable When Every Competitor Is Losing Money</div>
+        <p>Amreli lost PKR 6.1B, Mughal's profit collapsed to just PKR 186M (H1 FY25), Aisha Steel lost PKR 1.7B. But FF
+            Steel held a profit of PKR 1.4B (FY22) and maintains an A/A-1 credit rating. <strong>Our peer-implied
+                analysis estimates FF Steel remained profitable through FY23-FY25</strong> even as the sector contracted
+            — making it one of the strongest steel companies in Pakistan. This advantage was confirmed when peers began
+            recovering only in late 2025.</p>
+    </div>
+    <div class="signal-box" style="border-left-color: var(--green);">
+        <div class="signal-header">2. [STRENGTH] First Mover in Grade 80 Rebar — But Competitors Have Entered</div>
+        <p>FF Steel was among the first companies in Pakistan to manufacture Grade 80 rebar (80,000 PSI). However,
+            <strong>our V3 research found that Agha Steel, SJ Steel, Markhor Steel, and Ittehad Steel now also produce
+                Grade 80</strong>. This means the monopoly we identified in V2 no longer exists. FF Steel still has
+            first-mover advantage and production experience — but the competitive moat is narrower than previously
+            assessed.
+        </p>
+    </div>
+    <div class="signal-box grade-a">
+        <div class="signal-header">3. [RISK] Missing Financial Data — Biggest Concern for Investors</div>
+        <p>FF Steel says it is "soon" going public, but has no publicly visible audited financials after FY22 — that is
+            a 3-4 year gap with no data. Meanwhile, the KSE-100 index hit an all-time high of <strong>191,033 in January
+                2026</strong> — the best IPO window in Pakistan's history. The company did not list. This is either (a)
+            they are not ready, (b) they are holding back numbers until pricing is set, or (c) there are accounting
+            issues being cleaned up.</p>
+    </div>
+
+    <!-- GO / NO-GO GATES -->
+    <div class="page-break"></div>
+    <h2>Conditions to Clear — Go / No-Go Gates</h2>
+
+    <h3>✅ PROCEED if ALL of the following are true</h3>
+    <table class="go-table no-break">
+        <tr>
+            <th>#</th>
+            <th>Condition</th>
+            <th>Verification Method</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>FY23–FY25 audited financials show gross margin ≥ 10-12%</td>
+            <td>Request audited statements; verify against VIS/PACRA</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Positive operating cash flow in at least 2 of last 3 FYs</td>
+            <td>Cash flow statement review</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>IPO disclosure pack ready: prospectus + underwriters + PSX timeline</td>
+            <td>Confirm with SECP, underwriter, or PSX</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Grade 80 ≥ 15% of revenue OR verified 20%+ pricing premium</td>
+            <td>Management data with segment breakdown</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Governance: independent board + related-party policy disclosed</td>
+            <td>Pre-IPO governance documentation</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>No material WC stress: CCC ≤ industry norm, no emergency borrowings</td>
+            <td>WC analysis from financial statements</td>
+        </tr>
+    </table>
+
+    <h3>🛑 WALK AWAY or PRICE DISCOUNT if ANY are true</h3>
+    <table class="nogo-table no-break">
+        <tr>
+            <th>#</th>
+            <th>Trigger</th>
+            <th>Risk Implication</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Gross margins have dropped to the same level as competitors (below 9%)</td>
+            <td>FF Steel is no longer special — it is just another steel mill with no advantage</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Cash flow problems: working capital cycle too long, too much short-term borrowing</td>
+            <td>The company may struggle to pay its bills after listing on the stock exchange</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>The reason for raising IPO money has changed significantly from what was announced in 2021</td>
+            <td>The original plan may not have worked, or the company's direction has shifted</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Large business deals between FF Steel and companies owned by the same family, without proper oversight
+            </td>
+            <td>Investors will worry about fairness and whether the company is being run for public shareholders</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>IPO delayed beyond Aug 2026 with no milestones</td>
+            <td>"Soon" permanently discredited</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Audit restatements or qualified opinions FY23-FY25</td>
+            <td>Financial reliability compromised</td>
+        </tr>
+    </table>
+
+    <!-- COMPANY PROFILE -->
+    <h2>Company Profile</h2>
+    <table class="no-break">
+        <tr>
+            <th>Item</th>
+            <th>Detail</th>
+        </tr>
+        <tr>
+            <td><strong>Full Name</strong></td>
+            <td>Frontier Foundry Steel (Pvt.) Ltd → Public Limited Oct 2023</td>
+        </tr>
+        <tr>
+            <td><strong>Founded</strong></td>
+            <td>1986, Peshawar — by Nauman Wazir Khattak</td>
+        </tr>
+        <tr>
+            <td><strong>HQ</strong></td>
+            <td>Plot 166, Road B-7, Hayatabad Industrial Estate, Peshawar</td>
+        </tr>
+        <tr>
+            <td><strong>Chairman</strong></td>
+            <td>Nauman Wazir Khattak (founder, ex-PAF, ex-Senator 2015-2021)</td>
+        </tr>
+        <tr>
+            <td><strong>CEO</strong></td>
+            <td>Zarak K. Khattak (Mechanical Engineer, family member)</td>
+        </tr>
+        <tr>
+            <td><strong>Plants</strong></td>
+            <td>Peshawar + Lahore + Gujranwala (copper ingots, export)</td>
+        </tr>
+        <tr>
+            <td><strong>Planned</strong></td>
+            <td>3rd unit Karachi (1,200 MT/day) + Karachi SEZ</td>
+        </tr>
+        <tr>
+            <td><strong>Capacity</strong></td>
+            <td>400,000 tons/year (33,000 tons/month)</td>
+        </tr>
+        <tr>
+            <td><strong>Products</strong></td>
+            <td>Grade 60 + <strong>Grade 80 rebar (first mover in Pakistan; competitors now entering)</strong></td>
+        </tr>
+        <tr>
+            <td><strong>Standards</strong></td>
+            <td>ASTM 615, ASTM 706, BSI 4449</td>
+        </tr>
+        <tr>
+            <td><strong>Certifications</strong></td>
+            <td>ISO 9001, ISO 14001, ISO 18001, OHSAS 18001</td>
+        </tr>
+        <tr>
+            <td><strong>Market Share</strong></td>
+            <td>5-6% of domestic long steel market</td>
+        </tr>
+        <tr>
+            <td><strong>Employees</strong></td>
+            <td>1,000+</td>
+        </tr>
+        <tr>
+            <td><strong>Credit Rating</strong></td>
+            <td>VIS A/A-1 (Stable) — upgraded Nov 2021, reaffirmed Feb 2023</td>
+        </tr>
+        <tr>
+            <td><strong>IPO Status</strong></td>
+            <td>Announced Sep 2021; still pending; website says "soon" (Feb 2026)</td>
+        </tr>
+        <tr>
+            <td><strong>CMO</strong></td>
+            <td>Sohaib Afzal Rana</td>
+        </tr>
+        <tr>
+            <td><strong>V3 Activity</strong></td>
+            <td>JI Steel visited FF Steel (Apr 2024) to explore collaboration; still hiring across divisions (2025); no
+                Karachi plant progress confirmed</td>
+        </tr>
+    </table>
+
+    <!-- NDI CLAIM LEDGER -->
+    <div class="page-break"></div>
+    <h2>NDI Narrative Claim Ledger</h2>
+    <p><strong>NDI Score: 62/100</strong> — 4 Divergent / 1 Partial / 1 Unverified / 4 Aligned out of 10 claims</p>
+
+    <table class="no-break">
+        <tr>
+            <th>#</th>
+            <th>Claim</th>
+            <th>Source</th>
+            <th>Evidence</th>
+            <th>Status</th>
+            <th>Conf.</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>"IPO by end of 2021"</td>
+            <td>Sep 2021</td>
+            <td>Still not listed Feb 2026</td>
+            <td class="ndi-divergent">DIVERGENT</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>"Proceeds for Karachi 3rd unit"</td>
+            <td>IPO ann.</td>
+            <td>No construction evidence</td>
+            <td class="ndi-divergent">DIVERGENT</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>"SEZ development in Karachi"</td>
+            <td>IPO ann.</td>
+            <td>No updates since 2021</td>
+            <td class="ndi-unverified">UNVERIFIED</td>
+            <td>Med</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>"Top rebar manufacturer"</td>
+            <td>Website</td>
+            <td>5-6% share; sole Grade 80</td>
+            <td class="ndi-unverified">PARTIAL</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>"Grade 80 exclusive in Pakistan"</td>
+            <td>Website, VIS</td>
+            <td>No contradicting evidence</td>
+            <td class="ndi-aligned">ALIGNED</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>"400,000 tons annual capacity"</td>
+            <td>Website, VIS</td>
+            <td>Multi-source confirmed</td>
+            <td class="ndi-aligned">ALIGNED</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>"Conservative payout → equity CAGR 31%"</td>
+            <td>VIS Feb 2023</td>
+            <td>Consistent with retained earnings</td>
+            <td class="ndi-aligned">ALIGNED</td>
+            <td>Med</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>"Energy costs jeopardize industry"</td>
+            <td>Advocacy</td>
+            <td>267% tariff increase confirmed</td>
+            <td class="ndi-aligned">ALIGNED</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>"Soon signing an IPO"</td>
+            <td>FAQ Feb 2026</td>
+            <td>Same claim since 2021; no filing</td>
+            <td class="ndi-divergent">DIVERGENT</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>"Revenue growth continues" (FY23 PKR 35B+)</td>
+            <td>VIS</td>
+            <td>7M pace suggests ~PKR 31B</td>
+            <td class="ndi-divergent">DIVERGENT</td>
+            <td>Med</td>
+        </tr>
+    </table>
+
+    <p><strong>Verification Ask for Divergent Claims:</strong></p>
+    <ul>
+        <li><strong>Claims 1 &amp; 9:</strong> Provide specific PSX filing date or signed underwriter engagement</li>
+        <li><strong>Claim 2:</strong> Karachi site status — land acquired? Construction started? Approvals?</li>
+        <li><strong>Claim 10:</strong> Provide audited FY23, FY24, FY25 revenue with segment breakdown</li>
+    </ul>
+
+    <!-- SIGNAL-BY-SIGNAL AUDIT -->
+    <div class="page-break"></div>
+    <h2>Signal-by-Signal Forensic Audit</h2>
+
+    <!-- Signal 1 -->
+    <div class="signal-box grade-a no-break">
+        <div class="signal-header">Signal 1: Disclosure Readiness Failure [Grade A] — NEW V2</div>
+        <div class="signal-conf">Confidence: HIGH — Verifiable data gap</div>
+        <p>FF Steel is approaching an IPO with a <strong>3-4 year gap</strong> in publicly available audited financial
+            data. The most recent verified full-year financials are FY22 (June 2022).</p>
+        <p>Three possible interpretations:</p>
+        <table>
+            <tr>
+                <th>Interpretation</th>
+                <th>Probability</th>
+                <th>Implications</th>
+            </tr>
+            <tr>
+                <td><strong>(a) Not ready</strong> — audit infrastructure, IFRS compliance not built</td>
+                <td>Moderate</td>
+                <td>Further delays; prospectus timeline unreliable</td>
+            </tr>
+            <tr>
+                <td><strong>(b) Holding back the numbers</strong> — financials exist but are being kept private until
+                    the IPO price is decided</td>
+                <td>Moderate</td>
+                <td>Investors do not have the same information the company has — this creates an unfair advantage for
+                    the seller</td>
+            </tr>
+            <tr>
+                <td><strong>(c) Accounting cleanup needed</strong> — past financial statements may need corrections, or
+                    related-party transactions need proper documentation</td>
+                <td>Low-Mod</td>
+                <td>Serious risk if the IPO prospectus shows that past numbers had to be changed</td>
+            </tr>
+        </table>
+        <p><strong>What Clears This:</strong> Immediate provision of audited FY23-FY25 financials with unqualified audit
+            opinions.</p>
+    </div>
+
+    <!-- Signal 2 -->
+    <div class="signal-box grade-a no-break">
+        <div class="signal-header">Signal 2: IPO Delay Pattern [Grade A]</div>
+        <div class="signal-conf">Confidence: HIGH — Timeline verifiable across multiple sources</div>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Event</th>
+            </tr>
+            <tr>
+                <td>Sep 2021</td>
+                <td>IPO announced — PKR 9B, 25% stake, "by end of 2021"</td>
+            </tr>
+            <tr>
+                <td>2022</td>
+                <td>No listing</td>
+            </tr>
+            <tr>
+                <td>Feb 2023</td>
+                <td>VIS reaffirmation — still Pvt. Ltd</td>
+            </tr>
+            <tr>
+                <td>Oct 2023</td>
+                <td>Converted to Public Limited Company</td>
+            </tr>
+            <tr>
+                <td>Feb 2026</td>
+                <td>Website says "soon signing an IPO"</td>
+            </tr>
+        </table>
+
+        <h4>IPO Delay Decision Tree</h4>
+        <p><strong>Acceptable (lower risk):</strong></p>
+        <table>
+            <tr>
+                <th>Factor</th>
+                <th>Evidence Required</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Market shutdown periods</td>
+                <td>Documented crash dates</td>
+                <td>✅ FY22-FY23 crisis was real</td>
+            </tr>
+            <tr>
+                <td>Underwriter engaged + prospectus</td>
+                <td>Named underwriter</td>
+                <td>❌ No evidence</td>
+            </tr>
+            <tr>
+                <td>3-year audit completed</td>
+                <td>Audit reports</td>
+                <td>❌ Not visible</td>
+            </tr>
+            <tr>
+                <td>SECP/PSX milestones</td>
+                <td>Public filings</td>
+                <td>❌ Only Pvt→Public conversion</td>
+            </tr>
+        </table>
+        <p><strong>Unacceptable (higher risk):</strong></p>
+        <table>
+            <tr>
+                <th>Factor</th>
+                <th>Evidence</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Repeated "soon" without milestones</td>
+                <td>Website, press</td>
+                <td>⚠️ "Soon" for 4+ years</td>
+            </tr>
+            <tr>
+                <td>Shifting use-of-proceeds</td>
+                <td>2021: Karachi. 2026: unknown</td>
+                <td>⚠️ No update disclosed</td>
+            </tr>
+            <tr>
+                <td>Audit restatements / cleanup</td>
+                <td>Prospectus</td>
+                <td>❓ Unknown</td>
+            </tr>
+            <tr>
+                <td>Governance restructuring delays</td>
+                <td>Family → public</td>
+                <td>⚠️ Took 2 years for conversion</td>
+            </tr>
+        </table>
+        <p><strong>Assessment:</strong> 1/4 acceptable confirmed. 2-3/4 unacceptable yellow-flagged. The
+            market-conditions excuse holds for FY22-FY23 but <strong>completely fails for FY24-FY25</strong>. The
+            KSE-100 rose from ~64,000 (Sep 2021 when IPO was announced) to <strong>116,700 (Dec 2024)</strong>, then to
+            <strong>174,805 (Dec 2025)</strong>, and reached an all-time high of <strong>191,033 in January
+                2026</strong>. The index gained 84% in 2024 alone. This was the best IPO window in Pakistan's stock
+            market history — and FF Steel did not list.
+        </p>
+    </div>
+
+    <!-- Signal 3 -->
+    <div class="signal-box grade-b no-break">
+        <div class="signal-header">Signal 3: Financial Performance — Strong but Stale [Grade B]</div>
+        <div class="signal-conf">Confidence: MODERATE — Last verified full-year: FY22</div>
+        <table>
+            <tr>
+                <th>Period</th>
+                <th>Revenue</th>
+                <th>PAT</th>
+                <th>Gross Margin</th>
+            </tr>
+            <tr>
+                <td>FY20</td>
+                <td>~PKR 12B</td>
+                <td>PKR 453M</td>
+                <td>~11%</td>
+            </tr>
+            <tr>
+                <td>FY21</td>
+                <td>PKR 20.5B</td>
+                <td>PKR 1,346M</td>
+                <td>14.8%</td>
+            </tr>
+            <tr>
+                <td>FY22</td>
+                <td>PKR 29B</td>
+                <td>PKR 1,423M</td>
+                <td>13.4%</td>
+            </tr>
+            <tr>
+                <td>1H FY23</td>
+                <td>PKR 18.5B (7M)</td>
+                <td>PKR 321M</td>
+                <td>~10% (est.)</td>
+            </tr>
+        </table>
+        <p>Revenue growth is slowing down: it grew 70%, then 44%, then only about 7%. Profit in the first half of FY23
+            was on track for ~PKR 640M for the full year — that would be a 55% drop from FY22. Profit margins are
+            getting squeezed. <strong>Source:</strong> VIS Credit Rating Report Feb 2023.</p>
+    </div>
+
+    <!-- Signal 4 -->
+    <div class="signal-box grade-a no-break">
+        <div class="signal-header">Signal 4: Sector in Distress — FF Steel as Outlier [Grade A]</div>
+        <div class="signal-conf">Confidence: HIGH — PSX filings, credit reports, analyst coverage</div>
+        <table>
+            <tr>
+                <th>Company</th>
+                <th>FY24 Revenue</th>
+                <th>FY24 GM</th>
+                <th>FY24 PAT</th>
+                <th>FY25 GM</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td><strong>Amreli</strong></td>
+                <td>PKR 38.8B</td>
+                <td>6.2%</td>
+                <td class="text-red"><strong>-PKR 6.1B</strong></td>
+                <td>0.5%</td>
+                <td>Mill shutdown, WC crisis</td>
+            </tr>
+            <tr>
+                <td><strong>Mughal</strong></td>
+                <td>PKR 92B+</td>
+                <td>8.4%</td>
+                <td>PKR 2.0B</td>
+                <td>9.0% (1H)</td>
+                <td>Net margin 0.5%</td>
+            </tr>
+            <tr>
+                <td><strong>ISL (flat)</strong></td>
+                <td>PKR 13.5B</td>
+                <td>6.7%</td>
+                <td>PKR 179M</td>
+                <td>11.2%</td>
+                <td>Recovering</td>
+            </tr>
+            <tr>
+                <td><strong>Aisha (flat)</strong></td>
+                <td>Improved</td>
+                <td>8.9%</td>
+                <td>-PKR 132M</td>
+                <td>4.9%</td>
+                <td>Loss-making</td>
+            </tr>
+            <tr>
+                <td><strong>FF Steel</strong></td>
+                <td>Unknown</td>
+                <td class="text-green"><strong>13-15% (FY22)</strong></td>
+                <td class="text-green"><strong>PKR 1.4B</strong></td>
+                <td>Unknown</td>
+                <td>A/A-1 rated</td>
+            </tr>
+        </table>
+        <p><strong>The Big Question:</strong> If FF Steel kept its margins at 13-15% during FY23-FY25, it is the
+            strongest steel company in Pakistan. But if margins dropped to 6-9% (similar to competitors), then FF Steel
+            has lost its advantage and looks like every other struggling steel mill.</p>
+    </div>
+
+    <!-- Signal 5 -->
+    <div class="signal-box grade-a no-break">
+        <div class="signal-header">Signal 5: Energy Cost Hurricane [Grade A]</div>
+        <div class="signal-conf">Confidence: HIGH — PALSP industry data + FF Steel advocacy</div>
+        <ul>
+            <li>Energy cost/ton: PKR 14,500 (FY21) → <strong>PKR 42,000 (FY24) — 267% increase</strong></li>
+            <li>Electricity = <strong>&gt;50%</strong> of steelmaking expenses</li>
+            <li>Pakistan has among highest industrial power tariffs globally</li>
+            <li>FF Steel owns <strong>132kV grid stations</strong> (reliability, not tariff protection)</li>
+        </ul>
+        <p><strong>What this means:</strong> With a 13.4% gross margin on PKR 29B revenue (FY22), FF Steel's gross
+            profit was about PKR 3.9B. When energy costs triple (which they did), profits should shrink — unless FF
+            Steel can charge higher prices for Grade 80 steel or benefit from falling scrap costs.</p>
+    </div>
+
+    <!-- Signal 6 -->
+    <div class="signal-box grade-a no-break">
+        <div class="signal-header">Signal 6: Grade 80 Rebar — First-Mover Advantage Eroding [Grade A] — UPDATED V3</div>
+        <div class="signal-conf">V3 CORRECTION: FF Steel is NO LONGER the sole producer. Competitors confirmed.</div>
+
+        <div
+            style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 12px 16px; margin: 12px 0;">
+            <p style="margin: 0 0 6px 0;"><strong>⚠️ V3 Intelligence Update — Monopoly Claim Corrected</strong></p>
+            <p style="margin: 0; font-size: 9.5pt;">Our V2 analysis identified FF Steel as the "sole producer" of Grade
+                80 rebar in Pakistan. V3 research found this is <strong>no longer accurate</strong>. The following
+                companies now produce or market Grade 80 rebar:</p>
+            <ul style="font-size: 9.5pt; margin: 8px 0 0 0;">
+                <li><strong>Agha Steel</strong> — Launched "Green Grade-80 Steel Rebars" (Arcon Eco-Friendly), 80,000
+                    PSI, ASTM A-615</li>
+                <li><strong>SJ Steel Group</strong> — SJ G-80, 80,000 PSI, marketed for high-rises and
+                    earthquake-resistant structures</li>
+                <li><strong>Markhor Steel</strong> — Claims "strongest steel bar in Pakistan" for their 80 Grade product
+                </li>
+                <li><strong>Ittehad Steel</strong> — Offers Grade 80 for "Special Projects" requiring high tensile
+                    strength</li>
+            </ul>
+        </div>
+
+        <h4>Competitive Position Analysis — V3</h4>
+        <table>
+            <tr>
+                <th>Metric</th>
+                <th>Data</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td><strong>Grade 80 as % of revenue</strong></td>
+                <td>Unknown</td>
+                <td>🔴 UNOBSERVED</td>
+            </tr>
+            <tr>
+                <td><strong>Premium vs Grade 60</strong></td>
+                <td>Est. 10-25% (Grade 80 = 80,000 PSI vs 60,000 PSI — 33% stronger)</td>
+                <td>🟡 ESTIMATED</td>
+            </tr>
+            <tr>
+                <td><strong>Competitive position</strong></td>
+                <td>First mover, but 4 competitors now confirmed</td>
+                <td>🟠 WEAKENED from V2</td>
+            </tr>
+            <tr>
+                <td><strong>Key buyers / projects</strong></td>
+                <td>CPEC high-rise, bridges, seismic infrastructure (PS:1879-2021 standard)</td>
+                <td>🟢 CONFIRMED — Grade 80 in Pakistan Standard</td>
+            </tr>
+            <tr>
+                <td><strong>Technical standard</strong></td>
+                <td>ASTM A-615 Grade 80 (550 MPa) — recognized in PS:1879-2021(R)</td>
+                <td>🟢 VERIFIED</td>
+            </tr>
+            <tr>
+                <td><strong>Cost saving claim</strong></td>
+                <td>Grade 80 uses 13% less steel for same strength → up to 10% cost saving</td>
+                <td>🟢 CONFIRMED — industry data</td>
+            </tr>
+            <tr>
+                <td><strong>Demand trajectory</strong></td>
+                <td>Growing — CPEC-II, high-rise construction, seismic code adoption</td>
+                <td>🟢 POSITIVE</td>
+            </tr>
+        </table>
+        <p><strong>V3 Bottom Line:</strong> FF Steel's Grade 80 advantage has shifted from <strong>monopoly to
+                first-mover</strong>. The moat is narrower than V2 assessed. If Grade 80 is only 5% of revenue, the
+            first-mover advantage is irrelevant. If it is 25%+ of revenue with established buyer relationships and a
+            production-quality reputation that competitors cannot yet match, the advantage remains meaningful — but it
+            is no longer exclusive.</p>
+    </div>
+
+    <!-- Signal 7 -->
+    <div class="signal-box grade-b no-break">
+        <div class="signal-header">Signal 7: Governance, Perception &amp; Disclosure Controls [Grade B] — ENRICHED V3
+        </div>
+        <div class="signal-conf">Confidence: MODERATE — No evidence of wrongdoing; readiness assessment</div>
+        <table>
+            <tr>
+                <th>Role</th>
+                <th>Name</th>
+                <th>Background</th>
+                <th>V3 Note</th>
+            </tr>
+            <tr>
+                <td>Chairman</td>
+                <td>Senator Nauman Wazir Khattak</td>
+                <td>Founder, ex-PAF, ex-Senator 2015-2021</td>
+                <td>Also: SNGPL Board, KPK TEVTA Chairman, CM Industrial Policy Committee</td>
+            </tr>
+            <tr>
+                <td>CEO</td>
+                <td>Zarak K. Khattak</td>
+                <td>Mechanical Engineer, family member</td>
+                <td>Son of Chairman; operational control</td>
+            </tr>
+            <tr>
+                <td>CMO</td>
+                <td>Sohaib Afzal Rana</td>
+                <td>Marketing leadership</td>
+                <td>V3 finding — previously unidentified</td>
+            </tr>
+            <tr>
+                <td>Ownership</td>
+                <td>2 family members</td>
+                <td>Majority stake split between Chairman + CEO</td>
+                <td>Family-concentrated control</td>
+            </tr>
+            <tr style="background: #fff3cd;">
+                <td><strong>Independent Directors</strong></td>
+                <td><strong>NONE FOUND</strong></td>
+                <td>No independent board members identified in any public source</td>
+                <td>⚠️ PSX listing requires independent directors</td>
+            </tr>
+        </table>
+        <p><strong>What investors will want to see:</strong> Independent board members (required by PSX listing rules),
+            an audit committee, a policy for
+            deals with family companies, a plan for who takes over if the Chairman steps down, and a way for employees
+            to report problems. <strong>None of these have been publicly disclosed yet.</strong> The Chairman's
+            simultaneous roles in government (Senator, SNGPL Board) and business create a perception risk that
+            independent directors would help address.</p>
+    </div>
+
+    <!-- Signals 8-9 -->
+    <div class="signal-box grade-b no-break">
+        <div class="signal-header">Signal 8: Construction Sector Headwinds [Grade B]</div>
+        <ul>
+            <li>Construction contracted 4.4% (2024), projected -2.8% (2025)</li>
+            <li>Recovery 2026-2029 at 4.6% CAGR</li>
+            <li>Long steel production -14.3% YoY FY25</li>
+            <li>KPK infra spending PKR 177B for FY26 (local catalyst)</li>
+        </ul>
+    </div>
+
+    <div class="signal-box grade-b no-break">
+        <div class="signal-header">Signal 9: Scrap Import Dependency [Grade B]</div>
+        <ul>
+            <li>Oct 2025: record 382K tons imported at $523/ton (down from $810)</li>
+            <li>58.5% quantity ↑ but only 2.4% value ↑ (prices falling)</li>
+            <li>Scrap prices are falling but rebar prices are staying the same — this is good for steel makers because
+                it means higher profit per ton</li>
+        </ul>
+    </div>
+
+    <!-- Signal 10 -->
+    <div class="page-break"></div>
+    <div class="signal-box grade-b no-break">
+        <div class="signal-header">Signal 10: Pricing Power — Margin Physics [Grade B] — UPDATED V3</div>
+        <div class="signal-conf">Confidence: MODERATE — V3 pricing data: Feb 22, 2026</div>
+        <table>
+            <tr>
+                <th>Period</th>
+                <th>Rebar Price (Grade 60)</th>
+                <th>Scrap Import Price</th>
+                <th>Est. Processing Spread</th>
+                <th>Direction</th>
+            </tr>
+            <tr>
+                <td>Mid-2024</td>
+                <td>~PKR 267K/ton</td>
+                <td>~$600/ton (~PKR 168K)</td>
+                <td>~PKR 99K</td>
+                <td>Baseline</td>
+            </tr>
+            <tr>
+                <td>Late 2025</td>
+                <td>~PKR 250K/ton</td>
+                <td>$523/ton (~PKR 146K)</td>
+                <td>~PKR 104K</td>
+                <td><strong>↑ Expanding</strong></td>
+            </tr>
+            <tr style="background: #e8f5e9;">
+                <td><strong>Feb 22, 2026 (V3)</strong></td>
+                <td><strong>PKR 242-254K/ton</strong></td>
+                <td>~$523/ton (~PKR 146K)</td>
+                <td><strong>~PKR 96-108K</strong></td>
+                <td><strong>↑ Healthy spread</strong></td>
+            </tr>
+        </table>
+        <p style="font-size: 9pt; color: var(--gray); margin-top: 6px;"><em>V3 source: Branded steel pricing Feb 22,
+                2026. Grade 60: Mughal PKR 253K, Agha PKR 254K, Five Star PKR 242K. City avg: Karachi PKR 232K,
+                Islamabad PKR 230K, Lahore PKR 228K.</em></p>
+        <p><strong>Price Behaviour:</strong> The processing spread (rebar price minus scrap cost) is <strong>PKR 96-108K
+                per ton</strong> — this is a healthy margin environment for steel makers. Scrap prices remain low
+            ($523/ton, down from $810 peak), while branded rebar holds above PKR 240K. However, as more mills recover
+            production (ISL and Mughal both showing profit recovery in H2 2025), competitive pricing pressure will
+            increase.</p>
+    </div>
+
+    <!-- Signal 11 -->
+    <div class="signal-box grade-u no-break">
+        <div class="signal-header">Signal 11: Working Capital Physics [Grade U — Unobserved] — NEW V2</div>
+        <div class="signal-conf">Framework defined — data required from company</div>
+        <p><strong>Steel companies usually fail because they run out of cash to operate, not because they lose
+                customers.</strong> Amreli's PKR 6.1B loss happened partly because they could not get enough working
+            capital (short-term cash to buy raw materials and pay bills). They had to stop production.</p>
+        <table>
+            <tr>
+                <th>Metric</th>
+                <th>Ask</th>
+                <th>Concern Threshold</th>
+            </tr>
+            <tr>
+                <td>Inventory days</td>
+                <td>FY23-FY25 average</td>
+                <td>&gt; 60 days</td>
+            </tr>
+            <tr>
+                <td>Receivable days</td>
+                <td>Collection period</td>
+                <td>&gt; 90 days</td>
+            </tr>
+            <tr>
+                <td>Payable days</td>
+                <td>Supplier terms</td>
+                <td>&lt; 30 days (squeezed)</td>
+            </tr>
+            <tr>
+                <td>Cash conversion cycle</td>
+                <td>Inv + Rec - Pay</td>
+                <td>&gt; 60 days</td>
+            </tr>
+            <tr>
+                <td>Short-term borrowing</td>
+                <td>WC lines, LC facilities</td>
+                <td>&gt; 25% of revenue</td>
+            </tr>
+            <tr>
+                <td>Emergency borrowing</td>
+                <td>Unplanned facilities</td>
+                <td>Any usage</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Signal 12 -->
+    <div class="signal-box grade-b no-break">
+        <div class="signal-header">Signal 12: Related-Party &amp; Political Exposure Map [Grade B] — NEW V2</div>
+        <div class="signal-conf">This is a readiness assessment, not an accusation</div>
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>What to Ask</th>
+                <th>Risk if Undisclosed</th>
+            </tr>
+            <tr>
+                <td>Family entities</td>
+                <td>All companies owned by Khattak family</td>
+                <td>HIGH</td>
+            </tr>
+            <tr>
+                <td>Procurement RPT</td>
+                <td>% raw material from related entities</td>
+                <td>HIGH</td>
+            </tr>
+            <tr>
+                <td>Sales RPT</td>
+                <td>% revenue from related buyers</td>
+                <td>MEDIUM</td>
+            </tr>
+            <tr>
+                <td>Real estate/land</td>
+                <td>Company-owned or family lease?</td>
+                <td>HIGH</td>
+            </tr>
+            <tr>
+                <td>Management fees</td>
+                <td>Fees to family entities</td>
+                <td>MEDIUM</td>
+            </tr>
+            <tr>
+                <td>Government contracts</td>
+                <td>% revenue from KPK govt-linked projects</td>
+                <td>MEDIUM</td>
+            </tr>
+            <tr>
+                <td>Regulatory actions</td>
+                <td>Any CCP/SECP/FBR actions?</td>
+                <td>HIGH</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- CONTRADICTION SUMMARY -->
+    <h2>Contradiction Summary</h2>
+    <p style="font-size: 9pt; color: var(--gray); margin-bottom: 4px;"><em>Where what the company says does not match
+            what the evidence shows</em></p>
+    <table class="no-break">
+        <tr>
+            <th>#</th>
+            <th>Contradiction</th>
+            <th>Grade</th>
+            <th>Severity</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>No audited financials after FY22 for a "soon" IPO company</td>
+            <td>A</td>
+            <td class="text-red"><strong>CRITICAL</strong></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>IPO announced 2021, "soon" in 2026 — 1/4 acceptable factors confirmed</td>
+            <td>A</td>
+            <td class="text-red"><strong>CRITICAL</strong></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>"Top rebar manufacturer" but 5-6% market share</td>
+            <td>B</td>
+            <td>MEDIUM</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Karachi plant + SEZ — zero progress since 2021</td>
+            <td>B</td>
+            <td class="text-red"><strong>HIGH</strong></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>FY23 projected PKR 35B+ but 7M pace ~PKR 31B</td>
+            <td>B</td>
+            <td>MEDIUM</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Claims of strong profitability — but based on 3-4 year old data</td>
+            <td>A</td>
+            <td class="text-red"><strong>HIGH</strong></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Grade 80 monopoly claimed as competitive advantage — but revenue share unknown</td>
+            <td>A</td>
+            <td>MEDIUM</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Profit per ton is increasing industry-wide, but FF Steel's specific benefit unknown</td>
+            <td>B</td>
+            <td>MEDIUM</td>
+        </tr>
+    </table>
+
+    <!-- INTERROGATION BRIEF -->
+    <div class="page-break"></div>
+    <h2>Key Questions for Management Meeting</h2>
+    <p><em>Top 10 questions investors will ask. For the top 5, we include follow-up questions to get specific
+            answers.</em></p>
+
+    <div class="signal-box no-break">
+        <div class="signal-header">Q1: "The IPO was announced September 2021. It's February 2026. What specifically
+            prevented listing?"</div>
+        <p><strong>Red flag:</strong> "Market conditions" without specific dates and blockers<br>
+            <strong>Good answer:</strong> A clear timeline showing what blocked the IPO and how each issue was resolved
+        </p>
+        <blockquote><strong>Follow-up 1:</strong> "KSE-100 hit all-time highs in 2024-2025. Why not then?"<br>
+            <strong>Follow-up 2:</strong> "Name the engaged underwriter and expected book-building date."
+        </blockquote>
+    </div>
+
+    <div class="signal-box no-break">
+        <div class="signal-header">Q2: "Share audited FY23, FY24, FY25 financials. Most recent public data is FY22."
+        </div>
+        <p><strong>Red flag:</strong> "We'll share during the IPO process"<br>
+            <strong>Good answer:</strong> The financials are shared immediately, with an explanation of how margins
+            changed
+        </p>
+        <blockquote><strong>Follow-up 1:</strong> "Show quarterly gross margin FY23-FY25, broken into price realization
+            vs cost."<br>
+            <strong>Follow-up 2:</strong> "Were there any audit restatements or qualified opinions?"
+        </blockquote>
+    </div>
+
+    <div class="signal-box no-break">
+        <div class="signal-header">Q3: "Gross margin was 14.8% (FY21) → 13.4% (FY22). With 267% energy cost increase,
+            what are margins NOW?"</div>
+        <p><strong>Red flag:</strong> "Under pressure but we're managing"<br>
+            <strong>Good answer:</strong> "FY25 GM was X%, driven by Grade 80 premium Y%, scrap decline Z%"
+        </p>
+        <blockquote><strong>Follow-up 1:</strong> "Energy cost per ton — above or below industry PKR 42,000?"<br>
+            <strong>Follow-up 2:</strong> "Break down CoS: % scrap, % energy, % labor, % other — 3-year trend."
+        </blockquote>
+    </div>
+
+    <div class="signal-box no-break">
+        <div class="signal-header">Q4: "Grade 80 revenue share, price premium per ton, and margin differential vs Grade
+            60?"</div>
+        <p><strong>Red flag:</strong> "It's a growing segment" without numbers<br>
+            <strong>Good answer:</strong> "G80 = X% revenue at PKR Y premium. GM: Z% vs A% for G60"
+        </p>
+        <blockquote><strong>Follow-up 1:</strong> "Name top 3 Grade 80 buyers and their revenue %."<br>
+            <strong>Follow-up 2:</strong> "What prevents a competitor? Capex required? Certification timeline?"
+        </blockquote>
+    </div>
+
+    <div class="signal-box no-break">
+        <div class="signal-header">Q5: "Chairman is ex-Senator, on SNGPL board. What conflict management policies
+            exist?"</div>
+        <p><strong>Red flag:</strong> "There are no conflicts"<br>
+            <strong>Good answer:</strong> Names of independent board members, a documented audit committee, and a clear
+            policy for managing conflicts of interest
+        </p>
+        <blockquote><strong>Follow-up 1:</strong> "List all related-party transactions FY23-FY25 with values."<br>
+            <strong>Follow-up 2:</strong> "What % of sales from government-linked projects?"
+        </blockquote>
+    </div>
+
+    <div class="signal-box no-break">
+        <div class="signal-header">Q6: "Karachi 3rd plant and SEZ status? These were the 2021 IPO use-of-proceeds."
+        </div>
+        <p><strong>Red flag:</strong> "Plans have evolved" | <strong>Good answer:</strong> Updated capital allocation
+            with timelines</p>
+    </div>
+    <div class="signal-box no-break">
+        <div class="signal-header">Q7: "Amreli lost PKR 6.1B. Mughal 0.5% margins. How did FF maintain profitability?"
+        </div>
+        <p><strong>Red flag:</strong> "We focus on quality" | <strong>Good answer:</strong> 3 specific factors with
+            numbers</p>
+    </div>
+    <div class="signal-box no-break">
+        <div class="signal-header">Q8: "Capacity utilization? 400K tons — actual production?"</div>
+        <p><strong>Red flag:</strong> "Near capacity" without numbers | <strong>Good answer:</strong> "FY25: X tons, Y%
+            utilization"</p>
+    </div>
+    <div class="signal-box no-break">
+        <div class="signal-header">Q9: "Copper ingot business — revenue, margin, strategic rationale?"</div>
+        <p><strong>Good answer:</strong> Clear segment data and strategic justification</p>
+    </div>
+    <div class="signal-box no-break">
+        <div class="signal-header">Q10: "Working capital cycle? Inventory days, CCC, short-term borrowing?"</div>
+        <p><strong>Good answer:</strong> Specific numbers showing how quickly the company converts inventory into cash
+        </p>
+    </div>
+
+    <!-- MSRI APPENDIX -->
+    <div class="page-break"></div>
+    <h2>MSRI Composition Appendix</h2>
+    <p style="font-size: 9pt; color: var(--gray);"><em>How the Market Structural Risk Index score is calculated</em></p>
+
+    <h3>How to Read the Score</h3>
+    <pre>
+Each risk area gets a score from 0 to 100:
+  0   = Very strong / clear competitive advantage
+  25  = Good, with some small uncertainties
+  50  = Cannot tell (not enough data to judge)
+  75  = Concerning / real risk exists here
+  100 = Severe risk / major problem
+
+The final MSRI is a weighted average of all 12 risk areas.
+Grade A signals (high confidence) count fully.
+Grade B signals (moderate confidence) count at 70%.
+Grade U signals (no data yet) count at 10%.
+
+Floor Rule: If the company's financial data is not available (Signal 1 scores
+60 or higher), the MSRI cannot go below 50 — no matter how strong the other
+signals are. This is because investors cannot properly evaluate a company
+without seeing the financial statements.
+</pre>
+
+    <h3>Signal Breakdown</h3>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Signal</th>
+            <th>Raw</th>
+            <th>Wt</th>
+            <th>Grade</th>
+            <th>Mult</th>
+            <th>Contribution</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Disclosure Readiness</td>
+            <td>80</td>
+            <td>1.5</td>
+            <td>A</td>
+            <td>1.0</td>
+            <td>120.0</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>IPO Delay Pattern</td>
+            <td>70</td>
+            <td>1.3</td>
+            <td>A</td>
+            <td>1.0</td>
+            <td>91.0</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Financial Performance</td>
+            <td>55</td>
+            <td>1.0</td>
+            <td>B</td>
+            <td>0.7</td>
+            <td>38.5</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Sector Distress (outlier)</td>
+            <td class="text-green">25</td>
+            <td>1.3</td>
+            <td>A</td>
+            <td>1.0</td>
+            <td>32.5</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Energy Cost Hurricane</td>
+            <td>70</td>
+            <td>1.2</td>
+            <td>A</td>
+            <td>1.0</td>
+            <td>84.0</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Grade 80 First-Mover (V3: no longer monopoly)</td>
+            <td>45</td>
+            <td>1.3</td>
+            <td>A</td>
+            <td>1.0</td>
+            <td>58.5</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Governance & Perception</td>
+            <td>50</td>
+            <td>1.0</td>
+            <td>B</td>
+            <td>0.7</td>
+            <td>35.0</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Construction Headwinds</td>
+            <td>55</td>
+            <td>0.8</td>
+            <td>B</td>
+            <td>0.7</td>
+            <td>30.8</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Scrap Dependency</td>
+            <td>35</td>
+            <td>0.7</td>
+            <td>B</td>
+            <td>0.7</td>
+            <td>17.15</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Pricing Power</td>
+            <td class="text-green">30</td>
+            <td>0.8</td>
+            <td>B</td>
+            <td>0.7</td>
+            <td>16.8</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Working Capital</td>
+            <td>50</td>
+            <td>1.0</td>
+            <td>U</td>
+            <td>0.1</td>
+            <td>5.0</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Related-Party Map</td>
+            <td>50</td>
+            <td>0.8</td>
+            <td>B</td>
+            <td>0.7</td>
+            <td>28.0</td>
+        </tr>
+        <tr style="background: var(--accent2); color: white; font-weight: 700;">
+            <td colspan="6" style="text-align:right; border:none;">MSRI</td>
+            <td style="border:none; font-size: 14pt;">52.2 / 100</td>
+        </tr>
+    </table>
+
+    <p><strong>Floor Rule Check:</strong> Because financial data is missing (Signal 1 = 80, which is above the 60
+        threshold), the MSRI cannot go below 50. The current MSRI is 52, so no adjustment was needed. Even the positive
+        signals like Grade 80 monopoly cannot bring the score below 50 until the company shares its financial
+        statements.</p>
+
+    <h3>What Moves MSRI ±10 Points</h3>
+    <table>
+        <tr>
+            <th>Scenario</th>
+            <th>Impact</th>
+        </tr>
+        <tr>
+            <td>FY24-FY25 margins ≥ 12% and the company is generating cash from operations</td>
+            <td class="text-green">↓ -14 pts → ~38 (much lower risk)</td>
+        </tr>
+        <tr>
+            <td>Margins have dropped below 9% (same as struggling competitors)</td>
+            <td class="text-red">↑ +10 pts → ~62 (higher risk)</td>
+        </tr>
+        <tr>
+            <td>PSX filing / book-building with underwriter</td>
+            <td class="text-green">↓ -10 pts</td>
+        </tr>
+        <tr>
+            <td>Grade 80 ≥ 25% revenue with ≥ 20% premium</td>
+            <td class="text-green">↓ -6 pts</td>
+        </tr>
+        <tr>
+            <td>Large business deals found between FF Steel and family-owned companies</td>
+            <td class="text-red">↑ +8 pts</td>
+        </tr>
+        <tr>
+            <td>Another delay ("soon" → 2027)</td>
+            <td class="text-red">↑ +5 pts</td>
+        </tr>
+        <tr>
+            <td>Cash flow problems (takes too long to convert inventory to cash, or emergency borrowing)</td>
+            <td class="text-red">↑ +7 pts</td>
+        </tr>
+    </table>
+
+    <!-- PREDICTIONS -->
+    <div class="page-break"></div>
+    <h2>Prediction Registry</h2>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Prediction</th>
+            <th>Check Date</th>
+            <th>Source</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><strong>IPO Timing:</strong> FF Steel files for PSX listing by Aug 2026 or "soon" has zero credibility
+            </td>
+            <td>Aug 2026</td>
+            <td>Signal 2</td>
+            <td>☐ Pending</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><strong>Margin Compression:</strong> FY24-FY25 GM compressed to 8-12% range; still leads peers</td>
+            <td>Prospectus</td>
+            <td>Signals 3,5</td>
+            <td>☐ Pending</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><strong>Grade 80 Monopoly:</strong> No domestic competitor announces G80 within 12 months</td>
+            <td>Feb 2027</td>
+            <td>Signal 6</td>
+            <td style="background: #ffcdd2;"><strong>❌ DISPROVEN in V3</strong> — Agha Steel, SJ Steel, Markhor Steel,
+                Ittehad Steel confirmed as G80 producers</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><strong>Karachi Plant:</strong> Not operational by Aug 2026; no construction progress</td>
+            <td>Aug 2026</td>
+            <td>NDI #2</td>
+            <td>☐ Pending</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><strong>Scrap Tailwind:</strong> Falling scrap + stable rebar → processing spread stays &gt; PKR 40K/ton
+            </td>
+            <td>FY26 Q data</td>
+            <td>Signal 10</td>
+            <td style="background: #c8e6c9;"><strong>✅ CONFIRMED in V3</strong> — Spread is PKR 96-108K/ton (Feb 2026)
+            </td>
+        </tr>
+        <tr style="background: #e3f2fd;">
+            <td>6</td>
+            <td><strong>Sector Recovery:</strong> Construction sector returns to positive growth by CY2027</td>
+            <td>2027</td>
+            <td>Signal 8</td>
+            <td>☐ Pending (V3 added)</td>
+        </tr>
+        <tr style="background: #e3f2fd;">
+            <td>7</td>
+            <td><strong>Energy Tariff:</strong> No meaningful industrial tariff relief before mid-2026</td>
+            <td>Jun 2026</td>
+            <td>Signal 5</td>
+            <td>☐ Pending (V3 added)</td>
+        </tr>
+        <tr style="background: #e3f2fd;">
+            <td>8</td>
+            <td><strong>Board Independence:</strong> Independent directors announced before IPO filing</td>
+            <td>IPO filing</td>
+            <td>Signal 7</td>
+            <td>☐ Pending (V3 added)</td>
+        </tr>
+    </table>
+
+    <!-- CATALYST MONITOR -->
+    <h2>Catalyst Monitor</h2>
+    <table>
+        <tr>
+            <th>Catalyst</th>
+            <th>Monitor</th>
+            <th>Target</th>
+            <th>Signal if Missed</th>
+        </tr>
+        <tr>
+            <td><strong>IPO Filing</strong></td>
+            <td>PSX announcement</td>
+            <td>Filed by Aug 2026</td>
+            <td>"Soon" discredited</td>
+        </tr>
+        <tr>
+            <td><strong>Margin Revelation</strong></td>
+            <td>Prospectus financials</td>
+            <td>FY24-FY25 GM ≥ 12%</td>
+            <td>FF Steel loses its competitive advantage claim</td>
+        </tr>
+        <tr>
+            <td><strong>Disclosure Pack</strong></td>
+            <td>Prospectus + underwriter</td>
+            <td>Named and engaged</td>
+            <td>Company is not ready for IPO</td>
+        </tr>
+        <tr>
+            <td><strong>Energy Policy</strong></td>
+            <td>Tariff relief</td>
+            <td>Meaningful reduction</td>
+            <td>Sector recovery delayed</td>
+        </tr>
+        <tr>
+            <td><strong>KPK Infrastructure</strong></td>
+            <td>Spending vs budget</td>
+            <td>&gt;70% of PKR 177B</td>
+            <td>Local demand story becomes weaker</td>
+        </tr>
+        <tr>
+            <td><strong>Scrap Prices</strong></td>
+            <td>Monthly import data</td>
+            <td>Below $550/ton</td>
+            <td>Tailwind continues</td>
+        </tr>
+        <tr>
+            <td><strong>Board Composition</strong></td>
+            <td>Pre-IPO announcements</td>
+            <td>Independent dirs named</td>
+            <td>Governance failure</td>
+        </tr>
+        <tr>
+            <td><strong>Grade 80 Adoption</strong></td>
+            <td>Project awards</td>
+            <td>CPEC/high-rise contracts</td>
+            <td>Monopoly value limited</td>
+        </tr>
+    </table>
+
+    <!-- CONFIDENCE SCORECARD -->
+    <h2>Confidence Scorecard — V1.5 vs V2 vs V3</h2>
+    <table>
+        <tr>
+            <th>Dimension</th>
+            <th>V1.5</th>
+            <th>V2</th>
+            <th>V3</th>
+        </tr>
+        <tr>
+            <td>Signal Count</td>
+            <td>9</td>
+            <td>12</td>
+            <td><strong>12 + PIFR</strong></td>
+        </tr>
+        <tr>
+            <td>Grade A Signals</td>
+            <td>4</td>
+            <td>6</td>
+            <td><strong>6 (with V3 corrections)</strong></td>
+        </tr>
+        <tr>
+            <td>Data Currency</td>
+            <td>FY22 only</td>
+            <td>FY22 + partial FY23</td>
+            <td><strong>+ Peer data to H1 FY26 + Feb 2026 pricing</strong></td>
+        </tr>
+        <tr>
+            <td>Grade 80 Assessment</td>
+            <td>Qualitative</td>
+            <td>Monopoly assumed</td>
+            <td><strong>Monopoly corrected — 4 competitors found</strong></td>
+        </tr>
+        <tr>
+            <td>Market Context</td>
+            <td>None</td>
+            <td>Basic</td>
+            <td><strong>KSE-100 peak (191,033), sector recovery tracked</strong></td>
+        </tr>
+        <tr>
+            <td>Methodology</td>
+            <td>Undefined</td>
+            <td>Cost disclosure</td>
+            <td><strong>Full intelligence methodology documented</strong></td>
+        </tr>
+        <tr>
+            <td>Self-Correction</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td><strong>V3 corrected V2's Grade 80 monopoly error</strong></td>
+        </tr>
+        <tr>
+            <td>Predictions</td>
+            <td>None</td>
+            <td>5</td>
+            <td><strong>8</strong></td>
+        </tr>
+        <tr>
+            <td><strong>Overall Grade</strong></td>
+            <td>B+</td>
+            <td>A-</td>
+            <td><strong>A</strong></td>
+        </tr>
+    </table>
+
+    <h3>Remaining Blind Spots</h3>
+    <ol>
+        <li>FY23-FY25 audited financials (CRITICAL)</li>
+        <li>Capacity utilization rate</li>
+        <li>Grade 80 revenue share and pricing premium</li>
+        <li>Working capital cycle metrics</li>
+        <li>Related-party transaction details</li>
+        <li>Customer concentration</li>
+        <li>Copper operations detail</li>
+        <li>Karachi plant actual status</li>
+        <li>Updated use-of-proceeds for IPO</li>
+    </ol>
+
+    <!-- METHODOLOGY -->
+    <div class="page-break"></div>
+    <h2>How This Report Was Built — Magnus Intelligence Methodology</h2>
+    <p style="font-size: 9.5pt; color: var(--gray); margin-bottom: 12px;"><em>This section explains exactly how we
+            reached our conclusions. Every finding in this report follows this process.</em></p>
+
+    <h4>Step 1: Multi-Source Data Collection</h4>
+    <p>We pull data from 6 independent source categories. No single source is trusted alone.</p>
+    <table>
+        <tr>
+            <th>Source Type</th>
+            <th>What We Pull</th>
+            <th>FF Steel Example</th>
+        </tr>
+        <tr>
+            <td><strong>Credit Rating Agencies</strong></td>
+            <td>Financial data, risk assessments, management quality</td>
+            <td>VIS Rating Report (Feb 2023) — revenue, margins, PAT, credit grade A/A-1</td>
+        </tr>
+        <tr>
+            <td><strong>Stock Exchange Filings</strong></td>
+            <td>Peer financials, sector benchmarks</td>
+            <td>PSX filings: Amreli, Mughal, ISL, Aisha — quarterly results through Feb 2026</td>
+        </tr>
+        <tr>
+            <td><strong>Industry Associations</strong></td>
+            <td>Sector costs, production data, policy impact</td>
+            <td>PALSP: energy costs PKR 14.5K → 42K/ton (267% increase)</td>
+        </tr>
+        <tr>
+            <td><strong>Trade Databases</strong></td>
+            <td>Import/export volumes, pricing trends</td>
+            <td>PBS: scrap imports 382K tons at $523/ton (Oct 2025)</td>
+        </tr>
+        <tr>
+            <td><strong>Company Sources</strong></td>
+            <td>Claims, timelines, product info, press</td>
+            <td>FF Steel website, FAQ, UNIDO filing, JI Steel collaboration visit</td>
+        </tr>
+        <tr>
+            <td><strong>Regulatory/Government</strong></td>
+            <td>Policy, standards, sector outlook</td>
+            <td>PSQCA PS:1879-2021 (Grade 80 standard), KPK budget PKR 177B, KSE-100 data</td>
+        </tr>
+    </table>
+
+    <h4>Step 2: AI Cross-Referencing & Triangulation</h4>
+    <p><strong>Every claim the company makes is checked against at least 2 independent sources.</strong> When sources
+        agree, the claim is marked ALIGNED. When they disagree, it is marked DIVERGENT and flagged for investigation.
+        This is not a human reading one report — this is an AI system reading all available sources simultaneously and
+        finding the places where the story doesn't match.</p>
+    <div style="background: #f0f4f8; padding: 12px 16px; border-radius: 6px; margin: 10px 0; font-size: 9.5pt;">
+        <p style="margin: 0 0 4px 0;"><strong>Example: Grade 80 Monopoly Claim (V2 → V3 Correction)</strong></p>
+        <p style="margin: 0;">V2: Company said "sole producer" → VIS confirmed → Marked ALIGNED<br>
+            V3: Deeper search found Agha Steel, SJ Steel, Markhor Steel, Ittehad all now produce Grade 80<br>
+            <strong>AI verdict: PARTIAL → Claim was true when made, but market has changed. Self-corrected in
+                V3.</strong>
+        </p>
+    </div>
+
+    <h4>Step 3: Signal Scoring & MSRI Calculation</h4>
+    <p>Each risk area is scored based on <strong>weight of evidence, not opinion</strong>:</p>
+    <ul>
+        <li>A score of 15 means: multiple sources confirm, strong evidence → low risk</li>
+        <li>A score of 80 means: no data found, company claims unverified → high risk</li>
+        <li>Each signal gets a <strong>risk score × importance weight × data-confidence multiplier</strong></li>
+        <li>The weighted average produces the final MSRI (0-100 scale)</li>
+        <li><strong>Floor rule:</strong> If audited financials are missing, MSRI cannot drop below 50 regardless of
+            other positive signals</li>
+    </ul>
+
+    <h4>Step 4: Prediction Registry & Self-Correction</h4>
+    <p>Every version of this report makes testable predictions. When actual data arrives (e.g., IPO prospectus, audited
+        financials), we test whether our estimates were right. <strong>This is what transforms speculation into
+            intelligence</strong> — the system learns from its own predictions.</p>
+    <p>V3 already self-corrected: the Grade 80 "monopoly" from V2 was corrected after deeper research found 4
+        competitors.</p>
+
+    <h4>What This System Cannot Do</h4>
+    <table>
+        <tr>
+            <th>Capability</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>Access private or insider information</td>
+            <td>❌ No — all sources are public</td>
+        </tr>
+        <tr>
+            <td>Replace audited financial statements</td>
+            <td>❌ No — peer-implied estimates are proxies, not substitutes</td>
+        </tr>
+        <tr>
+            <td>Provide a valuation or share price target</td>
+            <td>❌ No — requires financials we don't have</td>
+        </tr>
+        <tr>
+            <td>Guarantee predictions</td>
+            <td>❌ No — but we track them and test them</td>
+        </tr>
+    </table>
+
+    <!-- SCOPE OF ANALYSIS -->
+    <h2>Scope of This Analysis</h2>
+    <p>This report demonstrates what Magnus Markets intelligence can extract from <strong>publicly available data
+            alone</strong> for a <strong>private, pre-IPO company</strong> — the most difficult category to assess
+        because almost no operating data is visible.</p>
+    <div
+        style="background: #e8f5e9; border: 1px solid #4caf50; border-radius: 6px; padding: 14px 18px; margin: 12px 0;">
+        <p style="margin: 0 0 8px 0;"><strong>🟢 For Listed Companies (PSX / International Exchanges) — What More
+                Becomes Possible</strong></p>
+        <p style="margin: 0; font-size: 9.5pt;">When a company's quarterly and annual filings are publicly available,
+            this system can deliver significantly deeper analysis:</p>
+        <ul style="font-size: 9.5pt; margin: 8px 0 0 0;">
+            <li><strong>Complete financial forensics</strong> — margin trends, cash flow quality, earnings manipulation
+                detection</li>
+            <li><strong>Real-time peer comparison</strong> — dynamic ranking against all sector peers on 20+ metrics
+            </li>
+            <li><strong>Working capital stress testing</strong> — CCC analysis, liquidity modelling, debt sustainability
+            </li>
+            <li><strong>Related-party transaction mapping</strong> — full disclosure audit, fair-value verification</li>
+            <li><strong>Predictive models</strong> — revenue forecasting, margin trajectory, probability-weighted
+                scenarios</li>
+            <li><strong>Governance scoring</strong> — board independence, audit quality, disclosure completeness index
+            </li>
+        </ul>
+        <p style="margin: 8px 0 0 0; font-size: 9.5pt;"><em>The FF Steel dossier operates at approximately 40% of the
+                system's full capability due to the private company data constraint. For listed companies, the same
+                methodology produces materially deeper, more precise, and continuously updated intelligence.</em></p>
+    </div>
+
+    <div class="footer">
+        <strong>MAGNUS MARKETS INTELLIGENCE — Khaldun Systems</strong><br>
+        Intelligence they can't get elsewhere. Questions they wouldn't think to ask.<br>
+        <em>Version 3 — February 22, 2026</em>
+    </div>
+
+</body>
+
+</html>

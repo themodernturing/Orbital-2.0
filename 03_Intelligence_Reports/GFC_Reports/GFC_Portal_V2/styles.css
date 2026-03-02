@@ -1,0 +1,154 @@
+:root {
+    /* Magnus Obsidian Palette */
+    --bg-deep: #050507;
+    --bg-surface: #0a0a0c;
+    --bg-card: #111114;
+    --bg-accent: #1a1a20;
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-dim: #64748b;
+    
+    --acc-green: #00ff88; /* Signal: Advantage */
+    --acc-blue: #2563eb;  /* Signal: Institutional */
+    --acc-red: #ff4444;   /* Signal: Risk */
+    --acc-gold: #fbbf24;  /* Signal: Heritage */
+    
+    --border: rgba(255, 255, 255, 0.08);
+    --border-glow: rgba(0, 255, 136, 0.2);
+    
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.portal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Typography Standards */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+}
+
+.text-mono {
+    font-family: var(--font-mono);
+}
+
+.text-accent-green { color: var(--acc-green); }
+.text-accent-red { color: var(--acc-red); }
+.text-accent-gold { color: var(--acc-gold); }
+
+/* Layout Components */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+/* Section Styling */
+section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--acc-blue);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+}
+
+/* Interactive Cards */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--acc-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card.highlight-green:hover { border-color: var(--acc-green); }
+.card.highlight-red:hover { border-color: var(--acc-red); }
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-brand {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.nav-status {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--acc-green);
+    background: rgba(0, 255, 136, 0.1);
+    padding: 4px 12px;
+    border-radius: 99px;
+    letter-spacing: 0.05em;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Print Overrides */
+@media print {
+    body { background: #fff; color: #000; }
+    .card { border: 1px solid #ddd; background: #fff; color: #000; box-shadow: none; }
+    .no-print { display: none; }
+}
